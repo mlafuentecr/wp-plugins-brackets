@@ -12,7 +12,7 @@
  * @package           Prevent_Brackets
  *
  * @wordpress-plugin
- * Plugin Name:       Prevent-Brackets ver1
+ * Plugin Name:       Prevent-Brackets 
  * Plugin URI:        https://revmasters.com
  * Description:       RevMaster.com's NFL Brackets plugin simplifies tracking and managing your NFL predictions. Enhance your football experience and potentially increase your passive income.
  * Version:           1.0.0
