@@ -11,10 +11,21 @@ function startBracket(){
 
 function listenForChange (){
 	//LISTEN ON CHANGEacf-input
-	const mySelect = document.querySelector("[data-name='select_a_league'] > .acf-input  select ")
-	console.log(mySelect,  'mySelect')
-	mySelect.addEventListener("onchange", ()=>console.log('xxxxx'));
+	const apiCallBtns = document.querySelectorAll('#apiCall_btn')
+	const mySelecttos = document.querySelectorAll("[data-name='select_a_league']")
+	console.log(mySelecttos)
 
+	apiCallBtns.forEach((btn, key)=>{
+		const parentWithClass = btn.closest(".acf-fields");
+		const select = parentWithClass.querySelector("[data-name='select_a_league'] select")
+
+		btn.addEventListener("click", ()=>console.log('xxxxx', select.value));
+	
+	})
+
+	
+
+	
 }
 
 
