@@ -26,6 +26,9 @@
 				'custom_tab_page',    // Menu slug (unique identifier)
 				// 'custom_tab_content'  // Function to display the page content
 		);
+		
+
+
 	}
 
 	// Function to display the content of the Bracket Contest

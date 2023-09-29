@@ -61,12 +61,14 @@ class Prevent_Brackets {
 		$this->plugin_name = 'prevent-brackets';
 
 		$this->load_dependencies();
+		$this->load_bracketshortcuts();
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-		$this->define_acf();
 		$this->define_theme_features();
-		$this->load_bracketshortcuts();
+		$this->define_acf();
+	
+		
 	}
 
 	private function load_dependencies() {
@@ -112,6 +114,13 @@ class Prevent_Brackets {
 		 * side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-load-bracket-shortcut.php';
+				/**
+		 * The class responsible for defining all actions that occur in the public-facing
+		 * side of the site.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-prevent-ACF_Onsave.php';
+	
+
 
 		$this->loader = new Prevent_Brackets_Loader();
 
@@ -137,24 +146,29 @@ class Prevent_Brackets {
 	private function define_admin_hooks() {
 
 		$plugin_admin = new Prevent_Brackets_Admin( $this->get_plugin_name(), $this->get_version() );
-
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
+		$acf_url = new ACF_Onsave(  );
+		$this->loader->add_action( 'acf/options_page/save', $acf_url, 'save_data_to_api' );
 	}
+
 
 	private function define_public_hooks() {
 
 		$plugin_public = new Prevent_Brackets_Public( $this->get_plugin_name(), $this->get_version() );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-
+	
+		// $expose = new Expose_api(  );
+		// $this->loader->add_action( 'rest_api_init', $expose, 'expose_bracket' );
+	
 	}
 
 	private function load_bracketshortcuts() {
 
-		 $shortcodes_class = new Bracket_shortcuts();
-		 $this->loader->add_shortcode( 'bracket_mlb', $shortcodes_class, 'shortcode_function' );
+		 $template_class = new Bracket_template();
+		 $this->loader->add_shortcode( 'bracket_mlb', $template_class, 'load_mlb_template' );
 	}
 
 
@@ -177,7 +191,12 @@ class Prevent_Brackets {
 
 	// (Optional) Hide the ACF admin menu item.
 	//add_filter('acf/settings/show_admin', '__return_false');
+
+
 	}
+
+
+
 
 
 	public function run() {
