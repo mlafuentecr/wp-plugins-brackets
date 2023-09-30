@@ -1,53 +1,57 @@
 
-document.readyState !== 'loading' ? startBracket() : document.addEventListener('DOMContentLoaded', () => startBracket());
-function startBracket(){
+// Wait for the DOM to be ready
+document.readyState !== 'loading' ? startBracket() : document.addEventListener('DOMContentLoaded', startBracket);
 
-		if(document.querySelector("[data-name='select_a_league']") ){
-			listenForChange()
-			}
-		
-		
+function startBracket() {
+    const selectLeagueElements = document.querySelectorAll("[data-name='select_a_league']");
+    
+    if (selectLeagueElements.length > 0) {
+        listenForChange();
+    }
 }
 
-function listenForChange (){
-	//LISTEN ON CHANGEacf-input
-	const apiCallBtns = document.querySelectorAll('#apiCall_btn')
-	const mySelecttos = document.querySelectorAll("[data-name='select_a_league']")
-	console.log(mySelecttos)
+function listenForChange() {
+    const apiCallBtns = document.querySelectorAll('#apiCall_btn');
 
-	apiCallBtns.forEach((btn, key)=>{
-		const parentWithClass = btn.closest(".acf-fields");
-		const select = parentWithClass.querySelector("[data-name='select_a_league'] select")
-
-		btn.addEventListener("click", ()=>console.log('xxxxx', select.value));
-	
-	})
-
-	
-
-	
+    apiCallBtns.forEach(btn => {
+        const parentWithClass = btn.closest(".acf-fields");
+        const select = parentWithClass.querySelector("[data-name='select_a_league'] select");
+        btn.addEventListener("click", () => saveListOfPlayers(select.value));
+    });
 }
 
+function saveListOfPlayers(select) {
+ 
+     const ajax_url = ajax_plugin_obj.ajax_url;
 
-function makeAfetch(){
-	 // Make an AJAX request to trigger the PHP function
-	 fetch(ajaxurl, {
-		method: 'POST',
-		headers: {
-				'Content-Type': 'application/x-www-form-urlencoded',
-		},
-		body: 'action=my_admin_ajax_action&param1=value1&param2=value2',
-})
-		.then(response => response.json())
-		.then(data => {
-				// Handle the AJAX response
-				console.log(data);
-		})
-		.catch(error => {
-				console.error('Error:', error);
-		});
+
+    // jQuery.ajax({
+    //     type: 'POST',
+    //     url: ajax_url,
+    //     //dataType: 'html',
+    //     data: {
+    //       action: 'saveACF',
+    //     },
+    //     success: function (res) {
+    //         console.log(res);
+    //     }
+    //   });
+//  
+
+console.log(select)
+
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+    if( xhr.readyState === 4 && xhr.status === 200 ) {
+        console.log( xhr.responseText );
+    }
+    }
+
+    xhr.open( 'POST', ajax_url, true );
+    xhr.setRequestHeader( 'Content-type', 'application/x-www-form-urlencoded' );
+    const params = `action=saveACF&leagueSelected=${select}`;
+    xhr.send( params );
 }
-
 
 // function makeAfetch(league){
 // 	if(league === 'Select an Option') return

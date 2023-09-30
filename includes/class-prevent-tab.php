@@ -31,19 +31,6 @@
 
 	}
 
-	// Function to display the content of the Bracket Contest
-	//  function custom_tab_content() {
-	// 	// You can put your custom content here
-	// 	echo '<div class="wrap">';
-	// 	echo '<h2>Bracket Contest Content</h2>';
-	// 	echo '<p>This is the content of your Bracket Contest.</p>';
-	// 	echo '</div>';
-	// }
-
-	// Hook to add the custom admin menu item
-	//add_action('admin_menu', 'load_tab');
-
-
 }
 
 

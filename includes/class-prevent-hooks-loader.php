@@ -67,6 +67,7 @@ class Prevent_Brackets {
 		$this->define_public_hooks();
 		$this->define_theme_features();
 		$this->define_acf();
+		$this->define_ajax_function();
 	
 		
 	}
@@ -119,8 +120,14 @@ class Prevent_Brackets {
 		 * side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-prevent-ACF_Onsave.php';
+				/**
+		 * The class responsible for defining all actions that occur in the public-facing
+		 * side of the site.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-prevent-ajax.php';
 	
-
+	
+	
 
 		$this->loader = new Prevent_Brackets_Loader();
 
@@ -149,7 +156,7 @@ class Prevent_Brackets {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
-		$acf_url = new ACF_Onsave(  );
+		$acf_url = new ACF_Onsave();
 		$this->loader->add_action( 'acf/options_page/save', $acf_url, 'save_data_to_api' );
 	}
 
@@ -165,8 +172,15 @@ class Prevent_Brackets {
 	
 	}
 
-	private function load_bracketshortcuts() {
+	private function define_ajax_function() {
+		$template_class = new Bracket_ajax();
+		$this->loader->add_action( 'wp_ajax_saveACF', $template_class, 'saveACF' );
+		$this->loader->add_action( 'wp_ajax_nopriv_saveACF', $template_class, 'saveACF' );
+ }
 
+
+
+	private function load_bracketshortcuts() {
 		 $template_class = new Bracket_template();
 		 $this->loader->add_shortcode( 'bracket_mlb', $template_class, 'load_mlb_template' );
 	}
