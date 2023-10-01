@@ -156,8 +156,9 @@ class Prevent_Brackets {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
-		$acf_url = new ACF_Onsave();
-		$this->loader->add_action( 'acf/options_page/save', $acf_url, 'save_data_to_api' );
+		$Bracket_ajax = new Bracket_ajax();
+		$this->loader->add_action( 'acf/options_page/save', $Bracket_ajax, 'saveACF', 20);
+	
 	}
 
 
@@ -186,25 +187,22 @@ class Prevent_Brackets {
 	}
 
 
-
-
-
 	private function define_theme_features(){
 		$theme_features = new Prevent_Brackets_Theme();
 		$this->loader->add_action( 'after_setup_theme',  $theme_features, 'theme_supported_features' );
 	}
 
 	private function define_acf(){
-	define( 'MY_ACF_PATH',  plugin_dir_path( dirname( __FILE__ ) ) . 'includes/acf/' );
-	define( 'MY_ACF_URL',  plugin_dir_path( dirname( __FILE__ ) ) . 'includes/acf/' );
+		define( 'MY_ACF_PATH',  plugin_dir_path( dirname( __FILE__ ) ) . 'includes/acf/' );
+		define( 'MY_ACF_URL',  plugin_dir_path( dirname( __FILE__ ) ) . 'includes/acf/' );
 
-	// Include the ACF plugin.
-	include_once( MY_ACF_PATH . 'acf.php' );
-	// When including the PRO plugin, hide the ACF Updates menu
-	add_filter('acf/settings/show_updates', '__return_false', 100);
+		// Include the ACF plugin.
+		include_once( MY_ACF_PATH . 'acf.php' );
+		// When including the PRO plugin, hide the ACF Updates menu
+		add_filter('acf/settings/show_updates', '__return_false', 100);
 
-	// (Optional) Hide the ACF admin menu item.
-	//add_filter('acf/settings/show_admin', '__return_false');
+		// (Optional) Hide the ACF admin menu item.
+		//add_filter('acf/settings/show_admin', '__return_false');
 
 
 	}
