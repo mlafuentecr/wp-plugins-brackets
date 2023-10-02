@@ -25,3 +25,39 @@
  .info .acf-label{
   display: none;
  }
+/* [data-name="lista_de_teams_json"]{
+  display: none;
+} */
+[data-name="teams_wildcard"]{
+  padding: 0px!important;
+}
+[data-name="teams_wildcard"] > .acf-label{
+  display: none;
+}
+[data-name="teams_wildcard"] .acf-fields.-border{
+  border: none;
+}
+[data-name="match"]:before, [data-name="match"] .acf-label{
+    display: none!important;
+  }
+  [data-name="match"] .acf-input{
+    width:100%!important;
+    position: relative;
+  }
+
+  [data-name="match"] .acf-row > [data-type="group"]:first-child::after{
+    content: 'vs';
+    color: white;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    right: -15px;
+    bottom: 0px;
+    width: 30px;
+    height: 30px;
+    flex-wrap: wrap;
+    border-radius: 50%;
+    z-index: 5;
+  }

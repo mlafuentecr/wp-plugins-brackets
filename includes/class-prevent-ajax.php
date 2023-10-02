@@ -18,8 +18,11 @@ class Bracket_ajax {
    */
   // $path = preg_replace( '/wp-content.*$/', '', __DIR__ );
   // require_once( $path . 'wp-load.php' );
-  
+  // Example server-side code (PHP)
+
+
   function saveACF() {
+    echo 'ENTRE saveACF';
     if (isset($_POST['action'])) {
       $leagueSelected = $_POST['leagueSelected']; //from bracket click js
       $option_value   = get_field('create_a_bracket', 'option'); //acf
@@ -36,25 +39,27 @@ class Bracket_ajax {
           echo 'ENTRE';
           $groupTeamTest  = "field_6515b2851d850";
           $testField = get_field( 'field_6515b2851d850', 'option');
+          $bracket_title = get_field( 'bracket_title', 'option');
           //ESTA fallando creo que seria mejro cargarlo manual
           $value1 = array(
             'rank' => 33,
           );
     
-          update_field($groupTeamTest, $value1, 'option');
+          //update_field($groupTeamTest, $value1, 'option');
+          update_field('bracket_title', 'title new test', 'option');
           
-          if ($field_name) {
-            echo ' Field updated successfully '.$testField. '<---';
+          if ($bracket_title) {
+            echo ' Field updated successfully '.$bracket_title. '<---';
         } else {
             echo ' Field update failed ';
         }
     
         
-          echo'$testField='.$testField.' ';
+          echo'$bracket_title='.$bracket_title.' ';
           echo' $teamName_1='.$groupTeamTest.' ';
         
         }
-        var_dump($testField);
+        var_dump($bracket_title);
           
           // if( $braketName == $leagueSelected){
           //   //var_dump($bracketFromACF);
