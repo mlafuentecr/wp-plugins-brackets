@@ -54,13 +54,15 @@ i
    return $box; 
   }
  
-  function logoContent($teamID, $jsonTeams) {
+  function teamDestructur($teamID, $jsonTeams, $logoType) {
  
     $foundTeam  = findTeamByID($jsonTeams, $teamID);
-    if ($foundTeam) {
+    if ( $logoType === 'logo') {
         return  $foundTeam['teamImageURL'];
-    } else {
-        return 'No team found';
+    }elseif ( $logoType === 'thumb'){
+        return  $foundTeam['thumbNailURL'];
+    }else {
+        return  $foundTeam['teamFirstName'];
     }
 
    
@@ -95,10 +97,10 @@ i
             $worldseriesMatches = $mlbObj['teams_worldseries'];
         
            //Champion
-            $champion           = $mlbObj['team_champion'];
+            $championid           = $mlbObj['team_champion']['team_name'];
 
             if ($league === 'MLB') {
-          
+              
               $htmlContent = '<h2>'.$bracket_title.'</h2>';
               $htmlContent .= '<main class="bracketContest-wrap">';
                 $htmlContent .= '<section class="group">';
@@ -115,7 +117,7 @@ i
                     $htmlContent .= '<section class="group-match">';
                       //wildcard
                       $htmlContent .= '<div class="group-1 group-wildcard">';
-                      $htmlContent .=  '<img class="logo" src="'.logoContent('3483', $json ). '">';
+                      $htmlContent .=  '<img class="logo" src="'.teamDestructur('3483', $json , 'logo'). '">';
                       $htmlContent .=  matchContent($wildMatches, $json, 'wildcard');
                       $htmlContent .= '</div>';
                       //division
@@ -138,7 +140,15 @@ $htmlContent .= '<div class="group-center">';
                 $htmlContent .= '<div class="group-4 group-worldseries">';
                 $htmlContent .=  'logo';
                 $htmlContent .=  matchContent($worldseriesMatches, $json, 'worldseries');
-                $htmlContent .=  'xxx'.matchContent($champion, $json, 'division');
+
+                $htmlContent .=  '<div class="match-row">
+                  <div class="matchBox champ">
+                  <img class="thumb" src="'.teamDestructur($championid, $json , 'thumb'). '">
+                  <div class="name">'.teamDestructur($championid, $json , 'name').'</div>
+                  </div>
+                </div>
+                ';
+
                 $htmlContent .= '</div>';
 $htmlContent .= '</div>'; //match-group    
 
@@ -154,7 +164,7 @@ $htmlContent .= '</div>'; //match-group
               $htmlContent .= '<section class="group-match">';
                 //wildcard
                 $htmlContent .= '<div class="group-1 group-wildcard">';
-                $htmlContent .=  '<img class="logo" src="'.logoContent('3483', $json ). '">';
+                $htmlContent .=  '<img class="logo" src="'.teamDestructur('3483', $json, 'logo' ). '">';
                 $htmlContent .=  matchContent($wildMatches, $json, 'wildcard');
                 $htmlContent .= '</div>';
                 //division

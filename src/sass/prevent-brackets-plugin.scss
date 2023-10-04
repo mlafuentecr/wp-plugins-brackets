@@ -152,6 +152,9 @@ $col-width:   160px;
       align-content: center;
       flex-wrap: wrap;
     }
+    .thumb{
+      width: 30px;
+    }
     &-right{
       display: flex;
       flex-direction: column;
