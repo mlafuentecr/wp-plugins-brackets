@@ -1,16 +1,12 @@
-$color-wildcard:  #176E8D;
-$color-division:  #D71E54;
-$color-championship:  #F7761E;
-$col-width:   160px;
-
+@import 'variable';
+@import 'desktop';
 .bracketContest {
   border-radius: 10px;
-  border: 2px solid gray;
   margin: 2rem;
+
   h2{
     font-size: clamp(2rem, 10vw, 32px);
     text-align: center;
-    max-width: 50%;
     margin: auto;
     position: relative;
     top: -35px;
@@ -26,12 +22,11 @@ $col-width:   160px;
   &::before {
     content: '🢒';
     left: -5px;
-
-}
-&::after {
-  content: '🢐';
-  right: -5px;
-}
+  }
+  &::after {
+    content: '🢐';
+    right: -5px;
+  }
   }
   .bracketContest-wrap{
     padding: 10px;
@@ -47,8 +42,6 @@ $col-width:   160px;
 
 
 }
-
-
 // Championship
 .match-championship {
   display: flex;
@@ -59,7 +52,6 @@ $col-width:   160px;
  
 
 }
-
 .matchBox{
   height: 80px;
   box-shadow: 0 2px 4px rgba(0,0,0,.16);
@@ -86,7 +78,7 @@ $col-width:   160px;
     & > p{
       display: none;
     }
-    .matchBox-logo {
+    &-logo {
       height: 25px;
       display: flex;
       align-items: center;
@@ -110,11 +102,17 @@ $col-width:   160px;
       align-items: center;
       margin-right: 10px;
     }
-  
+    &.wildcard{
+      border-right: 4px solid $color-wildcard;
+    }
+    &.division{
+      border-right: 4px solid $color-division;
+    }
+    &.championship{
+      border-right: 4px solid $color-championship;
+    }
   
 }
-
-
 .match-row {
   display: flex;
   flex: 1;
@@ -128,125 +126,257 @@ $col-width:   160px;
   }
 }
 //la primera arriba la segunda abajo 
- 
-  .group{
-      background-color: gray;
-      width: 100%;
-      display: flex;
-      padding: 5px;
-      &-match {
-        display: flex;
-        height: 600px;
-        gap: 5px;
-      }
-    &-left{
-      background-color: yellow;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-    .group-center {
-      min-width: 255px;
-      display: flex;
-      justify-content: center;
-      align-content: center;
-      flex-wrap: wrap;
-    }
-    .thumb{
-      width: 30px;
-    }
-    &-right{
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      background-color: pink;
-      .group-stages,.group-match{
-        flex-direction: row-reverse;
-      }
-    }
+.group{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+  &-match {
+    display: flex;
+    height: $bracketHeight;
 
-    &-1{
-      position: relative;
-      height: 100%;
-      p{
-        display: none;
-      }
-      .logo{
-        position: absolute;
-        width: 140px;
-        top: 230px;
-      }
-    }
-
-    //.group-division 
-    &-2 {
-      margin-top: 120px;
-      margin-bottom: 120px;
-      background-color: rgb(103, 103, 103);
-      position: relative;
-      
-      display: flex;
-      flex-direction: column;
-        p{
-        display: none;
-      }
-     
-    }
-    //championship
-    &-3 {
-      height: 100%;
-      background-color: rgb(59, 58, 58);
-      position: relative;
-      p{
-        display: none;
-      }
-      .match-row{
-        height: 100%;
-        align-content: center;
-        border: 2px solid red;
-        justify-content: center;
-      }
- 
-    }
-
- 
-  //Stages Tabs
-  &-stages{
-  display: flex;
-  flex: 1;
-  gap: 5px;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-  .date {
-    font-size: 12px;
-    text-align: center;
-    height: 12px;
-    line-height: 12px;
-    padding: 5px 0px;
   }
-  p{
-    display: none;
+  &-left{
+    max-width: $group-width;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
-  a, span {
-    height: 35px;
-    width: $col-width;
+  &-center {
+    min-width: 255px;
     display: flex;
     justify-content: center;
     align-content: center;
-    text-decoration: none;
     flex-wrap: wrap;
-    opacity: 0;
   }
-  a{
-    opacity: 1;
-    font-size: 12px;
-    font-weight: 700;
-    color: $color-wildcard;
-    background: #fafafb 0% 0% no-repeat padding-box;
-    border: 1px solid $color-wildcard;
-    border-radius: 10px;
+  .thumb{
+    width: 30px;
   }
-  //stages-link division
+  &-right{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: $group-width;
+    .group-stages,.group-match{
+      flex-direction: row-reverse;
+    }
+    .group-1{
+      left: 0px;
+      .match_1::after, .match_2::after{
+        right: 80%;
+      }
+    }
+    .group-2{
+      left: 80px;
+      .match_1::after, .match_2::after{
+        right: 90%;
+      }
+    }
+    .group-3{
+      left: 120px;
+      .match_1::after{
+        left: -260px;
+      }
+    }
+
+      
+  }
+
+  &-1{
+    position: relative;
+    height: 100%;
+    
+    p{
+      display: none;
+    }
+    .logo{
+      position: absolute;
+      max-width: 250px;
+      height: 160px;
+      top: calc($bracketHeight / 2 - 80px);
+        z-index: 20;
+    }
+    .match_1{
+      position: relative;
+      @include line-v(70px, 81px, auto, 30%); //height, top, bottom , right/
+    }
+    .match_2{
+      position: relative;
+      @include line-v(70px, auto, 81px, 30%); //height, top, bottom , right/
+    }
+  }
+
+  //.group-division 
+  &-2 {
+    margin-top: 120px;
+    margin-bottom: 120px;
+    position: relative;
+    left: -80px;
+    z-index: 25;
+    display: flex;
+    flex-direction: column;
+      p{
+      display: none;
+    }
+    .match_1{
+      position: relative;
+      @include line-v(70px, 81px, auto, 10%); //height, top, bottom , right/
+    }
+    .match_2{
+      position: relative;
+      @include line-v(70px, auto, 81px, 10%); //height, top, bottom , right/
+    }
+  }
+  //championship
+  &-3 {
+    height: 100%;
+    position: relative;
+    left: -120px;
+    z-index: 30;
+    .match_1{
+      @include line-h (260px, 50%,-260px, auto) 
+    }
+    p{
+      display: none;
+    }
+    .match-row{
+      height: 100%;
+      align-content: center;
+      justify-content: center;
+    }
+
+  }
+  &-center{
+  z-index: 50;
+  }
+  &-worldseries{
+    .worldseries{
+      padding: 10px;
+      width: 200px;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #f3f3f3 0% 0% no-repeat padding-box;
+      border: 1px solid #707070;
+      border-radius: 10px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      margin: auto;
+      position: relative;
+      @include line-v(70px, 161px, auto, 50%); //height, top, bottom , right/
+      .title{
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .worldseries-wrap{
+        .matchBox {
+          width: $col-width;
+          display: flex;
+          flex-direction: row;
+          padding: 0px;
+          border: 1px solid #707070;
+          &-teamName {
+            height: 5px;
+            min-height: 5px;
+            padding: 0px;
+            margin: 0px!important;
+            line-height: 12px;
+            margin-bottom: 10px!important;
+        }
+          &-team {
+            background: #F3F3F3 0% 0% no-repeat padding-box;
+            padding: 0px;
+            margin: 0px;
+            border-radius: 10px 0px 0px 10px;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+            height: 100%;
+            &:first-child{
+              border-right: 2px solid #707070;
+            }
+            * {
+              display: flex;
+              width: 100%;
+              margin: auto;
+              justify-content: center;
+            }
+            p{
+            display: none;
+            }
+            img{
+              width: 25px;
+              height: 25px;
+              margin-top: 10px;
+            }
+            &:nth-child(2) {
+              border-radius: 0px 10px 10px 0px;
+          }
+        }
+        }
+    
+      }
+    }
+    .match-row {
+      align-content: center!important;
+      overflow: initial;
+    }
+  }
+  //group-stages Tabs
+  &-stages{
+    display: flex;
+    flex: 1;
+    gap: 5px;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    .date {
+      font-size: 12px;
+      text-align: center;
+      height: 12px;
+      line-height: 12px;
+      padding: 5px 0px;
+    }
+    p{
+      display: none;
+    }
+    a, span {
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      text-decoration: none;
+      flex-wrap: wrap;
+      opacity: 0;
+      padding: 0px 1.4rem;
+    }
+    a{
+      opacity: 1;
+      font-size: 12px;
+      font-weight: 700;
+      color: $color-wildcard;
+      border: 1px solid $color-wildcard;
+      border-radius: 10px;
+    }
+    & > div >.wildcard{
+      border-color: $color-wildcard;
+      color: $color-wildcard;
+    }
+    & > div > .division{
+      border-color: $color-division;
+      color: $color-division;
+    }
+    & > div > .championship{
+      border-color: $color-championship;
+      color: $color-championship;
+    }
+
   }
 
   &-wildcard{
@@ -255,9 +385,35 @@ $col-width:   160px;
     justify-content: space-between;
     align-content: flex-end;
     flex-direction: column;
-    background-color: #bebebe;
-  }
 
   }
-  
- 
+
+
+
+.champ{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 30px;
+  position: relative;
+  overflow: initial;
+  z-index: 80;
+  .title{
+    font-weight: 700;
+  }
+  &-wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    gap: 10px;
+  }
+  img{
+    width: 25px;
+    height: 25px;
+  }
+}
+
+}
+

@@ -1,0 +1,45 @@
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$lg: 1200px;
+$color-wildcard:  #176E8D;
+$color-division:  #D71E54;
+$color-championship:  #F7761E;
+
+$color-line: #707070;
+$bracketHeight: 600px;
+$col-width:   160px;
+$group-width: 360px;
+@mixin line-v ($height, $top, $bottom, $right) {
+  &::after{
+    content: '';
+    display: flex;
+    height: $height;
+    right: $right;
+    top:  $top;
+    bottom:  $bottom;
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    width: 1px;
+    background-color: $color-line;
+    z-index: 25;
+  }
+}
+
+@mixin line-h ($width, $top, $right, $left) {
+  &::after{
+    content: '';
+    display: flex;
+    width: $width;
+    right: $right;
+    left:$left;
+    top:  $top;
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    height: 1px;
+    background-color: $color-line;
+    z-index: 25;
+  }
+}

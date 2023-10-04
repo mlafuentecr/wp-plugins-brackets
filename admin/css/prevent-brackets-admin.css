@@ -26,7 +26,7 @@
  } 
 
 [data-name="lista_de_teams_json"]{
-  /* display: none; */
+  display: none; 
 } 
 .Teams{
   padding: 0px!important;
