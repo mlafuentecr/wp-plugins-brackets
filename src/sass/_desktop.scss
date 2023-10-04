@@ -1,8 +1,173 @@
 
 @import 'variable';
-.bracketContest {
+  @media (min-width: $lg) {
+  .bracketContest {
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: initial;
+    margin: 2rem;
+    position: relative;
+    border: 1px solid #707070;
+    border-radius: 32px;
+    & > p {
+      display: none;
+  }
+    .bracketContest-wrap{
+      padding: 10px;
+      & > p {
+        display: none;
+      }
+    }
+    h2{
+      display: flex;
+      top: -50px;
+      background-color: white;
+      position: relative;
+      max-width: 60vw;
+      font-weight: 600;
+      text-align: center;
+      margin: auto;
+      &::before, &::after {
+        position: absolute;
+        display: flex;
+        height: 15px;
+        align-items: center;
+        top: 6px;
+        font-size: 30px;
+      }
+      &::before {
+        content: '🢒';
+        left: -5px;
+      }
+      &::after {
+        content: '🢐';
+        right: -5px;
+      }
+    }
+    .group{
+      &-left{
+        max-width: $group-width;
+      }
+      &-center {
+        max-width: 250px;
+      }
+      &-1{
+        position: relative;
+        height: 100%;
+        
+        p{
+          display: none;
+        }
+        .logo{
+          position: absolute;
+          max-width: 250px;
+          height: 160px;
+          top: calc($bracketHeight / 2 - 80px);
+            z-index: 20;
+        }
+        .match_1{
+          position: relative;
+          @include line-v(70px, 81px, auto, 30%); //height, top, bottom , right/
+        }
+        .match_2{
+          position: relative;
+          @include line-v(70px, auto, 81px, 30%); //height, top, bottom , right/
+        }
 
-  h2{
+      }
+      &-stages{
+        display: flex;
+        position: relative;
+        background-color: transparent;
+        width: $group-width;
+        top: initial;
+        gap: 5px;
+              .date {
+        display: block;
+      }
+        a, span {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        text-decoration: none;
+        flex-wrap: wrap;
+        padding: 0px 1.4rem;
+      }
+      a{
+        color: $color-wildcard;
+        border: 1px solid $color-wildcard;
+        border-radius: 10px;
+        
+        &.worldSeries, span{
+          display: none;
+        }
+      }
+      & > div >.wildcard{
+        border-color: $color-wildcard;
+        color: $color-wildcard;
+      }
+      & > div > .division{
+        border-color: $color-division;
+        color: $color-division;
+      }
+      & > div > .championship{
+        border-color: $color-championship;
+        color: $color-championship;
+      }
+      }
+      //.group-division 
+      &-2 {
+        left: -80px;
+          p{
+          display: none;
+        }
+        .match_1{
+          @include line-v(70px, 81px, auto, 10%); //height, top, bottom , right/
+        }
+        .match_2{
+          @include line-v(70px, auto, 81px, 10%); //height, top, bottom , right/
+        }
+      }
+      //championship
+      &-3 {
+        left: -120px;
+        .match_1{
+          @include line-h (150px, 50%,-150px, auto) 
+        }
+        p{
+          display: none;
+        }
+        .match-row{
+          height: 100%;
+          align-content: center;
+          justify-content: center;
+        }
+    
+      }
+      &-right{
+        max-width: $group-width;
+        .group-1{
+          left: 0px;
+          .match_1::after, .match_2::after{
+            right: 80%;
+          }
+        }
+        .group-2{
+          left: 80px;
+          .match_1::after, .match_2::after{
+            right: 90%;
+          }
+        }
+        .group-3{
+          left: 120px;
+          .match_1::after{
+            left: -150px;
+          }
+      }
+  
 
+  
+    }
   }
 }
+  }
