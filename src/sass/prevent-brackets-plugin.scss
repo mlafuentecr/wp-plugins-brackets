@@ -1,7 +1,38 @@
-.bracketContest {
-  border: 2px solid red;
-  border-radius: 10px;
+$color-wildcard:  #176E8D;
+$color-division:  #D71E54;
+$color-championship:  #F7761E;
+$col-width:   160px;
 
+.bracketContest {
+  border-radius: 10px;
+  border: 2px solid gray;
+  margin: 2rem;
+  h2{
+    font-size: clamp(2rem, 10vw, 32px);
+    text-align: center;
+    max-width: 50%;
+    margin: auto;
+    position: relative;
+    top: -35px;
+    background-color: white;
+    &::before, &::after {
+      position: absolute;
+      display: flex;
+      height: 15px;
+      align-items: center;
+      top: 6px;
+      font-size: 30px;
+    }
+  &::before {
+    content: '🢒';
+    left: -5px;
+
+}
+&::after {
+  content: '🢐';
+  right: -5px;
+}
+  }
   .bracketContest-wrap{
     padding: 10px;
     justify-content: space-between;
@@ -12,11 +43,11 @@
       display: none;
   }
   }
-   & section {
-      display: flex;
-      flex-direction: column;
-  }
+ 
+
+
 }
+
 
 // Championship
 .match-championship {
@@ -25,16 +56,19 @@
   width: 100%;
   text-align: center;
   justify-content: center;
+ 
 
 }
+
 .matchBox{
+  height: 80px;
   box-shadow: 0 2px 4px rgba(0,0,0,.16);
     display: flex;
     background-color: white;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    width: 160px;
+    width: $col-width;
     border: 1px solid #484A4E;
     border-radius: 5px;
     overflow: hidden;
@@ -76,5 +110,151 @@
       align-items: center;
       margin-right: 10px;
     }
- 
+  
+  
 }
+
+
+.match-row {
+  display: flex;
+  flex: 1;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+    &:last-child{
+    justify-content: flex-end;
+    align-content:flex-end;
+  }
+}
+//la primera arriba la segunda abajo 
+ 
+  .group{
+      background-color: gray;
+      width: 100%;
+      display: flex;
+      padding: 5px;
+      &-match {
+        display: flex;
+        height: 600px;
+        gap: 5px;
+      }
+    &-left{
+      background-color: yellow;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .group-center {
+      min-width: 255px;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-wrap: wrap;
+    }
+    &-right{
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      background-color: pink;
+      .group-stages,.group-match{
+        flex-direction: row-reverse;
+      }
+    }
+
+    &-1{
+      position: relative;
+      height: 100%;
+      p{
+        display: none;
+      }
+      .logo{
+        position: absolute;
+        width: 140px;
+        top: 230px;
+      }
+    }
+
+    //.group-division 
+    &-2 {
+      margin-top: 120px;
+      margin-bottom: 120px;
+      background-color: rgb(103, 103, 103);
+      position: relative;
+      
+      display: flex;
+      flex-direction: column;
+        p{
+        display: none;
+      }
+     
+    }
+    //championship
+    &-3 {
+      height: 100%;
+      background-color: rgb(59, 58, 58);
+      position: relative;
+      p{
+        display: none;
+      }
+      .match-row{
+        height: 100%;
+        align-content: center;
+        border: 2px solid red;
+        justify-content: center;
+      }
+ 
+    }
+
+ 
+  //Stages Tabs
+  &-stages{
+  display: flex;
+  flex: 1;
+  gap: 5px;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  .date {
+    font-size: 12px;
+    text-align: center;
+    height: 12px;
+    line-height: 12px;
+    padding: 5px 0px;
+  }
+  p{
+    display: none;
+  }
+  a, span {
+    height: 35px;
+    width: $col-width;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-decoration: none;
+    flex-wrap: wrap;
+    opacity: 0;
+  }
+  a{
+    opacity: 1;
+    font-size: 12px;
+    font-weight: 700;
+    color: $color-wildcard;
+    background: #fafafb 0% 0% no-repeat padding-box;
+    border: 1px solid $color-wildcard;
+    border-radius: 10px;
+  }
+  //stages-link division
+  }
+
+  &-wildcard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-end;
+    flex-direction: column;
+    background-color: #bebebe;
+  }
+
+  }
+  
+ 

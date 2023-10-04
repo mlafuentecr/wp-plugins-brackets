@@ -17,11 +17,23 @@ function startBracket() {
 function ListenLeagueChange() {
     const select = document.querySelectorAll("[data-name='select_a_league']");
     select.forEach(item => {
-        const leagueSelected = jQuery( '[data-name="select_a_league"] .acf-input select' );
-           jQuery(document).on('change', leagueSelected, function(e) {
-            //Donde estoy buscar todos los teams y meterle la data
-            //makeAfetch(leagueSelected.val());
-        });
+        //const leagueSelected = jQuery( '[data-name="select_a_league"] .acf-input select' );
+        
+        const e = item.querySelector('.acf-input select');
+        const leagueSelected = e.options[e.selectedIndex].value;
+
+        const parent = item.parentNode.closest('.acf-fields');
+        const shortcut = parent.querySelector("[data-name='bracket_shorcut']");
+        console.log(shortcut)
+        console.log(leagueSelected)
+        shortcut.innerHTML = `Use this code: [ bracket_${leagueSelected} ]`
+
+        //    jQuery(document).on('change', leagueSelected, function(e) {
+        //     //Donde estoy buscar todos los teams y meterle la data
+        //     //makeAfetch(leagueSelected.val());
+        // });
+        //change shortcut
+        //data-name="bracket_shorcut"
     });
 }
 //acf-btn acf-publish ShowListOfTeams
@@ -33,6 +45,7 @@ function ListenBtnShowTeams() {
 
 
     infoBtn.forEach((item) => item.addEventListener('click', ()=>{
+       
         const parent = item.closest(".acf-fields");
         const list_of_teams = parent.querySelector(".list_of_teams");
 
@@ -51,17 +64,6 @@ function ListenBtnShowTeams() {
 
     }))
 }
-
-
-	/**
-	 * Trying save data to ACF with ajax
-	 *
-	 * Uses  class-prevent-ajax.php
-	 * with WordPress.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
 
 
 function saveListOfPlayers(leagueSelected) {
@@ -103,7 +105,7 @@ function saveListOfPlayers(leagueSelected) {
 
 function makeAfetch(league, teamsListDiv, json_of_teams){
  
-   
+       
 	if(league === 'Select an Option') return
     console.log('start fetching' )
  
@@ -127,6 +129,8 @@ function makeAfetch(league, teamsListDiv, json_of_teams){
         nationalLeagueTeams.forEach(function(team) {
             teamsListDiv.innerHTML+= `${team.teamID} : ${team.teamShortName} <br>`;
         });
+        
+        console.log(json_of_teams,'saving ', JSON.stringify(teamsData.data)) 
         json_of_teams.innerHTML =  JSON.stringify(teamsData.data);
         
         

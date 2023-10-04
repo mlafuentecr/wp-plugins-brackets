@@ -1,18 +1,20 @@
-/**
+/* /**
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
- .vs{
-  display: flex;
-    margin: auto;
-    border-radius: 25px;
-    width: 25px;
-    text-align: center;
-    justify-content: center;
-    padding: 5px;
-    background: #898383;
-    color: white;
- }
+[data-name="create_a_bracket"] .acf-table > tbody > tr{
+    
+    &:nth-child(1)  {
+      border: 2px solid #dfdfdfed;
+      background: #dfdfdfed;
+    }
+    & > td, & > .acf-row-handle{
+      background: transparent;
+    }
+    .acf-fields > .acf-tab-wrap{
+      background: transparent;
+    }
+}
  .info{
   background: #898383;
   color: white;
@@ -21,31 +23,22 @@
     align-content: center;
     flex-wrap: wrap;
     font-size: 1.2vw;
- }
- .info .acf-label{
-  display: none;
- }
-/* [data-name="lista_de_teams_json"]{
-  display: none;
-} */
-[data-name="teams_wildcard"]{
-  padding: 0px!important;
-}
-[data-name="teams_wildcard"] > .acf-label{
-  display: none;
-}
-[data-name="teams_wildcard"] .acf-fields.-border{
-  border: none;
-}
-[data-name="match"]:before, [data-name="match"] .acf-label{
-    display: none!important;
-  }
-  [data-name="match"] .acf-input{
-    width:100%!important;
-    position: relative;
-  }
+ } 
 
-  [data-name="match"] .acf-row > [data-type="group"]:first-child::after{
+[data-name="lista_de_teams_json"]{
+  /* display: none; */
+} 
+.Teams{
+  padding: 0px!important;
+} 
+ .Teams > .acf-label{
+  display: none;
+} 
+ .Teams .acf-fields.-border{
+  border: none;
+} 
+ .Teams .acf-fields > [data-type="group"] > .acf-input .acf-field-group:first-child::after  {
+
     content: 'vs';
     color: white;
     background-color: gray;
@@ -54,10 +47,15 @@
     align-content: center;
     position: absolute;
     right: -15px;
-    bottom: 0px;
+    bottom: 50%;
     width: 30px;
     height: 30px;
     flex-wrap: wrap;
     border-radius: 50%;
     z-index: 5;
   }
+  /* //:first-child::after */
+   .info .acf-label{
+    display: none;
+   } 
+ 
