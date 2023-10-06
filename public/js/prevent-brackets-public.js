@@ -127,13 +127,18 @@ function toggleMenuMobile(divId){
  
    
 function ScrollToDiv(divId){
-	cPos = document.getElementById(divId).getBoundingClientRect(), 
-	console.log(cPos.x)
-	bracket.scrollTo({
-		top: 100,
-		left: 500,
-		behavior: "smooth",
-	});
+	const elem = document.getElementById(divId)
+	cPos = elem.getBoundingClientRect(), 
+	elem.scrollIntoView({ behavior: "smooth", block: "start", inline: "center" });
+	console.log(cPos, bracket)
+
+
+
+	// bracketScroll.scrollTo({
+	// 	top: 100,
+	// 	left: cPos.x,
+	// 	behavior: "smooth",
+	// });
 
 	///THIS ONLY WORK WITH DESKTOP
 // document.getElementById(divId).scrollIntoView({
