@@ -33,7 +33,7 @@ function startMobileMenu(){
 	})
 
 
-	bracketScroll.addEventListener('scroll', (e) =>  console.log(bracketScroll.scrollLeft))
+	//bracketScroll.addEventListener('scroll', (e) =>  console.log(bracketScroll.scrollLeft))
 }
 
 
@@ -130,20 +130,5 @@ function ScrollToDiv(divId){
 	const elem = document.getElementById(divId)
 	cPos = elem.getBoundingClientRect(), 
 	elem.scrollIntoView({ behavior: "smooth", block: "start", inline: "center" });
-	console.log(cPos, bracket)
 
-
-
-	// bracketScroll.scrollTo({
-	// 	top: 100,
-	// 	left: cPos.x,
-	// 	behavior: "smooth",
-	// });
-
-	///THIS ONLY WORK WITH DESKTOP
-// document.getElementById(divId).scrollIntoView({
-// 	behavior: 'auto',
-// 	block: 'center',
-// 	inline: 'center'
-// });
 }
