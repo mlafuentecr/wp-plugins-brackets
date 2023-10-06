@@ -1,43 +1,112 @@
 @import 'variable';
 @import 'desktop';
 
-@media (max-width: $md) {
-  .bracket-mobile-menu{
-    display: flex;
-    flex-direction: column;
-    background-color: yellow;
-    padding: 1rem;
-  }
-.bracketContest {
-  //Mobile normal
-  position: relative;
-  overflow-x: auto;
-  border-radius: 10px;
-  max-width: 95%;
-  margin: auto;
-  h2{
-    font-size: clamp(12px, 2vw, 32px);
-    text-align: center;
-    margin: auto;
-    background-color: #F3F3F3;
-    width: 90vw;
-    padding: 8px;
-    font-weight: 600;
-    display: none;
-  }
-  .bracketContest-wrap{
-    justify-content: space-between;
-    display: flex;
-    align-content: center;
-    flex-wrap: wrap;
- 
-    & > p {
-      display: none;
-  }
-  }
- 
-  }
 
+////REMOVE THIS LATER
+header, footer{
+  display: none;
+}
+@media (max-width: $lg) {
+  *{
+    scroll-behavior: smooth;
+  }
+  .scroll-wrap {
+    width: 1200px;
+    overflow: scroll;
+  }
+.bracket{
+    &-mobile{
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        max-width: 100vw;
+      h2{
+        background-color: #F3F3F3;
+        padding: 1rem;
+        font-size: clamp(12px, 2vw, 32px);
+        text-align: center;
+        font-weight: 600;
+      }
+      .menu {
+        display: flex;
+        flex-direction: column;
+        & .logos {
+          display: flex;
+          gap: 10px;
+          & .logo{
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            border-bottom: 4px solid transparent;
+            &.active{
+              border-bottom: 4px solid  $color-wildcard;
+            }
+           & img {
+            height: fit-content;
+            max-width: 145px;
+            }
+          }
+        }
+ 
+        .series {
+          display: flex;
+          gap: 10px;
+      
+          .serie{
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            line-height: 15px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 20px 0px;
+            border-bottom: 4px solid transparent;
+            &.active{
+              color: $color-wildcard;
+              border-bottom:4px solid  $color-wildcard;
+            }
+            &:hover{
+              color: $color-wildcard;
+            }
+          }
+      }
+       }
+      }
+    &-contest {
+      //Mobile 
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      margin: auto;
+      max-width: 100vw;
+      border: 2px solid red;
+      h2{
+        font-size: clamp(12px, 2vw, 32px);
+        text-align: center;
+        margin: auto;
+        background-color: #F3F3F3;
+        width: 90vw;
+        padding: 8px;
+        font-weight: 600;
+        display: none;
+      }
+      .bracketContest-wrap{
+        justify-content: space-between;
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+    
+        & > p {
+          display: none;
+      }
+      }
+    
+      }
+  }
 }
 // Championship
 .match-championship {
@@ -138,19 +207,19 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    max-width: 100vw;
+    min-width: 500px;
+  
   }
   &-center {
-    max-width: 100vw;
     display: flex;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    margin: 0px 2rem;
-    
+    min-width: 500px;
+   
   }
   &-right{
-    max-width: 90vw;
+    max-width: 500px;
   }
   .thumb{
     width: 30px;
@@ -172,14 +241,25 @@
     }
     .match_1{
       position: relative;
-      @include line-v(70px, 81px, auto, 30%); //height, top, bottom , right/
+      &::after {
+        @include line_v(80px, 81px, auto, 30%, auto); //$height,  $top, $bottom, $right, $left
+      }
+      &::before {
+        $moveit: calc(100% - 30%); //30% same has above line
+        @include line_h(80px, 161px, auto , auto,  $moveit); //$width,  $top, $bottom, $right, $left
+      }
     }
     .match_2{
       position: relative;
-      @include line-v(70px, auto, 81px, 30%); //height, top, bottom , right/
+      &::after {
+        @include line_v(80px, auto, 81px, 30%, auto);  //$height, $top, $bottom, $right, $pos
+      }
+      &::before {
+        $moveit: calc(100% - 30%); //30% same has above line
+        @include line_h(80px, auto, 161px , auto,  $moveit); //$width,  $top, $bottom, $right, $left
+      }
     }
   }
-
   //.group-division 
   &-2 {
     margin-top: 120px;
@@ -193,20 +273,35 @@
     }
     .match_1{
       position: relative;
-      @include line-v(70px, 81px, auto, 10%); //height, top, bottom , right/
+      &::after {
+        @include line_v(80px, 81px, auto, 30%, auto); //$height,  $top, $bottom, $right, $left
+      }
+      &::before {
+        $moveit: calc(100% - 30%); //30% same has above line
+        @include line_h(80px, 161px, auto , auto,  $moveit); //$width,  $top, $bottom, $right, $left
+      }
     }
     .match_2{
       position: relative;
-      @include line-v(70px, auto, 81px, 10%); //height, top, bottom , right/
+      &::after {
+        @include line_v(80px, auto, 81px, 30%, auto);  //$height, $top, $bottom, $right, $pos
+      }
+      &::before {
+        $moveit: calc(100% - 30%); //30% same has above line
+        @include line_h(80px, auto, 161px , auto,  $moveit); //$width,  $top, $bottom, $right, $left
+      }
     }
   }
   //championship
   &-3 {
     height: 100%;
     position: relative;
-    z-index: 30;
-    .match_1{
-      @include line-h (150px, 50%,-150px, auto) 
+
+      &::before {
+        @include line_h(150px, auto, 50% , -150px, auto); //$width,  $top, $bottom, $right, $left
+    }
+    .championship{
+      z-index: 30;
     }
     p{
       display: none;
@@ -236,7 +331,9 @@
       padding-bottom: 20px;
       margin: auto;
       position: relative;
-      @include line-v(70px, 161px, auto, 50%); //height, top, bottom , right/
+      &::before{
+        @include line-v(70px, 161px, auto, 50%, auto); //$height,  $top, $bottom, $right, $left
+      }
       .title{
         font-weight: 700;
         text-transform: uppercase;
@@ -319,7 +416,7 @@
     p{
       display: none;
     }
-    a, span {
+    .stages-link, span {
       height: 35px;
       display: flex;
       justify-content: center;
@@ -328,13 +425,13 @@
       flex-wrap: wrap;
       opacity: 0;
     }
-    a{
+    .stages-link{
       opacity: 1;
       font-size: 12px;
       font-weight: 700;
       text-transform: uppercase;
       display: flex;
-    flex-direction: column;
+      flex-direction: column;
       span{
         opacity: 1;
         height: 15px;
@@ -352,32 +449,52 @@
     justify-content: space-between;
     align-content: flex-end;
     flex-direction: column;
-
+    .logo{
+      left: 0px;
+      right: auto;
+    }
   }
 
   &-right{
     display: flex;
     flex-direction: column;
     flex: 1;
+ 
     .group-stages,.group-match{
       flex-direction: row-reverse;
     }
     .group-1{
       left: 0px;
+      .logo{
+        left: auto;
+        right: 0px;
+      }
       .match_1::after, .match_2::after{
         right: 80%;
+      }
+      .match_1::before, .match_2::before{
+        $moveit: calc(-30% + 2px);
+        left: $moveit;
+        right: auto;
       }
     }
     .group-2{
       left: 0px;
       .match_1::after, .match_2::after{
-        right: 90%;
+        right: 80%;
+      }
+      .match_1::before, .match_2::before{
+        $moveit: calc(-30% + 2px);
+        left: $moveit;
+        right: auto;
       }
     }
     .group-3{
       left: 0px;
-      .match_1::after{
-        left: -150px;
+      &::before{
+        right: auto;
+        left: -180px;
+        width: 180px;
       }
     }
 

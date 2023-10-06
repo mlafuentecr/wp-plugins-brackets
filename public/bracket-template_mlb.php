@@ -125,14 +125,27 @@ i
 
 if ($league === 'MLB') {
 
-    echo'<section class="bracket-mobile-menu">';
-    echo'<div>menu</div>';
-    echo'<h2>'.$bracket_title.'</h2>';
-    echo'</section>';
+  $htmlContent .=  '<section class="bracket-mobile">';
+    $htmlContent .=  '<div class="menu"> ';
+    $htmlContent .=  '<h2>'.$bracket_title.'</h2>';
+      $htmlContent .=  '<div class="logos"> ';
+      $htmlContent .=  '<div  class="logo legue_logo_L active" > <img width="269px" src="'. $legue_logo_L . '"></div>';
+      $htmlContent .=  '<div  class="logo legue_logo_R"        > <img width="269px" src="'. $legue_logo_R . '"></div>';
+      $htmlContent .= '</div>';
 
-  echo '<main class="bracketContest bracket-mlb">';
-        $htmlContent = '<h2>'.$bracket_title.'</h2>';
-        $htmlContent .= '<main class="bracketContest-wrap">';
+      $htmlContent .=  '<div class="series"> ';
+        $htmlContent .=  '<div data-type="wildcard" class="serie active" >WILDCARD <span>Series</span> </div>';
+        $htmlContent .=  '<div data-type="division" class="serie "       >DIVISION <span>Series</span> </div>';
+        $htmlContent .=  '<div data-type="championship" class="serie "   >CHAMPIONSHIP<span>Series</span> </div>';
+        $htmlContent .=  '<div data-type="worldseries" class="serie "    >WORLD<span>Series</span> </div>';
+      $htmlContent .= '</div>';
+    $htmlContent .= '</div>';
+  $htmlContent .=  '</section>';
+
+  $htmlContent .=  '<main class="bracket-contest bracket-mlb">';
+        $htmlContent .= '<h2>'.$bracket_title.'</h2>';
+    $htmlContent .= '<div class="bracketContest-wrap">';
+      $htmlContent .= '<div class="scroll-wrap">';
           $htmlContent .= '<section class="group">';
 
             /** **************************
@@ -140,16 +153,16 @@ if ($league === 'MLB') {
             ************************** */
             $htmlContent .= '<div class="group-left">';
               $htmlContent .= '<section class="group-stages">';
-                $htmlContent .= '<div> <a href="#wildcard" class="stages-link">WILDCARD <span>Series</span></a>  <div class="date"> '.$wildDate.'</div> </div>';
-                $htmlContent .= '<div> <a href="#division" class="stages-link division">DIVISION <span>Series</span></a> <div class="date"> '.$divisionDate.'</div> </div>';
-                $htmlContent .= '<div> <a href="#championship" class="stages-link championship">CHAMPIONSHIP <span>Series</span></a> <div class="date"> '.$championshipDate.'</div> </div>';
-                $htmlContent .= '<div> <a href="#worldSeries" class="stages-link worldSeries">World <span>Series</span></a></div>';
+                $htmlContent .= '<div><div class="stages-link">WILDCARD <span>Series</span></div>  <div class="date"> '.$wildDate.'</div> </div>';
+                $htmlContent .= '<div><div class="stages-link division">DIVISION <span>Series</span></div> <div class="date"> '.$divisionDate.'</div> </div>';
+                $htmlContent .= '<div><div class="stages-link championship">CHAMPIONSHIP <span>Series</span></div> <div class="date"> '.$championshipDate.'</div> </div>';
+                $htmlContent .= '<div><div class="stages-link worldSeries">World <span>Series</span></div>';
               $htmlContent .= '</section>';
           
               $htmlContent .= '<section class="group-match">';
                 //wildcard
                 $htmlContent .= '<div id="wildcard" class="group-1 group-wildcard">';
-                $htmlContent .=  '<img width="269px" class="logo" src="'. $legue_logo_L . '">';
+                $htmlContent .=  '<img class="logo"  width="269px" src="'. $legue_logo_L . '">';
                 $htmlContent .=  matchContent($wildMatches, $json, 'wildcard');
                 $htmlContent .= '</div>';
                 //division
@@ -169,7 +182,7 @@ if ($league === 'MLB') {
             /** **************************
             * Getting Center 
             ************************** */
-        $htmlContent .= '<div id="worldSeries" class="group-center">';
+        $htmlContent .= '<div id="worldseries" class="group-center">';
             //worldseries
           $htmlContent .= '<div class="group-4 group-worldseries">';
             $htmlContent .=  '<img width="269px" class="logo" src="'. $worldseries_logo . '">';
@@ -201,10 +214,10 @@ if ($league === 'MLB') {
         ************************** */
         $htmlContent .= '<div class="group-right">';
         $htmlContent .= '<section class="group-stages">';
-          $htmlContent .= '<div> <a href="#wildcard_R" class="stages-link">WILDCARD</a>  <div class="date"> '.$wildDat_R.'</div> </div>';
-          $htmlContent .= '<div> <a href="#division_R" class="stages-link division">DIVISION</a> <div class="date"> '.$divisionDate_R.'</div> </div>';
-          $htmlContent .= '<div> <a href="#championship_R" class="stages-link championship">CHAMPIONSHIP</a> <div class="date"> '.$championshipDate_R.'</div> </div>';
-          $htmlContent .= '<div> <a href="#worldSeries" class="stages-link worldSeries">World Series</a></div>';
+          $htmlContent .= '<div><div class="stages-link">WILDCARD <span>Series</span></div>  <div class="date"> '.$wildDate.'</div> </div>';
+          $htmlContent .= '<div><div class="stages-link division">DIVISION <span>Series</span></div> <div class="date"> '.$divisionDate.'</div> </div>';
+          $htmlContent .= '<div><div class="stages-link championship">CHAMPIONSHIP <span>Series</span></div> <div class="date"> '.$championshipDate.'</div> </div>';
+          $htmlContent .= '<div><div class="stages-link worldSeries">World <span>Series</span></div>';
         $htmlContent .= '</section>';
     
         $htmlContent .= '<section class="group-match">';
@@ -225,12 +238,14 @@ if ($league === 'MLB') {
           $htmlContent .= '</div>';
         $htmlContent .= '</section>'; //match-group
       $htmlContent .= '</div>'; //match-group    
-
+      $htmlContent .= '</div>'; //scroll-wrap    
 
         $htmlContent .= '</section>'; //match-group
-        $htmlContent .= '</main>';
-        echo $htmlContent;
-        echo '</main>';
+    $htmlContent .= '</div>'; //bracketContest-wrap
+
+    $htmlContent .= '</div>';
+    $htmlContent .= '</main>';
+    echo $htmlContent;
         } else {
           echo '<section class="match-nothing">No results</section>';
         }
