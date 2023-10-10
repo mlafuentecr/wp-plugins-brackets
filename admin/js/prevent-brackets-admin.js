@@ -9,7 +9,6 @@ if (document.readyState !== 'loading') { setTimeout(() => {startBracket();}, 100
 function startBracket() {
     //console.log('starting admin js')
     const selectLeagueElements = document.querySelectorAll("[data-name='create_a_bracket']");
-    //console.log(selectLeagueElements, 'starting brackets')
     if (selectLeagueElements.length > 0) { 
         ListenLeagueChange(); 
         ListenBtnShowTeams(); 
@@ -37,21 +36,25 @@ function ListenBtnShowTeams() {
     //console.log(infoBtn, 'btn foundxx')
 
     infoBtn.forEach((item) => item.addEventListener('click', ()=>{
-       //console.log('btn list click')
+       console.log('btn list click')
         const parent = item.closest(".acf-fields");
         const list_of_teams = parent.querySelector(".list_of_teams");
 
         const league = parent.querySelector('[data-name="select_a_league"] .acf-input select');
+        const jsonAcf = parent.querySelector('[data-name="lista_de_teams_json"]');
         const json_of_teams = parent.querySelector('.json_of_teams .acf-input textarea');
-        //console.log(json_of_teams, 'json_of_teams****')
+              console.log(json_of_teams, 'json_of_teams****')
+
       if( item.innerHTML === "Show List of Teams" || item.innerHTML === "Populate Teams"){
         item.innerHTML = "Hide List of Teams";
         list_of_teams.style.display = "block"
+        jsonAcf.style.display = "block"
         makeAfetch(league.value, list_of_teams, json_of_teams)
        
       } else{
         item.innerHTML = "Populate Teams"
-        //list_of_teams.style.display = "none"
+        list_of_teams.style.display = "none"
+        jsonAcf.style.display = "none"
       }
 
     }))
@@ -120,13 +123,14 @@ function makeAfetch(league, teamsListDiv, json_of_teams){
 		teamsListDiv.innerHTML =' ';
         json_of_teams.innerHTML=' ';
         teamsListDiv.innerHTML+= '<h1> Click update bracket btn to save it </h1>'
+        teamsListDiv.innerHTML += '<p> this list should be paste it in acf if its not working </p>';
         teamsListDiv.innerHTML+= `Select a team <br>`;
         nationalLeagueTeams.forEach(function(team) {
             teamsListDiv.innerHTML+= `${team.teamID} : ${team.teamShortName} <br>`;
         });
         
         //console.log(json_of_teams,'saving ', JSON.stringify(teamsData.data)) 
-        json_of_teams.innerHTML =  `Select a team </br> ${JSON.stringify(teamsData.data)}`;
+        json_of_teams.innerHTML =  `${JSON.stringify(teamsData.data)}`;
        
 	})
 	.catch(error => {
