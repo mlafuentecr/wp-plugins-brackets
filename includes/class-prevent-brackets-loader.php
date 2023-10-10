@@ -1,26 +1,16 @@
 <?php
 
 /**
- * Register all actions and filters for the plugin
+ * The admin-specific functionality of the plugin.
  *
  * @link       https://revmasters.com
  * @since      1.0.0
  *
  * @package    Prevent_Brackets
- * @subpackage Prevent_Brackets/includes
+ * @subpackage Prevent_Brackets/admin
  */
 
-/**
- * Register all actions and filters for the plugin.
- *
- * Maintain a list of all hooks that are registered throughout
- * the plugin, and register them with the WordPress API. Call the
- * run function to execute the list of actions and filters.
- *
- * @package    Prevent_Brackets
- * @subpackage Prevent_Brackets/includes
- * @author     Mario Lafuente <mlafuente@revmasters.com>
- */
+ 
 class Prevent_Brackets_Loader {
 
 	/**

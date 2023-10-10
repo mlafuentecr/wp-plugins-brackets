@@ -8,11 +8,25 @@ let bracket 			= ''
 let bracketScroll = ''
 let menuSeries		= ''
 let menuLinks			= ''
+const sizes = { sm: 576, md: 768, lg: 992, xl: 1200, }
+
 
 function startBracket(){
 		console.log('starting brackets')
+
+
 	if(document.querySelector('.bracket-mobile')){
+		//check if Im on desktop but block is not fulwidth
+		checkWidth()
 		startMobileMenu()
+	}
+}
+function checkWidth(){
+	const bracketMobile = document.querySelector('.bracket-mobile');
+	const bracket = document.querySelector('.bracket-mlb');
+	if(bracket.offsetWidth < sizes.lg){
+		bracketMobile.classList.add('swithMobile');
+		bracket.classList.add('swithMobile');
 	}
 }
 function startMobileMenu(){
@@ -37,15 +51,6 @@ function startMobileMenu(){
 }
 
 
-// let timer;
-// //console.log(bracketScroll.scrollLeft )
-// const debounce = function (scroll) {
-// 	const messageText = isInViewport(box) ;
-// 	clearTimeout(timer);
-// 	timer = setTimeout(function () {
-// 			console.log(messageText, 'messageText')
-// 	}, 50)
-// }
 
 function menuClick(link){
 	console.log(link.dataset.type, ' menu click ',side)

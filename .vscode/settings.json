@@ -1,0 +1,106 @@
+{
+	"editor.fontSize": 18,
+	"terminal.integrated.fontSize": 16,
+	"editor.tabSize": 2,
+	"editor.wordWrap": "off",
+	"editor.renderWhitespace": "all",
+	"liveServer.settings.donotShowInfoMsg": true,
+	"editor.bracketPairColorization.enabled": true,
+	"editor.guides.bracketPairs": "active",
+	"bracket-pair-colorizer-2.activeScopeCSS": ["borderStyle : solid", "borderWidth : 1px", "borderColor : {color}", "opacity: 0.5"],
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact",
+		"typescript": "typescriptreact",
+		"html": "html",
+		"vue-html": "html",
+		"razor": "html",
+		"plaintext": "jade"
+	},
+	"editor.multiCursorModifier": "alt",
+	"editor.largeFileOptimizations": false,
+	"[javascript]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"diffEditor.ignoreTrimWhitespace": false,
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"files.associations": {
+		"*.css": "css",
+		"*.js": "javascriptreact",
+		"*.md": "markdown"
+	},
+	"workbench.iconTheme": "vscode-icons",
+
+	"editor.cursorStyle": "line-thin",
+	"sync.gist": "d98b6a9f430f619f071b0d66b4a15a6e",
+	"editor.wordWrapColumn": 120,
+
+	"[css]": {
+		"editor.defaultFormatter": "vscode.css-language-features"
+	},
+	"workbench.startupEditor": "newUntitledFile",
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"explorer.confirmDelete": false,
+	"[markdown]": {},
+	"eslint.alwaysShowStatus": true,
+	"eslint.codeAction.disableRuleComment": {
+		"enable": true
+	},
+	"eslint.format.enable": true,
+	"eslint.lintTask.enable": true,
+	"eslint.quiet": true,
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"prettier.useTabs": true,
+	"prettier.singleQuote": true,
+	"eslint.run": "onSave",
+	"eslint.workingDirectories": ["./src"],
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"prettier.jsxSingleQuote": true,
+	"sync.autoDownload": true,
+	"sync.autoUpload": true,
+	"sync.forceDownload": true,
+	"scss.lint.duplicateProperties": "warning",
+	"javascript.preferences.quoteStyle": "single",
+	"html-css-class-completion.enableEmmetSupport": true,
+	"liveSassCompile.settings.formats": [
+		{
+			"format": "compressed",
+			"extensionName": ".min.css"
+		}
+	],
+	"liveSassCompile.settings.includeItems": [],
+	"liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+	"editor.formatOnSave": true,
+	"prettier.printWidth": 200,
+	"emmet.excludeLanguages": ["markdown", "Comment"],
+	"emmet.syntaxProfiles": {},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"html.format.indentInnerHtml": true,
+	"html.format.wrapAttributes": "auto",
+	"prettier.arrowParens": "avoid",
+	"prettier.endOfLine": "auto",
+	"editor.accessibilityPageSize": 20,
+	"php.validate.executablePath": "C:/Program Files/php-8.0.9/php.exe",
+	"auto-rename-tag.activationOnLanguage": ["*"],
+	"terminal.integrated.defaultProfile.windows": "Git Bash",
+	"workbench.colorCustomizations": {
+		"titleBar.activeForeground": "#ffffff",
+		"titleBar.inactiveForeground": "#cecececc",
+		"titleBar.activeBackground": "#a54f37",
+		"titleBar.inactiveBackground": "#a55437"
+	},
+	"workbench.colorTheme": "Cobalt2",
+	"git.ignoreLimitWarning": true,
+	"[php]": {
+		"editor.defaultFormatter": "fterrag.vscode-php-cs-fixer"
+	}
+}

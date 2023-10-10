@@ -1,7 +1,6 @@
 <?php
-
 /**
- * The file that defines the core plugin class
+ * The file that defines the core plugin class.
  *
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
@@ -53,7 +52,7 @@ class Prevent_Brackets {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'PREVENT_BRACKETS_VERSION' ) ) {
+		if (defined('PREVENT_BRACKETS_VERSION')) {
 			$this->version = PREVENT_BRACKETS_VERSION;
 		} else {
 			$this->version = '1.0.0';
@@ -61,92 +60,60 @@ class Prevent_Brackets {
 		$this->plugin_name = 'prevent-brackets';
 
 		$this->load_dependencies();
+		$this->define_acf();
+		$this->acf_load_and_save();
+		$this->add_new_tab();
 		$this->load_bracketshortcuts();
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
 		$this->define_theme_features();
-		$this->define_acf();
-		$this->define_ajax_function();
-	
-		
+		// $this->define_ajax_function();
 	}
 
 	private function load_dependencies() {
-
-		/**
-		 * The class responsible for orchestrating the actions and filters of the
-		 * core plugin.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-prevent-brackets-loader.php';
-
-		/**
-		 * The class responsible for defining internationalization functionality
-		 * of the plugin.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-prevent-brackets-i18n.php';
-
-		/**
-		 * The class responsible for defining all actions that occur in the admin area.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-prevent-brackets-admin.php';
-
-		/**
-		 * The class responsible for defining all actions that occur in the public-facing
-		 * side of the site.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-prevent-brackets-public.php';
-
-				/**
-		 * The class responsible for defining all actions that occur in the public-facing
-		 * side of the site.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-prevent-tab.php';
-
-			/**
-		 * The class responsible for defining all actions that occur in the public-facing
-		 * side of the site.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-prevent-theme.php';
-
-		
-				/**
-		 * The class responsible for defining all actions that occur in the public-facing
-		 * side of the site.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-load-bracket-shortcut.php';
-				/**
-		 * The class responsible for defining all actions that occur in the public-facing
-		 * side of the site.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-prevent-ACF_Onsave.php';
-				/**
-		 * The class responsible for defining all actions that occur in the public-facing
-		 * side of the site.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-prevent-ajax.php';
-	
-	
-	
-
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-prevent-brackets-loader.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-prevent-brackets-i18n.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-prevent-brackets-admin.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'public/class-prevent-brackets-public.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-prevent-tab.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-prevent-theme.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-load-bracket-shortcut.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-prevent-ajax.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-acf-and-json.php';
 		$this->loader = new Prevent_Brackets_Loader();
-
 	}
 
-	/**
-	 * Define the locale for this plugin for internationalization.
-	 *
-	 * Uses the Prevent_Brackets_i18n class in order to set the domain and to register the hook
-	 * with WordPress.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
+	private function define_acf() {
+		if (!function_exists('acf')) {
+			define('MY_ACF_PATH',  plugin_dir_path(dirname(__FILE__)) . 'includes/acf/');
+			define('MY_ACF_URL',  	plugin_dir_url(dirname(__FILE__)) . 'includes/acf/');
+
+			include_once(MY_ACF_PATH . 'acf.php');
+
+			add_filter('acf/settings/url', 'my_acf_settings_url');
+			function my_acf_settings_url($url) {
+				return MY_ACF_URL;
+			}
+
+			add_filter('acf/settings/show_updates', '__return_false', 100);
+		} else {
+			$acf_loader = new load_acf_and_json();
+			$this->loader->add_action('init', $acf_loader, 'check_for_acf');
+		}
+	}
+
 	private function set_locale() {
 
 		$plugin_i18n = new Prevent_Brackets_i18n();
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
+	}
+
+	private function acf_load_and_save() {
+		$load_acf_class = new load_acf_and_json();
+		$this->loader->add_filter('acf/settings/save_json', $load_acf_class, 'acf_location');
+		$this->loader->add_filter('acf/settings/load_json', $load_acf_class, 'acf_location');
 	}
 
 	
@@ -156,11 +123,17 @@ class Prevent_Brackets {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
-		$Bracket_ajax = new Bracket_ajax();
-		$this->loader->add_action( 'acf/options_page/save', $Bracket_ajax, 'saveACF', 20);
+		// $Bracket_ajax = new Bracket_ajax();
+		// $this->loader->add_action( 'acf/options_page/save', $Bracket_ajax, 'saveACF', 20);
+		
+		
 	
 	}
 
+	private function add_new_tab() {
+		$newTabUrl = new Prevent_Brackets_add_tab();
+		$this->loader->add_action('acf/init', $newTabUrl, 'load_tab');
+	}
 
 	private function define_public_hooks() {
 
@@ -173,11 +146,11 @@ class Prevent_Brackets {
 	
 	}
 
-	private function define_ajax_function() {
-		$template_class = new Bracket_ajax();
-		$this->loader->add_action( 'wp_ajax_saveACF', $template_class, 'saveACF' );
-		$this->loader->add_action( 'wp_ajax_nopriv_saveACF', $template_class, 'saveACF' );
- }
+// 	private function define_ajax_function() {
+// 		$template_class = new Bracket_ajax();
+// 		$this->loader->add_action( 'wp_ajax_saveACF', $template_class, 'saveACF' );
+// 		$this->loader->add_action( 'wp_ajax_nopriv_saveACF', $template_class, 'saveACF' );
+//  }
 
 
 
@@ -191,22 +164,6 @@ class Prevent_Brackets {
 		$theme_features = new Prevent_Brackets_Theme();
 		$this->loader->add_action( 'after_setup_theme',  $theme_features, 'theme_supported_features' );
 	}
-
-	private function define_acf(){
-		define( 'MY_ACF_PATH',  plugin_dir_path( dirname( __FILE__ ) ) . 'includes/acf/' );
-		define( 'MY_ACF_URL',  plugin_dir_path( dirname( __FILE__ ) ) . 'includes/acf/' );
-
-		// Include the ACF plugin.
-		include_once( MY_ACF_PATH . 'acf.php' );
-		// When including the PRO plugin, hide the ACF Updates menu
-		add_filter('acf/settings/show_updates', '__return_false', 100);
-
-		// (Optional) Hide the ACF admin menu item.
-		//add_filter('acf/settings/show_admin', '__return_false');
-
-
-	}
-
 
 
 

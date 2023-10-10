@@ -1,15 +1,14 @@
-i
     <?php 
-    $create_a_bracket = get_field('create_a_bracket', 'option');
-  
  
-  
   function findTeamByID($jsonTeams, $teamID) {
+   
+    if(!is_null($jsonTeams)){
     foreach ($jsonTeams as $team) {
         if ($team['teamID'] === $teamID) {
             return $team;
         }
     }
+  }
     return null; 
 }
 
@@ -25,9 +24,10 @@ i
         foreach ($matchesValue as $key => $matches) {
 
           $teamID     = $matches['team_name'];
-          $rank       = $matches['team_rank'];
+          $rank       = $matches['team_rank']  ?? 0;
+     
           $foundTeam  = findTeamByID($jsonTeams, $teamID);
-
+       
           if ($foundTeam) {
               $teamName       = $foundTeam['teamFirstName'];
               $teamNickname   = $foundTeam['teamShortName'];
@@ -44,7 +44,7 @@ i
              
           
           } else {
-              return 'No team found';
+              return 'No team found Check json';
           }
         }
         $box .= '</div>';
@@ -59,22 +59,23 @@ i
   function teamDestructur($teamID, $jsonTeams, $logoType) {
  
     $foundTeam  = findTeamByID($jsonTeams, $teamID);
-    if ( $logoType === 'logo') {
+    if(!is_null( $foundTeam )){
+      if ( $logoType === 'logo') {
         return  $foundTeam['teamImageURL'];
-    }elseif ( $logoType === 'thumb'){
+      }elseif ( $logoType === 'thumb'){
         return  $foundTeam['thumbNailURL'];
-    }else {
+      }else {
         return  $foundTeam['teamFirstName'];
+      }
+      return $box; 
     }
-
    
-   return $box; 
   }
  
     if (have_rows('create_a_bracket', 'option')):
 
         while (have_rows('create_a_bracket', 'option')) : the_row();
-
+        $variable = get_field('create_a_bracket', 'option');
             //Get Subfield
             $data               = get_sub_field('lista_de_teams_json');
             $json               = json_decode($data, true);
@@ -122,8 +123,8 @@ i
             $championshipDate_R = $mlbObj['league_right']['teams_championship']['date'];
             $championshipMatches_R = $mlbObj['league_right']['teams_championship'];
 
-
 if ($league === 'MLB') {
+  $htmlContent =  '<main class="bracket-mlb">';
 
   $htmlContent .=  '<section class="bracket-mobile">';
     $htmlContent .=  '<div class="menu"> ';
@@ -142,7 +143,7 @@ if ($league === 'MLB') {
     $htmlContent .= '</div>';
   $htmlContent .=  '</section>';
 
-  $htmlContent .=  '<main class="bracket-contest bracket-mlb">';
+  $htmlContent .=  '<div class="bracket-contest">';
         $htmlContent .= '<h2>'.$bracket_title.'</h2>';
     $htmlContent .= '<div class="bracketContest-wrap">';
       $htmlContent .= '<div class="scroll-wrap">';
@@ -244,7 +245,8 @@ if ($league === 'MLB') {
     $htmlContent .= '</div>'; //bracketContest-wrap
 
     $htmlContent .= '</div>';
-    $htmlContent .= '</main>';
+    $htmlContent .= '</div>';
+    $htmlContent .=  '</main>';
     echo $htmlContent;
         } else {
           echo '<section class="match-nothing">No results</section>';

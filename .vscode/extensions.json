@@ -1,0 +1,12 @@
+{
+	"recommendations": [
+		"formulahendry.auto-rename-tag",
+		"dbaeumer.vscode-eslint",
+		"wesbos.theme-cobalt2",
+		"graphql.vscode-graphql",
+		"styled-components.vscode-styled-components",
+		"fterrag.vscode-php-cs-fixer",
+		"mohd-akram.vscode-html-format",
+		"mgmcdermott.vscode-language-babel"
+	]
+}

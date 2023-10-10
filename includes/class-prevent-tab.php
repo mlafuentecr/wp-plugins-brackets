@@ -1,9 +1,12 @@
 <?php
 /**
- * Plugin Name: Admin Tab Plugin
- * Description: This plugin adds a custom tab in the admin panel.
- * Version: 1.0
- * Author: Your Name
+ * Register Api 
+ *
+ * @link       https://revmasters.com
+ * @since      1.0.0
+ *
+ * @package    Prevent_Brackets
+ * @subpackage Prevent_Brackets/includes
  */
 
 
@@ -18,19 +21,21 @@
 	 */
 	// Hook to add a custom admin menu item
 	 function load_tab() {
-		// Add a top-level menu item under the "Settings" menu
-		add_menu_page(
-				'Bracket Contest',         // Page title
-				'Bracket Contest',         // Menu title
-				'manage_options',     // Capability required to access the menu
-				'custom_tab_page',    // Menu slug (unique identifier)
-				// 'custom_tab_content'  // Function to display the page content
-		);
-		
 
+    // Check function exists.
+    if( function_exists('acf_add_options_page') ) {
+			acf_add_options_page(array(
+        'page_title'    => 'Bracket Contest',
+        'menu_title'    => 'Bracket Contest',
+        'menu_slug'     => 'bracket_contest',
+        'capability'    => 'edit_posts',
+				'autoload' 			=> true,
+				'update_button' => __('Update Bracket', 'acf'),
+				'icon_url' 			=> 'dashicons-editor-kitchensink',
+				'redirect'      => false
+    ));
 
+	}
 	}
 
 }
-
-
