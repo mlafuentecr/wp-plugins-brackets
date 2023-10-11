@@ -1,11 +1,6 @@
 @import 'variable';
 @import 'desktop';
 
-////REMOVE THIS LATER
-header,
-footer {
-	display: none;
-}
 @media (max-width: $lg) {
 	.scroll-wrap {
 		width: 1200px;
@@ -189,11 +184,13 @@ footer {
 				font-weight: 600;
 				display: none;
 			}
-			.group-2, .group-3{
+			.group-2,
+			.group-3 {
 				left: initial;
 			}
-			.group-left, .group-right{
-				min-width:auto;
+			.group-left,
+			.group-right {
+				min-width: auto;
 			}
 			.bracketContest-wrap {
 				justify-content: space-between;
@@ -210,6 +207,9 @@ footer {
 	.group-stages {
 		display: none;
 	}
+}
+.bracket-contest {
+	font-family: 'Gotham', sans-serif !important;
 }
 
 * {
@@ -431,11 +431,13 @@ footer {
 			padding-bottom: 20px;
 			margin: auto;
 			position: relative;
+			font-size: 1.2rem;
 			&::before {
 				@include line-v(70px, 161px, auto, 50%, auto); //$height,  $top, $bottom, $right, $left
 			}
 			.title {
 				font-weight: 700;
+				font-size: 1.2rem;
 				text-transform: uppercase;
 				margin-bottom: 10px;
 			}
@@ -585,11 +587,10 @@ footer {
 			}
 			.match_1::before,
 			.match_2::before {
-				$moveit: calc(-40% + 2px);
+				$moveit: calc(-30% + 2px);
 				left: $moveit;
 				right: auto;
 			}
-			
 		}
 		.group-3 {
 			left: 0px;
@@ -609,6 +610,7 @@ footer {
 		position: relative;
 		overflow: initial;
 		z-index: 80;
+		font-size: 1rem;
 		.title {
 			font-weight: 700;
 		}

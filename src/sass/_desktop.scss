@@ -13,6 +13,9 @@
 			max-width: $xl;
 			margin: auto;
 			padding: 20px;
+			margin-top: 4rem;
+			margin-bottom: 4rem;
+			font-size: 12em;
 			& > p {
 				display: none;
 			}
@@ -24,22 +27,26 @@
 			}
 			h2 {
 				display: flex;
-				top: -50px;
-				background-color: white;
+				top: -40px;
+				background-color: #fff;
 				position: relative;
-				max-width: 60vw;
+				width: 40vw;
+				font-size: 1.5rem;
 				font-weight: 600;
+				height: 35px;
 				text-align: center;
 				margin: auto;
 				justify-content: center;
+				flex-wrap: wrap;
+				align-content: center;
 				&::before,
 				&::after {
 					position: absolute;
 					display: flex;
 					height: 30px;
 					align-items: center;
-					top: 11px;
-					font-size: 30px;
+					top: 2px;
+					font-size: 40px;
 				}
 				&::before {
 					content: '🢒';
@@ -160,14 +167,20 @@
 						left: 0px;
 						.match_1::after,
 						.match_2::after {
-							right: 80%;
+							right: 70%;
 						}
 					}
 					.group-2 {
 						left: 80px;
 						.match_1::after,
 						.match_2::after {
-							right: 90%;
+							left: 30%;
+							right: auto;
+						}
+						.match_1::before,
+						.match_2::before {
+							left: auto;
+							right: 70%;
 						}
 					}
 					.group-3 {
@@ -181,4 +194,3 @@
 		}
 	}
 }
- 
