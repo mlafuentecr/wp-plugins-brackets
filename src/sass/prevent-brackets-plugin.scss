@@ -223,6 +223,7 @@
 	text-align: center;
 	justify-content: center;
 }
+
 .matchBox {
 	height: 80px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
@@ -235,6 +236,11 @@
 	border: 1px solid #484a4e;
 	border-radius: 5px;
 	overflow: hidden;
+	&:has(> .deactivate) {
+		border: 1px solid #c3c3c3;
+		border-right: 3px solid gray !important;
+		background-color: #f3f3f3;
+	}
 	&-team {
 		width: 100%;
 		margin: 0 5px;
@@ -265,6 +271,7 @@
 		display: flex;
 		align-items: center;
 		flex: 1;
+		line-height: 12px;
 	}
 	&-rank {
 		font-weight: 500;
@@ -319,9 +326,7 @@
 		flex-wrap: wrap;
 		min-width: 500px;
 	}
-	&-right {
-		max-width: 500px;
-	}
+
 	.thumb {
 		width: 30px;
 	}
@@ -557,47 +562,86 @@
 		display: flex;
 		flex-direction: column;
 		flex: 1;
-
-		.group-stages,
-		.group-match {
-			flex-direction: row-reverse;
+		max-width: 500px;
+		.group {
+			&-stages,
+			&-match {
+				flex-direction: row-reverse;
+			}
+			&-1 {
+				left: 0px;
+				.logo {
+					left: auto;
+					right: 0px;
+				}
+				.match_1::after,
+				.match_2::after {
+					right: 80%;
+				}
+				.match_1::before,
+				.match_2::before {
+					$moveit: calc(-30% + 2px);
+					left: $moveit;
+					right: auto;
+				}
+			}
+			&-2 {
+				left: 0px;
+				.match_1::after,
+				.match_2::after {
+					right: 80%;
+				}
+				.match_1::before,
+				.match_2::before {
+					$moveit: calc(-30% + 2px);
+					left: $moveit;
+					right: auto;
+				}
+			}
+			&-3 {
+				left: 0px;
+				&::before {
+					right: auto;
+					left: -180px;
+					width: 180px;
+				}
+			}
 		}
-		.group-1 {
-			left: 0px;
-			.logo {
-				left: auto;
-				right: 0px;
+		//Flip elements
+		& .matchBox-old {
+			&-team {
+				flex-direction: row-reverse;
 			}
-			.match_1::after,
-			.match_2::after {
-				right: 80%;
+			&-logo {
+				margin-left: initial;
+				margin-right: 10px;
 			}
-			.match_1::before,
-			.match_2::before {
-				$moveit: calc(-30% + 2px);
-				left: $moveit;
-				right: auto;
+			&-nickname {
+				margin-left: initial;
+				margin-right: 5px;
+				justify-content: end;
 			}
-		}
-		.group-2 {
-			left: 0px;
-			.match_1::after,
-			.match_2::after {
-				right: 80%;
+			&-rank {
+				margin-left: 10px;
+				margin-right: 5px;
 			}
-			.match_1::before,
-			.match_2::before {
-				$moveit: calc(-30% + 2px);
-				left: $moveit;
-				right: auto;
+			&.wildcard {
+				border-right: 1px solid #c3c3c3 !important;
+				border-left: 4px solid $color-wildcard;
 			}
-		}
-		.group-3 {
-			left: 0px;
-			&::before {
-				right: auto;
-				left: -180px;
-				width: 180px;
+			&.division {
+				border-right: 1px solid #c3c3c3 !important;
+				border-left: 4px solid $color-division;
+			}
+			&.championship {
+				border-right: 1px solid #c3c3c3 !important;
+				border-left: 4px solid $color-championship;
+			}
+			&:has(> .deactivate) {
+				border: 1px solid #c3c3c3;
+				border-right: 1px solid #c3c3c3 !important;
+				border-left: 3px solid gray;
+				background-color: #f3f3f3;
 			}
 		}
 	}

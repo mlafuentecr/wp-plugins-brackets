@@ -67,20 +67,22 @@ class Prevent_Brackets {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-		$this->define_theme_features();
-		// $this->define_ajax_function();
+		//$this->define_theme_features();
+
 	}
 
 	private function load_dependencies() {
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-prevent-brackets-loader.php';
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-prevent-brackets-i18n.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-prevent-admin-tab.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-prevent-load-shortcut.php';
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-prevent-acf-and-json.php';
 		require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-prevent-brackets-admin.php';
+		//Templates
 		require_once plugin_dir_path(dirname(__FILE__)) . 'public/class-prevent-brackets-public.php';
-		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-prevent-tab.php';
+		//Theme
 		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-prevent-theme.php';
-		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-load-bracket-shortcut.php';
-		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-prevent-ajax.php';
-		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-acf-and-json.php';
+
 		$this->loader = new Prevent_Brackets_Loader();
 	}
 
@@ -118,16 +120,9 @@ class Prevent_Brackets {
 
 	
 	private function define_admin_hooks() {
-
 		$plugin_admin = new Prevent_Brackets_Admin( $this->get_plugin_name(), $this->get_version() );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-
-		// $Bracket_ajax = new Bracket_ajax();
-		// $this->loader->add_action( 'acf/options_page/save', $Bracket_ajax, 'saveACF', 20);
-		
-		
-	
 	}
 
 	private function add_new_tab() {
@@ -146,11 +141,6 @@ class Prevent_Brackets {
 	
 	}
 
-// 	private function define_ajax_function() {
-// 		$template_class = new Bracket_ajax();
-// 		$this->loader->add_action( 'wp_ajax_saveACF', $template_class, 'saveACF' );
-// 		$this->loader->add_action( 'wp_ajax_nopriv_saveACF', $template_class, 'saveACF' );
-//  }
 
 
 

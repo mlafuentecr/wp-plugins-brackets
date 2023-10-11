@@ -41,10 +41,17 @@
               $box .= '<div class="matchBox-teamName">' .   $teamName . '</div>';
              if($rank) {$box .= '<div class="matchBox-rank">#' .      $rank . '</div>';}
               $box .= '</div>';
-             
           
           } else {
-              return 'No team found Check json';
+              // Build the HTML for each match
+              $teamThumb = esc_url( plugins_url( '/images/shield.png', __FILE__ ) );
+    
+              
+              $box .= '<div class="matchBox-team deactivate">';
+              $box .= '<img class="matchBox-logo" src="'.$teamThumb .'" alt="Team Logo">';
+              $box .= '<div class="matchBox-nickname"></div>';
+              $box .= '<div class="matchBox-teamName"></div>';
+              $box .= '</div>';
           }
         }
         $box .= '</div>';
