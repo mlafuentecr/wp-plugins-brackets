@@ -147,6 +147,7 @@ class Prevent_Brackets {
 	private function load_bracketshortcuts() {
 		 $template_class = new Bracket_template();
 		 $this->loader->add_shortcode( 'bracket_mlb', $template_class, 'load_mlb_template' );
+		 $this->loader->add_shortcode( 'bracket_nfl', $template_class, 'load_nfl_template' );
 	}
 
 

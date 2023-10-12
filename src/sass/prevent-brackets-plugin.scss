@@ -422,6 +422,7 @@
 		z-index: 50;
 	}
 	&-worldseries {
+		text-align: center;
 		.worldseries {
 			padding: 10px;
 			width: 200px;
@@ -438,6 +439,7 @@
 			position: relative;
 			font-size: 1.2rem;
 			z-index: 100;
+
 			.title {
 				font-weight: 700;
 				font-size: 1.2rem;

@@ -111,7 +111,7 @@
             ************************** */
             //worldseries
             $worldseriesMatches = $mlbObj['teams_worldseries'];
-            $worldseriesDate    = $mlbObj['teams_worldseries']['date'];
+            //$worldseriesDate    = $mlbObj['teams_worldseries']['date'];
             $worldseries_logo   = $mlbObj['teams_worldseries']['logo'];
             $championid         = $mlbObj['team_champion']['team_name'];
 
