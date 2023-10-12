@@ -16,13 +16,13 @@ class load_acf_and_json {
 
 
   // Check if ACF is installed and not already loaded
-  function check_for_acf() {
-    if (function_exists('acf')) {
-        // Load ACF
-        acf()->include_libraries();
-        acf()->init();
-    }
-  }
+  // function check_for_acf() {
+  //   if (function_exists('acf')) {
+  //       // Load ACF
+  //       acf()->include_libraries();
+  //       acf()->init();
+  //   }
+  // }
 
 
 //add_filter( 'acf/settings/save_json', 'acf_location' );

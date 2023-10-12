@@ -87,7 +87,7 @@ class Prevent_Brackets {
 	}
 
 	private function define_acf() {
-		if (!function_exists('acf')) {
+		if (!function_exists( 'get_field' )) {
 			define('MY_ACF_PATH',  plugin_dir_path(dirname(__FILE__)) . 'includes/acf/');
 			define('MY_ACF_URL',  	plugin_dir_url(dirname(__FILE__)) . 'includes/acf/');
 
@@ -100,8 +100,8 @@ class Prevent_Brackets {
 
 			add_filter('acf/settings/show_updates', '__return_false', 100);
 		} else {
-			$acf_loader = new load_acf_and_json();
-			$this->loader->add_action('init', $acf_loader, 'check_for_acf');
+			// $acf_loader = new load_acf_and_json();
+			// $this->loader->add_action('init', $acf_loader, 'check_for_acf');
 		}
 	}
 

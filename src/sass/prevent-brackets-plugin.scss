@@ -437,9 +437,7 @@
 			margin: auto;
 			position: relative;
 			font-size: 1.2rem;
-			&::before {
-				@include line-v(70px, 161px, auto, 50%, auto); //$height,  $top, $bottom, $right, $left
-			}
+			z-index: 100;
 			.title {
 				font-weight: 700;
 				font-size: 1.2rem;
@@ -474,6 +472,7 @@
 						align-content: center;
 						flex-wrap: wrap;
 						height: 100%;
+						text-align: center;
 						&:first-child {
 							border-right: 2px solid #707070;
 						}
@@ -580,9 +579,8 @@
 				}
 				.match_1::before,
 				.match_2::before {
-					$moveit: calc(-30% + 2px);
-					left: $moveit;
-					right: auto;
+					left: auto;
+					right: 70%;
 				}
 			}
 			&-2 {
@@ -653,8 +651,12 @@
 		margin-top: 30px;
 		position: relative;
 		overflow: initial;
-		z-index: 80;
+		z-index: 90;
 		font-size: 1rem;
+
+		&::before {
+			@include line-v(71px, -71px, auto, 50%, auto); //$height,  $top, $bottom, $right, $left
+		}
 		.title {
 			font-weight: 700;
 		}
