@@ -79,59 +79,61 @@
    
   }
  
-    if (have_rows('create_a_bracket', 'option')):
+  $brackets = get_field('create_a_bracket', 'option');
+  if( $brackets ) {
+    foreach( $brackets as $row ) {
+    $league             = $row['select_a_league']['value'];
+    if($league === 'MLB'):
+      $data               = $row['lista_de_teams_json'];
+      $json               = json_decode($data, true);
+      $mlbObj             = $row['MLB'];
+      $bracket_title      = $row['bracket_title'];
 
-        while (have_rows('create_a_bracket', 'option')) : the_row();
-        $variable = get_field('create_a_bracket', 'option');
-            //Get Subfield
-            $data               = get_sub_field('lista_de_teams_json');
-            $json               = json_decode($data, true);
-            $league             = get_sub_field('select_a_league')['value'];
-            $bracket_title      = get_sub_field('bracket_title');
-            $mlbObj             = get_sub_field('MLB');
-            /** **************************
-            * Getting Left League
-            ************************** */
-            $stages             = $mlbObj['league_left'];
-            $legue_logo_L       = $mlbObj['league_left']['logo'];
+      
+      /** **************************
+      * Getting Left League
+      ************************** */
+      $stages             = $mlbObj['league_left'];
+      $legue_logo_L       = $mlbObj['league_left']['logo'];
 
 
-            //WILDCARD
-            $wildDate           = $mlbObj['league_left']['teams_wildcard']['date'];
-            $wildMatches        = $mlbObj['league_left']['teams_wildcard'];
-            //division
-            $divisionDate       = $mlbObj['league_left']['teams_division']['date'];
-            $divisionMatches    = $mlbObj['league_left']['teams_division'];
-            //Championship
-            $championshipDate    = $mlbObj['league_left']['teams_championship']['date'];
-            $championshipMatches = $mlbObj['league_left']['teams_championship'];
-            
-            /** **************************
-            * Getting Center worldseries
-            ************************** */
-            //worldseries
-            $worldseriesMatches = $mlbObj['teams_worldseries'];
-            //$worldseriesDate    = $mlbObj['teams_worldseries']['date'];
-            $worldseries_logo   = $mlbObj['teams_worldseries']['logo'];
-            $championid         = $mlbObj['team_champion']['team_name'];
+      //WILDCARD
+      $wildDate           = $mlbObj['league_left']['teams_wildcard']['date'];
+      $wildMatches        = $mlbObj['league_left']['teams_wildcard'];
+      //division
+      $divisionDate       = $mlbObj['league_left']['teams_division']['date'];
+      $divisionMatches    = $mlbObj['league_left']['teams_division'];
+      //Championship
+      $championshipDate    = $mlbObj['league_left']['teams_championship']['date'];
+      $championshipMatches = $mlbObj['league_left']['teams_championship'];
+      
+      /** **************************
+      * Getting Center worldseries
+      ************************** */
+      //worldseries
+      $worldseriesMatches = $mlbObj['teams_worldseries'];
+      $worldseries_logo   = $mlbObj['teams_worldseries']['logo'];
+      $championid         = $mlbObj['team_champion']['team_name'];
 
-            /** **************************
-            * Getting RIGHT League
-            ************************** */
-            $legue_logo_R       = $mlbObj['league_right']['logo'];
+      /** **************************
+      * Getting RIGHT League
+      ************************** */
+      $legue_logo_R       = $mlbObj['league_right']['logo'];
 
-            //WILDCARD
-            $wildDate_R         = $mlbObj['league_right']['teams_wildcard']['date'];
-            $wildMatches_R      = $mlbObj['league_right']['teams_wildcard'];
-            //division
-            $divisionDate_R     = $mlbObj['league_right']['teams_division']['date'];
-            $divisionMatches_R  = $mlbObj['league_right']['teams_division'];
-            //Championship
-            $championshipDate_R = $mlbObj['league_right']['teams_championship']['date'];
-            $championshipMatches_R = $mlbObj['league_right']['teams_championship'];
+      //WILDCARD
+      $wildDate_R         = $mlbObj['league_right']['teams_wildcard']['date'];
+      $wildMatches_R      = $mlbObj['league_right']['teams_wildcard'];
+      //division
+      $divisionDate_R     = $mlbObj['league_right']['teams_division']['date'];
+      $divisionMatches_R  = $mlbObj['league_right']['teams_division'];
+      //Championship
+      $championshipDate_R = $mlbObj['league_right']['teams_championship']['date'];
+      $championshipMatches_R = $mlbObj['league_right']['teams_championship'];
 
-if ($league === 'MLB') {
-  $htmlContent =  '<main class="bracket-mlb">';
+  /** **************************
+  * HTML 
+  ************************** */
+  $htmlContent =  '<main class="bracket_container bracket-mlb">';
 
   $htmlContent .=  '<section class="bracket-mobile">';
     $htmlContent .=  '<div class="menu"> ';
@@ -170,7 +172,7 @@ if ($league === 'MLB') {
               $htmlContent .= '<section class="group-match">';
                 //wildcard
                 $htmlContent .= '<div id="wildcard" class="group-1 group-wildcard">';
-                $htmlContent .=  '<img class="logo"  width="269px" src="'. $legue_logo_L . '">';
+                $htmlContent .=  '<img class="logo_league"  width="269px" src="'. $legue_logo_L . '">';
                 $htmlContent .=  matchContent($wildMatches, $json, 'wildcard');
                 $htmlContent .= '</div>';
                 //division
@@ -231,7 +233,7 @@ if ($league === 'MLB') {
         $htmlContent .= '<section class="group-match">';
           //wildcard
           $htmlContent .= '<div id="wildcard_R" class="group-1 group-wildcard">';
-          $htmlContent .=  '<img class="logo" src="'.$legue_logo_R . '">';
+          $htmlContent .=  '<img class="logo_league" src="'.$legue_logo_R . '">';
           $htmlContent .=  matchContent($wildMatches_R, $json, 'wildcard');
           $htmlContent .= '</div>';
           //division
@@ -255,10 +257,7 @@ if ($league === 'MLB') {
     $htmlContent .= '</div>';
     $htmlContent .=  '</main>';
     echo $htmlContent;
-        } else {
-          echo '<section class="match-nothing">No results</section>';
-        }
-        break; 
-    endwhile;
 
-endif;
+  endif;
+}
+}

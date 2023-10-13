@@ -1,0 +1,41 @@
+@import 'variable';
+
+@media (min-width: $lg) {
+	.bracket-nfl {
+		.logo_league {
+			position: absolute;
+			max-width: 105px;
+		}
+		.group-left {
+			.logo_league {
+				left: 150px;
+				top: -55px;
+			}
+		}
+		.group-right {
+			.logo_league {
+				right: 150px;
+				top: -55px;
+			}
+		}
+		.bracket-contest h2 {
+			width: 30vw;
+		}
+	}
+}
+//IF WP PAGE IS LESS THAN 1200px
+.bracket-nfl.swithMobile {
+	.bracket-contest {
+		.logo_league {
+			display: none;
+		}
+	}
+}
+//MOBILE
+@media (max-width: $lg) {
+	.bracket-nfl {
+		.logo_league {
+			display: none;
+		}
+	}
+}

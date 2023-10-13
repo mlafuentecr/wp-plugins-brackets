@@ -1,0 +1,28 @@
+@import 'variable';
+
+@media (min-width: $lg) {
+	.bracket-mlb {
+		.logo_league {
+			position: absolute;
+			bottom: calc(50% - 80px);
+			left: -25px;
+		}
+		.group-right {
+			.logo_league {
+				left: auto;
+				right: -25px;
+			}
+		}
+		.bracket-contest h2 {
+			width: 55vw;
+		}
+	}
+}
+//MOBILE
+@media (max-width: $lg) {
+	.bracket-mlb {
+		.logo_league {
+			display: none;
+		}
+	}
+}

@@ -25,14 +25,15 @@
 
           $teamID     = $matches['team_name'];
           $rank       = $matches['team_rank']  ?? 0;
-     
           $foundTeam  = findTeamByID($jsonTeams, $teamID);
-       
+
           if ($foundTeam) {
+              
               $teamName       = $foundTeam['teamFirstName'];
               $teamNickname   = $foundTeam['teamShortName'];
               $teamLogo       = $foundTeam['teamImageURL'];
               $teamThumb      = $foundTeam['thumbNailURL'];
+              $box .= '<div class="xxxxxx $teamID='.$teamName.'"></div>';
 
               // Build the HTML for each match
               $box .= '<div class="matchBox-team">';
@@ -130,11 +131,11 @@
         //Championship
         $championshipDate_R = $mlbObj['league_right']['teams_championship']['date'];
         $championshipMatches_R = $mlbObj['league_right']['teams_championship'];
-
+  
         /** **************************
         * HTML 
         ************************** */
-        $htmlContent =  '<main class="bracket-mlb">';
+        $htmlContent =  '<main class="bracket_container bracket-nfl">';
 
         $htmlContent .=  '<section class="bracket-mobile">';
           $htmlContent .=  '<div class="menu"> ';
@@ -163,7 +164,7 @@
                   * Getting Left League
                   ************************** */
                   $htmlContent .= '<div class="group-left">';
-                  $htmlContent .=  '<img class="logo"  width="269px" src="'. $legue_logo_L . '">';
+                  $htmlContent .=  '<img class="logo_league"  width="269px" src="'. $legue_logo_L . '">';
                     $htmlContent .= '<section class="group-stages">';
                       $htmlContent .= '<div><div class="stages-link">WILDCARD </div>  <div class="date"> '.$wildDate.'</div> </div>';
                       $htmlContent .= '<div><div class="stages-link division">DIVISION </div> <div class="date"> '.$divisionDate.'</div> </div>';
@@ -224,7 +225,7 @@
               * Getting Right League 
               ************************** */
               $htmlContent .= '<div class="group-right">';
-              $htmlContent .=  '<img class="logo" src="'.$legue_logo_R . '">';
+              $htmlContent .=  '<img class="logo_league" src="'.$legue_logo_R . '">';
               $htmlContent .= '<section class="group-stages">';
                 $htmlContent .= '<div><div class="stages-link">WILDCARD </div>  <div class="date"> '.$wildDate.'</div> </div>';
                 $htmlContent .= '<div><div class="stages-link division">DIVISION </div> <div class="date"> '.$divisionDate.'</div> </div>';
