@@ -21,6 +21,7 @@ function startBracket() {
 function checkWidth() {
 	const bracketMobile = document.querySelector('.bracket-mobile');
 	const bracket = document.querySelector('.bracket_container');
+
 	if (bracket.offsetWidth < sizes.lg) {
 		bracketMobile.classList.add('swithMobile');
 		bracket.classList.add('swithMobile');
@@ -50,49 +51,60 @@ function menuClick(link) {
 	console.log(link.dataset.type, ' menu click ', side);
 	if (side === 'L') {
 		switch (link.dataset.type) {
-			case 'wildcard':
-				ScrollToDiv('wildcard');
-				toggleMenuMobile('wildcard');
+			case 'group-1':
+				ScrollToDiv('group-1');
+				toggleMenuMobile('group-1');
 				break;
 
-			case 'division':
-				ScrollToDiv('division');
-				console.log('division', side);
-				toggleMenuMobile('division');
+			case 'group-2':
+				ScrollToDiv('group-2');
+				console.log('group-2', side);
+				toggleMenuMobile('group-2');
 				// bracketScroll.scrollTo(165, 0);
 				break;
 
-			case 'championship':
-				ScrollToDiv('championship');
-				console.log('championship', side);
-				toggleMenuMobile('championship');
+			case 'group-3':
+				ScrollToDiv('group-3');
+				console.log('group-3', side);
+				toggleMenuMobile('group-3');
+				break;
+
+			case 'group-4':
+				ScrollToDiv('group-4');
+				console.log('group-4', side);
+				toggleMenuMobile('group-4');
 				break;
 
 			default:
-				ScrollToDiv('worldseries');
-				toggleMenuMobile('worldseries');
+				ScrollToDiv('group-5');
+				toggleMenuMobile('group-5');
 		}
 	} else {
 		switch (link.dataset.type) {
-			case 'wildcard':
-				ScrollToDiv('wildcard_R');
-				toggleMenuMobile('wildcard');
+			case 'group-1':
+				ScrollToDiv('group-1_R');
+				toggleMenuMobile('group-1');
 				break;
 
-			case 'division':
-				ScrollToDiv('division_R');
-				toggleMenuMobile('division');
+			case 'group-2':
+				ScrollToDiv('group-2_R');
+				toggleMenuMobile('group-2');
 				// bracketScroll.scrollTo(165, 0);
 				break;
 
-			case 'championship':
-				ScrollToDiv('championship_R');
-				toggleMenuMobile('championship');
+			case 'group-3':
+				ScrollToDiv('group-3_R');
+				toggleMenuMobile('group-3');
+				break;
+
+			case 'group-4':
+				ScrollToDiv('group-4_R');
+				toggleMenuMobile('group-4');
 				break;
 
 			default:
-				ScrollToDiv('worldseries');
-				toggleMenuMobile('worldseries');
+				ScrollToDiv('group-5');
+				toggleMenuMobile('group-5');
 		}
 	}
 }
@@ -105,14 +117,14 @@ function toggleLogo(logo, logos) {
 	//scroll depending of the logo
 	if (logos[0].classList.contains('active')) {
 		side = 'L';
-		ScrollToDiv('wildcard'); //reset pos
+		ScrollToDiv('group-1'); //reset pos
 		menuSeries.style.flexDirection = 'row';
 	} else {
 		side = 'R';
-		ScrollToDiv('wildcard_R'); //reset pos
+		ScrollToDiv('group-1_R'); //reset pos
 		menuSeries.style.flexDirection = 'row-reverse';
 	}
-	toggleMenuMobile('wildcard');
+	toggleMenuMobile('group-1');
 }
 function resetMenuLinks() {
 	menuLinks.forEach(link => link.classList.remove('active'));

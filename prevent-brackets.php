@@ -10,7 +10,7 @@
  * Plugin Name: Bracket-contest
  * Author: Mario Lafuente
  * Description: Feature plugin to build brackets contests
- * Version: 1.1.1
+ * Version: 1.3.1
  * Network: true
  * License: MIT
  * Text Domain: bracket-contest

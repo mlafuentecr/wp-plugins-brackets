@@ -23,6 +23,12 @@
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/bracket-template_nfl.php';
     return ob_get_clean();
   }
+  
+  public function load_nba_template() {
+    ob_start();
+    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/bracket-template_nba.php';
+    return ob_get_clean();
+  }
 }
 
 // // Initialize the class

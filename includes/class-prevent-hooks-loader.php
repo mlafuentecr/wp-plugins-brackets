@@ -148,6 +148,7 @@ class Prevent_Brackets {
 		 $template_class = new Bracket_template();
 		 $this->loader->add_shortcode( 'bracket_mlb', $template_class, 'load_mlb_template' );
 		 $this->loader->add_shortcode( 'bracket_nfl', $template_class, 'load_nfl_template' );
+		 $this->loader->add_shortcode( 'bracket_nba', $template_class, 'load_nba_template' );
 	}
 
 

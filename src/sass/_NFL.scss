@@ -30,6 +30,13 @@
 			display: none;
 		}
 	}
+	#group-1_R {
+		.match_1::before,
+		.match_2::before {
+			left: auto;
+			right: 80%;
+		}
+	}
 }
 //MOBILE
 @media (max-width: $lg) {

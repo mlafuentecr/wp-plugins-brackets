@@ -74,7 +74,8 @@
 	"liveSassCompile.settings.formats": [
 		{
 			"format": "compressed",
-			"extensionName": ".min.css"
+			"extensionName": ".min.css",
+			"savePath": "~/../../public/css/"
 		}
 	],
 	"liveSassCompile.settings.includeItems": [],
@@ -95,8 +96,8 @@
 	"workbench.colorCustomizations": {
 		"titleBar.activeForeground": "#ffffff",
 		"titleBar.inactiveForeground": "#cecececc",
-		"titleBar.activeBackground": "#a54f37",
-		"titleBar.inactiveBackground": "#a55437"
+		"titleBar.activeBackground": "#42a537",
+		"titleBar.inactiveBackground": "#42a537"
 	},
 	"workbench.colorTheme": "Cobalt2",
 	"git.ignoreLimitWarning": true,

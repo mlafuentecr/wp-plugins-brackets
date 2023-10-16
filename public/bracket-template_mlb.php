@@ -144,10 +144,10 @@
       $htmlContent .= '</div>';
 
       $htmlContent .=  '<div class="series"> ';
-        $htmlContent .=  '<div data-type="wildcard" class="serie active" >WILDCARD <span>Series</span> </div>';
-        $htmlContent .=  '<div data-type="division" class="serie "       >DIVISION <span>Series</span> </div>';
-        $htmlContent .=  '<div data-type="championship" class="serie "   >CHAMPIONSHIP<span>Series</span> </div>';
-        $htmlContent .=  '<div data-type="worldseries" class="serie "    >WORLD<span>Series</span> </div>';
+        $htmlContent .=  '<div data-type="group-1" class="serie active" >WILDCARD <span>Series</span> </div>';
+        $htmlContent .=  '<div data-type="group-2" class="serie "       >DIVISION <span>Series</span> </div>';
+        $htmlContent .=  '<div data-type="group-3" class="serie "   >CHAMPIONSHIP<span>Series</span> </div>';
+        $htmlContent .=  '<div data-type="group-4" class="serie "    >WORLD<span>Series</span> </div>';
       $htmlContent .= '</div>';
     $htmlContent .= '</div>';
   $htmlContent .=  '</section>';
@@ -166,23 +166,23 @@
                 $htmlContent .= '<div><div class="stages-link">WILDCARD <span>Series</span></div>  <div class="date"> '.$wildDate.'</div> </div>';
                 $htmlContent .= '<div><div class="stages-link division">DIVISION <span>Series</span></div> <div class="date"> '.$divisionDate.'</div> </div>';
                 $htmlContent .= '<div><div class="stages-link championship">CHAMPIONSHIP <span>Series</span></div> <div class="date"> '.$championshipDate.'</div> </div>';
-                $htmlContent .= '<div><div class="stages-link worldSeries">World <span>Series</span></div>';
+                $htmlContent .= '<div><div class="stages-link worldSeries">World <span>Series</span></div></div>';
               $htmlContent .= '</section>';
           
               $htmlContent .= '<section class="group-match">';
                 //wildcard
-                $htmlContent .= '<div id="wildcard" class="group-1 group-wildcard">';
+                $htmlContent .= '<div id="group-1" class="group-1 group-wildcard">';
                 $htmlContent .=  '<img class="logo_league"  width="269px" src="'. $legue_logo_L . '">';
                 $htmlContent .=  matchContent($wildMatches, $json, 'wildcard');
                 $htmlContent .= '</div>';
                 //division
-                $htmlContent .= '<div id="division" class="group-2 group-division">';
+                $htmlContent .= '<div id="group-2" class="group-2 group-division">';
                 $htmlContent .=  matchContent($divisionMatches, $json, 'division');
                 $htmlContent .= '</div>';
                 
 
                 //championship
-                $htmlContent .= '<div id="championship" class="group-3 group-championship">';
+                $htmlContent .= '<div id="group-3" class="group-3 group-championship">';
                 $htmlContent .=  matchContent($championshipMatches, $json, 'championship');
                 $htmlContent .= '</div>';
 
@@ -192,9 +192,9 @@
             /** **************************
             * Getting Center 
             ************************** */
-        $htmlContent .= '<div id="worldseries" class="group-center">';
+        $htmlContent .= '<div id="group-4" class="group-center">';
             //worldseries
-          $htmlContent .= '<div class="group-4 group-worldseries">';
+          $htmlContent .= '<div  id="group-4_R" class="group-4 group-worldseries">';
             $htmlContent .=  '<img width="269px" class="logo" src="'. $worldseries_logo . '">';
 
             //worldseries
@@ -227,23 +227,23 @@
           $htmlContent .= '<div><div class="stages-link">WILDCARD <span>Series</span></div>  <div class="date"> '.$wildDate.'</div> </div>';
           $htmlContent .= '<div><div class="stages-link division">DIVISION <span>Series</span></div> <div class="date"> '.$divisionDate.'</div> </div>';
           $htmlContent .= '<div><div class="stages-link championship">CHAMPIONSHIP <span>Series</span></div> <div class="date"> '.$championshipDate.'</div> </div>';
-          $htmlContent .= '<div><div class="stages-link worldSeries">World <span>Series</span></div>';
+          $htmlContent .= '<div><div class="stages-link worldSeries">World <span>Series</span></div></div>';
         $htmlContent .= '</section>';
     
         $htmlContent .= '<section class="group-match">';
           //wildcard
-          $htmlContent .= '<div id="wildcard_R" class="group-1 group-wildcard">';
+          $htmlContent .= '<div id="group-1_R" class="group-1 group-wildcard">';
           $htmlContent .=  '<img class="logo_league" src="'.$legue_logo_R . '">';
           $htmlContent .=  matchContent($wildMatches_R, $json, 'wildcard');
           $htmlContent .= '</div>';
           //division
-          $htmlContent .= '<div id="division_R" class="group-2 group-division">';
+          $htmlContent .= '<div id="group-2_R" class="group-2 group-division">';
           $htmlContent .=  matchContent($divisionMatches_R, $json, 'division');
           $htmlContent .= '</div>';
           
 
           //championship
-          $htmlContent .= '<div id="championship_R" class="group-3 group-championship">';
+          $htmlContent .= '<div id="group-3_R" class="group-3 group-championship">';
           $htmlContent .=  matchContent($championshipMatches_R, $json, 'championship');
           $htmlContent .= '</div>';
         $htmlContent .= '</section>'; //match-group

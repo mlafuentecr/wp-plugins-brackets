@@ -1,0 +1,272 @@
+@import 'variable';
+.bracket-nba {
+	$divWidth: 550px;
+	.bracket-contest {
+		max-width: 1480px;
+		width: 1480px;
+	}
+	//Menu
+	.group {
+		justify-content: space-between;
+		&-stages {
+			width: 100%;
+			& > div {
+				width: calc($divWidth/4);
+			}
+			.stages-link {
+				border: 2px solid $color-green;
+				color: $color-green;
+				padding: 0px 1.2rem;
+			}
+
+			& :nth-child(2) > .stages-link {
+				border: 2px solid $color-wildcard;
+				color: $color-wildcard;
+				padding: 0px 0.5rem;
+				white-space: nowrap;
+			}
+			& :nth-child(3) > .stages-link {
+				color: $color-division;
+				border: 2px solid $color-division;
+			}
+			& :nth-child(4) > .stages-link {
+				color: $color-championship;
+				border: 2px solid $color-championship;
+			}
+		}
+
+		//Group LEFT
+		&-left {
+			position: relative;
+			height: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			min-width: auto;
+			max-width: $divWidth;
+			.logo_league {
+				left: 150px;
+				top: -120px;
+			}
+			& .group {
+				&-1 {
+					display: flex;
+					justify-content: flex-end;
+					align-content: space-between;
+					flex-wrap: wrap;
+					& :nth-child(1).match-row,
+					& :nth-child(2).match-row {
+						height: 210px;
+						justify-content: center;
+					}
+					.matchBox {
+						border-right: 4px solid $color-green;
+					}
+				}
+				&-2 {
+					left: auto;
+					margin-left: 10px;
+					margin-top: initial;
+					margin-bottom: initial;
+
+					& :nth-child(2).match-row {
+						margin-bottom: 180px;
+					}
+				}
+				&-3 {
+					left: auto;
+					margin-left: 10px;
+					display: flex;
+					justify-content: flex-end;
+					align-content: space-between;
+					flex-wrap: wrap;
+					& :nth-child(1).match-row,
+					& :nth-child(2).match-row {
+						height: 210px;
+						justify-content: center;
+					}
+					&::before,
+					&::after {
+						display: none !important;
+					}
+					.matchBox {
+						border-right: 4px solid $color-division;
+					}
+				}
+				&-4 {
+					left: auto;
+					margin-left: 10px;
+					display: flex;
+					justify-content: flex-end;
+					align-content: center;
+					flex-wrap: wrap;
+					position: relative;
+					left: -100px;
+					.matchBox {
+						border-right: 4px solid $color-championship;
+					}
+				}
+			}
+		}
+		//Group LEFT
+		&-right {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			min-width: auto;
+			max-width: $divWidth;
+			align-content: end;
+			.logo_league {
+				right: 150px;
+				top: -45px;
+			}
+			& .group {
+				&-1 {
+					display: flex;
+					justify-content: flex-end;
+					align-content: space-between;
+					flex-wrap: wrap;
+					& :nth-child(1).match-row,
+					& :nth-child(2).match-row {
+						height: 210px;
+						justify-content: center;
+					}
+					.matchBox {
+						border-right: 4px solid $color-green;
+					}
+				}
+				&-2 {
+					left: auto;
+					margin-top: initial;
+					margin-bottom: initial;
+					margin-right: 10px;
+					& :nth-child(2).match-row {
+						margin-bottom: 180px;
+					}
+				}
+				&-3 {
+					left: auto;
+					margin-left: 10px;
+					display: flex;
+					justify-content: flex-end;
+					align-content: space-between;
+					flex-wrap: wrap;
+					margin-right: 10px;
+					& :nth-child(1).match-row,
+					& :nth-child(2).match-row {
+						height: 210px;
+						justify-content: center;
+					}
+					&::before,
+					&::after {
+						display: none !important;
+					}
+					.matchBox {
+						border-right: 4px solid $color-division;
+					}
+				}
+				&-4 {
+					margin-left: 10px;
+					display: flex;
+					justify-content: flex-end;
+					align-content: center;
+					flex-wrap: wrap;
+					position: relative;
+					left: 100px;
+					.matchBox {
+						border-right: 4px solid $color-championship;
+					}
+				}
+			}
+		}
+
+		.matchBox {
+			width: calc($divWidth/4 - 20px);
+			min-width: 160px;
+			border-right: 4px solid $color-wildcard;
+		}
+		.match-row {
+			&::before,
+			&::after {
+				display: none !important;
+			}
+		}
+		&-center {
+			min-width: 185px;
+			.group-championship {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-content: center;
+				flex-wrap: wrap;
+				flex: 1;
+				height: 100%;
+				text-align: center;
+				min-width: auto;
+				.logo {
+					height: 200px;
+					width: 83px;
+					margin-left: auto;
+					margin-right: auto;
+				}
+			}
+		}
+		&-worldseries .worldseries {
+			background: none;
+			border: none;
+		}
+	}
+	.logo_league {
+		position: absolute;
+		max-width: 75px;
+	}
+
+	.bracket-contest h2 {
+		width: 30vw;
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+}
+
+//IF WP PAGE IS LESS THAN 1200px
+.bracket-nba.swithMobile {
+	.bracket-contest {
+		.logo_league {
+			display: none;
+		}
+	}
+}
+
+//MOBILE
+@media (max-width: $lg) {
+	.bracket-nba {
+		max-width: auto;
+		width: auto;
+		.bracket-contest {
+			overflow: hidden;
+			width: 100%;
+		}
+		.logo_league {
+			display: none;
+		}
+		.group-left,
+		.group-right {
+			max-width: 700px;
+		}
+		.group-4 {
+			left: auto;
+		}
+		.group {
+			&-2,
+			&-3,
+			&-4 {
+				margin-left: 20px;
+			}
+		}
+		.bracket-mobile {
+			max-width: initial !important;
+		}
+	}
+}
