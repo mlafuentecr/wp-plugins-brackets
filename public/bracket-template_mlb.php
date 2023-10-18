@@ -27,7 +27,7 @@
           $rank       = $matches['team_rank']  ?? 0;
      
           $foundTeam  = findTeamByID($jsonTeams, $teamID);
-       
+          
           if ($foundTeam) {
               $teamName       = $foundTeam['teamFirstName'];
               $teamNickname   = $foundTeam['teamShortName'];
@@ -38,7 +38,7 @@
               $box .= '<div class="matchBox-team">';
               $box .= '<img class="matchBox-logo" src="' .  $teamThumb . '" alt="Team Logo">';
               $box .= '<div class="matchBox-nickname">' .   $teamNickname . '</div>';
-              $box .= '<div class="matchBox-teamName">' .   $teamName . '</div>';
+              // $box .= '<div class="matchBox-teamName">' .   $teamName . '</div>';
              if($rank) {$box .= '<div class="matchBox-rank">#' .      $rank . '</div>';}
               $box .= '</div>';
           

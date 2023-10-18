@@ -1,16 +1,18 @@
 @import 'variable';
-
+$logos_Size: 260px;
 @media (min-width: $lg) {
 	.bracket-mlb {
 		.logo_league {
 			position: absolute;
 			bottom: calc(50% - 80px);
 			left: -25px;
+			min-width: $logos_Size;
 		}
 		.group-right {
 			.logo_league {
 				left: auto;
 				right: -25px;
+				min-width: $logos_Size;
 			}
 		}
 		.bracket-contest h2 {
@@ -26,14 +28,14 @@
 		}
 	}
 }
-
+.bracket-mlb {
+	& .matchBox-rank {
+		font-weight: 600;
+	}
+}
 //IF WP PAGE IS LESS THAN 1200px
 .swithMobile {
-	#group-1_R {
-		.match_1::before,
-		.match_2::before {
-			left: auto;
-			right: 80%;
-		}
+	.bracket-mlb {
+		border: 2px solid pink;
 	}
 }

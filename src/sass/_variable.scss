@@ -9,8 +9,10 @@ $color-green: #43a50f;
 
 $color-line: #707070;
 $bracketHeight: 600px;
-$col-width: 160px;
+$col-width: 130px;
 $group-width: 320px;
+$group1Pos: 20px;
+$group3Pos: 35px;
 
 @mixin line_v($height, $top, $bottom, $right, $left) {
 	content: '';

@@ -139,24 +139,15 @@
 				}
 				//.group-division
 				&-2 {
-					left: -80px;
+					left: -$group1Pos;
 					p {
 						display: none;
-					}
-					.match_1 {
-					}
-					.match_2 {
-						//@include line-v(90px, auto, 91px, 10%); //height, top, bottom , right/
 					}
 				}
 				//championship
 				&-3 {
-					left: -120px;
-					.match_1 {
-						&::after {
-							//@include line-h (150px, 50%,-150px, auto)
-						}
-					}
+					left: -$group3Pos;
+
 					p {
 						display: none;
 					}
@@ -186,22 +177,33 @@
 						}
 					}
 					.group-2 {
-						left: 80px;
+						left: $group1Pos;
 						.match_1::after,
 						.match_2::after {
 							left: 30%;
 							right: auto;
 						}
-						.match_1::before,
-						.match_2::before {
-							left: -31px;
-							//right: 70%;
-						}
 					}
 					.group-3 {
-						left: 120px;
+						left: $group3Pos;
 						.match_1::after {
 							left: -150px;
+						}
+					}
+					#group-1_R {
+						.match_1::before,
+						.match_2::before {
+							left: auto;
+							right: 70%;
+						}
+					}
+					#group-2_R {
+						.match_1::before,
+						.match_2::before {
+							left: 30%;
+							right: auto;
+							transform: rotate(180deg);
+							transform-origin: top left;
 						}
 					}
 				}

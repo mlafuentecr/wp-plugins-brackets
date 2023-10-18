@@ -271,6 +271,8 @@
 		margin-left: 5px;
 		display: flex;
 		align-items: center;
+		flex: 2;
+		justify-content: center;
 	}
 	&-teamName {
 		margin-left: 5px;
@@ -322,14 +324,12 @@
 		display: flex;
 		flex-direction: column;
 		flex: 1;
-		min-width: 500px;
 	}
 	&-center {
 		display: flex;
 		justify-content: center;
 		align-content: center;
 		flex-wrap: wrap;
-		min-width: 500px;
 	}
 
 	&-1 {
@@ -349,21 +349,21 @@
 		.match_1 {
 			position: relative;
 			&::after {
-				@include line_v(80px, 81px, auto, 30%, auto); //$height,  $top, $bottom, $right, $left
+				@include line_v(80px, 80px, auto, 30%, auto); //$height,  $top, $bottom, $right, $left
 			}
 			&::before {
 				$moveit: calc(100% - 30%); //30% same has above line
-				@include line_h(80px, 161px, auto, auto, $moveit); //$width,  $top, $bottom, $right, $left
+				@include line_h(80px, 160px, auto, auto, $moveit); //$width,  $top, $bottom, $right, $left
 			}
 		}
 		.match_2 {
 			position: relative;
 			&::after {
-				@include line_v(80px, auto, 81px, 30%, auto); //$height, $top, $bottom, $right, $pos
+				@include line_v(80px, auto, 80px, 30%, auto); //$height, $top, $bottom, $right, $pos
 			}
 			&::before {
 				$moveit: calc(100% - 30%); //30% same has above line
-				@include line_h(80px, auto, 161px, auto, $moveit); //$width,  $top, $bottom, $right, $left
+				@include line_h(80px, auto, 160px, auto, $moveit); //$width,  $top, $bottom, $right, $left
 			}
 		}
 	}
@@ -385,7 +385,7 @@
 			}
 			&::before {
 				$moveit: calc(100% - 30%); //30% same has above line
-				@include line_h(80px, 161px, auto, auto, $moveit); //$width,  $top, $bottom, $right, $left
+				@include line_h(80px, 160px, auto, auto, $moveit); //$width,  $top, $bottom, $right, $left
 			}
 		}
 		.match_2 {
@@ -395,7 +395,7 @@
 			}
 			&::before {
 				$moveit: calc(100% - 30%); //30% same has above line
-				@include line_h(80px, auto, 161px, auto, $moveit); //$width,  $top, $bottom, $right, $left
+				@include line_h(80px, auto, 160px, auto, $moveit); //$width,  $top, $bottom, $right, $left
 			}
 		}
 	}
@@ -405,7 +405,7 @@
 		position: relative;
 
 		&::before {
-			@include line_h(150px, auto, 50%, -150px, auto); //$width,  $top, $bottom, $right, $left
+			@include line_h(250px, auto, 50%, -250px, auto); //$width,  $top, $bottom, $right, $left
 		}
 		.championship {
 			z-index: 30;
@@ -421,6 +421,7 @@
 	}
 	&-center {
 		z-index: 50;
+		min-width: 400px;
 	}
 	&-worldseries {
 		text-align: center;
@@ -564,7 +565,6 @@
 		display: flex;
 		flex-direction: column;
 		flex: 1;
-		max-width: 500px;
 
 		.group {
 			&-stages,
@@ -579,18 +579,14 @@
 				}
 				.match_1::after,
 				.match_2::after {
-					right: 80%;
-				}
-				.match_1::before,
-				.match_2::before {
-					left: -31px;
+					right: 70%;
 				}
 			}
 			&-2 {
 				left: 0px;
 				.match_1::after,
 				.match_2::after {
-					right: 80%;
+					right: 70%;
 				}
 				.match_1::before,
 				.match_2::before {
@@ -606,6 +602,23 @@
 					left: -180px;
 					width: 180px;
 				}
+			}
+		}
+
+		#group-1_R {
+			.match_1::before,
+			.match_2::before {
+				left: auto;
+				right: 70%;
+			}
+		}
+		#group-2_R {
+			.match_1::before,
+			.match_2::before {
+				left: 30%;
+				right: auto;
+				transform: rotate(180deg);
+				transform-origin: top left;
 			}
 		}
 		//Flip elements

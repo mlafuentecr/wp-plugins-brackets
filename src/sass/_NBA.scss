@@ -203,6 +203,11 @@
 				height: 100%;
 				text-align: center;
 				min-width: auto;
+				.champ {
+					&::before {
+						right: calc(50% - 2px);
+					}
+				}
 				.logo {
 					height: 200px;
 					width: 83px;
@@ -227,6 +232,9 @@
 		&::after {
 			display: none;
 		}
+	}
+	& .matchBox-rank {
+		font-weight: 600;
 	}
 }
 
@@ -268,5 +276,11 @@
 		.bracket-mobile {
 			max-width: initial !important;
 		}
+	}
+}
+
+.bracket-nba {
+	& .matchBox-rank {
+		font-weight: 600;
 	}
 }
