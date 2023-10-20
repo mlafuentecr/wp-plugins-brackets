@@ -96,8 +96,8 @@
 	"workbench.colorCustomizations": {
 		"titleBar.activeForeground": "#ffffff",
 		"titleBar.inactiveForeground": "#cecececc",
-		"titleBar.activeBackground": "#42a537",
-		"titleBar.inactiveBackground": "#42a537"
+		"titleBar.activeBackground": "#37a549",
+		"titleBar.inactiveBackground": "#37a549"
 	},
 	"workbench.colorTheme": "Cobalt2",
 	"git.ignoreLimitWarning": true,

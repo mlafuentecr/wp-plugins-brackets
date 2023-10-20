@@ -142,7 +142,6 @@
                         "id": ""
                     },
                     "layout": "block",
-                    "parent_repeater": "field_6513599e12351",
                     "sub_fields": [
                         {
                             "key": "field_6513196d43752",
@@ -208,7 +207,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "return_format": "url",
+                                    "return_format": "array",
                                     "library": "all",
                                     "min_width": "",
                                     "min_height": "",
@@ -479,11 +478,28 @@
                                                             "append": ""
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "key": "field_6531684a107a5",
+                                                    "label": "url",
+                                                    "name": "url",
+                                                    "aria-label": "",
+                                                    "type": "url",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": ""
                                                 }
                                             ]
                                         },
                                         {
-                                            "key": "field_6525b5fa65aff",
+                                            "key": "field_65316d1fa699b",
                                             "label": "match 2",
                                             "name": "match_2",
                                             "aria-label": "",
@@ -499,7 +515,7 @@
                                             "layout": "block",
                                             "sub_fields": [
                                                 {
-                                                    "key": "field_6525b5fa65b00",
+                                                    "key": "field_65316d20a699c",
                                                     "label": "team 1",
                                                     "name": "team_1",
                                                     "aria-label": "",
@@ -515,7 +531,7 @@
                                                     "layout": "block",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_6525b5fa65b01",
+                                                            "key": "field_65316d20a699d",
                                                             "label": "Team name",
                                                             "name": "team_name",
                                                             "aria-label": "",
@@ -572,7 +588,7 @@
                                                             "placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_6525b5fa65b02",
+                                                            "key": "field_65316d20a699e",
                                                             "label": "Rank",
                                                             "name": "team_rank",
                                                             "aria-label": "",
@@ -596,7 +612,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "key": "field_6525b5fa65b03",
+                                                    "key": "field_65316d20a699f",
                                                     "label": "team 2",
                                                     "name": "team_2",
                                                     "aria-label": "",
@@ -612,7 +628,7 @@
                                                     "layout": "block",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_6525b5fa65b04",
+                                                            "key": "field_65316d20a69a0",
                                                             "label": "Team name",
                                                             "name": "team_name",
                                                             "aria-label": "",
@@ -669,7 +685,7 @@
                                                             "placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_6525b5fa65b05",
+                                                            "key": "field_65316d21a69a1",
                                                             "label": "Rank",
                                                             "name": "team_rank",
                                                             "aria-label": "",
@@ -691,6 +707,23 @@
                                                             "append": ""
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "key": "field_65316d21a69a2",
+                                                    "label": "url",
+                                                    "name": "url",
+                                                    "aria-label": "",
+                                                    "type": "url",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": ""
                                                 }
                                             ]
                                         }
@@ -714,8 +747,8 @@
                                     "endpoint": 0
                                 },
                                 {
-                                    "key": "field_651c2d464f611",
-                                    "label": "Teams Division",
+                                    "key": "field_65316f2dd7ca5",
+                                    "label": "Teams Division2",
                                     "name": "teams_division",
                                     "aria-label": "",
                                     "type": "group",
@@ -730,7 +763,7 @@
                                     "layout": "block",
                                     "sub_fields": [
                                         {
-                                            "key": "field_651c2d464f612",
+                                            "key": "field_65316f2ed7ca6",
                                             "label": "date",
                                             "name": "date",
                                             "aria-label": "",
@@ -748,7 +781,7 @@
                                             "first_day": 1
                                         },
                                         {
-                                            "key": "field_6525b5b49a2ee",
+                                            "key": "field_65316f2ed7ca7",
                                             "label": "match 1",
                                             "name": "match_1",
                                             "aria-label": "",
@@ -764,7 +797,7 @@
                                             "layout": "block",
                                             "sub_fields": [
                                                 {
-                                                    "key": "field_6525b5b49a2ef",
+                                                    "key": "field_65316f2fd7ca8",
                                                     "label": "team 1",
                                                     "name": "team_1",
                                                     "aria-label": "",
@@ -780,7 +813,7 @@
                                                     "layout": "block",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_6525b5b49a2f0",
+                                                            "key": "field_65316f2fd7ca9",
                                                             "label": "Team name",
                                                             "name": "team_name",
                                                             "aria-label": "",
@@ -837,7 +870,7 @@
                                                             "placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_6525b5b49a2f1",
+                                                            "key": "field_65316f2fd7caa",
                                                             "label": "Rank",
                                                             "name": "team_rank",
                                                             "aria-label": "",
@@ -861,7 +894,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "key": "field_6525b5b49a2f2",
+                                                    "key": "field_65316f2fd7cab",
                                                     "label": "team 2",
                                                     "name": "team_2",
                                                     "aria-label": "",
@@ -877,7 +910,7 @@
                                                     "layout": "block",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_6525b5b49a2f3",
+                                                            "key": "field_65316f30d7cac",
                                                             "label": "Team name",
                                                             "name": "team_name",
                                                             "aria-label": "",
@@ -934,7 +967,7 @@
                                                             "placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_6525b5b49a2f4",
+                                                            "key": "field_65316f30d7cad",
                                                             "label": "Rank",
                                                             "name": "team_rank",
                                                             "aria-label": "",
@@ -956,11 +989,28 @@
                                                             "append": ""
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "key": "field_65316f30d7cae",
+                                                    "label": "url",
+                                                    "name": "url",
+                                                    "aria-label": "",
+                                                    "type": "url",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": ""
                                                 }
                                             ]
                                         },
                                         {
-                                            "key": "field_6525b64e997bc",
+                                            "key": "field_65316f30d7caf",
                                             "label": "match 2",
                                             "name": "match_2",
                                             "aria-label": "",
@@ -976,7 +1026,7 @@
                                             "layout": "block",
                                             "sub_fields": [
                                                 {
-                                                    "key": "field_6525b64e997bd",
+                                                    "key": "field_65316f30d7cb0",
                                                     "label": "team 1",
                                                     "name": "team_1",
                                                     "aria-label": "",
@@ -992,7 +1042,7 @@
                                                     "layout": "block",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_6525b64e997be",
+                                                            "key": "field_65316f31d7cb1",
                                                             "label": "Team name",
                                                             "name": "team_name",
                                                             "aria-label": "",
@@ -1049,7 +1099,7 @@
                                                             "placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_6525b64e997bf",
+                                                            "key": "field_65316f31d7cb2",
                                                             "label": "Rank",
                                                             "name": "team_rank",
                                                             "aria-label": "",
@@ -1073,7 +1123,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "key": "field_6525b64f997c0",
+                                                    "key": "field_65316f31d7cb3",
                                                     "label": "team 2",
                                                     "name": "team_2",
                                                     "aria-label": "",
@@ -1089,7 +1139,7 @@
                                                     "layout": "block",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_6525b64f997c1",
+                                                            "key": "field_65316f31d7cb4",
                                                             "label": "Team name",
                                                             "name": "team_name",
                                                             "aria-label": "",
@@ -1146,7 +1196,7 @@
                                                             "placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_6525b64f997c2",
+                                                            "key": "field_65316f31d7cb5",
                                                             "label": "Rank",
                                                             "name": "team_rank",
                                                             "aria-label": "",
@@ -1168,6 +1218,23 @@
                                                             "append": ""
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "key": "field_65316f32d7cb6",
+                                                    "label": "url",
+                                                    "name": "url",
+                                                    "aria-label": "",
+                                                    "type": "url",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": ""
                                                 }
                                             ]
                                         }
@@ -1191,7 +1258,7 @@
                                     "endpoint": 0
                                 },
                                 {
-                                    "key": "field_651c5c9a06e43",
+                                    "key": "field_65316e0bc527f",
                                     "label": "Teams Championship",
                                     "name": "teams_championship",
                                     "aria-label": "",
@@ -1207,7 +1274,7 @@
                                     "layout": "block",
                                     "sub_fields": [
                                         {
-                                            "key": "field_651c5c9a06e44",
+                                            "key": "field_65316e0dc5280",
                                             "label": "date",
                                             "name": "date",
                                             "aria-label": "",
@@ -1225,7 +1292,7 @@
                                             "first_day": 1
                                         },
                                         {
-                                            "key": "field_651c5c9a06e45",
+                                            "key": "field_65316e0dc5281",
                                             "label": "match 1",
                                             "name": "match_1",
                                             "aria-label": "",
@@ -1241,7 +1308,7 @@
                                             "layout": "block",
                                             "sub_fields": [
                                                 {
-                                                    "key": "field_651c5c9a06e46",
+                                                    "key": "field_65316e0ec5282",
                                                     "label": "team 1",
                                                     "name": "team_1",
                                                     "aria-label": "",
@@ -1257,7 +1324,7 @@
                                                     "layout": "block",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_651c5c9a06e47",
+                                                            "key": "field_65316e0ec5283",
                                                             "label": "Team name",
                                                             "name": "team_name",
                                                             "aria-label": "",
@@ -1314,7 +1381,7 @@
                                                             "placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_651c5c9a06e48",
+                                                            "key": "field_65316e0ec5284",
                                                             "label": "Rank",
                                                             "name": "team_rank",
                                                             "aria-label": "",
@@ -1338,7 +1405,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "key": "field_651c5c9a06e49",
+                                                    "key": "field_65316e0ec5285",
                                                     "label": "team 2",
                                                     "name": "team_2",
                                                     "aria-label": "",
@@ -1354,7 +1421,7 @@
                                                     "layout": "block",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_651c5c9a06e4a",
+                                                            "key": "field_65316e0fc5286",
                                                             "label": "Team name",
                                                             "name": "team_name",
                                                             "aria-label": "",
@@ -1411,7 +1478,7 @@
                                                             "placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_651c5c9b06e4b",
+                                                            "key": "field_65316e0fc5287",
                                                             "label": "Rank",
                                                             "name": "team_rank",
                                                             "aria-label": "",
@@ -1433,6 +1500,252 @@
                                                             "append": ""
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "key": "field_65316e0fc5288",
+                                                    "label": "url",
+                                                    "name": "url",
+                                                    "aria-label": "",
+                                                    "type": "url",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "key": "field_65316e0fc5289",
+                                            "label": "match 2",
+                                            "name": "match_2",
+                                            "aria-label": "",
+                                            "type": "group",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "layout": "block",
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_65316e0fc528a",
+                                                    "label": "team 1",
+                                                    "name": "team_1",
+                                                    "aria-label": "",
+                                                    "type": "group",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "45",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "layout": "block",
+                                                    "sub_fields": [
+                                                        {
+                                                            "key": "field_65316e0fc528b",
+                                                            "label": "Team name",
+                                                            "name": "team_name",
+                                                            "aria-label": "",
+                                                            "type": "select",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "70",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "choices": {
+                                                                "Select a team": "Select a team",
+                                                                "2981": "HOU",
+                                                                "2977": "TEX",
+                                                                "2979": "LAA",
+                                                                "2969": "OAK",
+                                                                "2973": "SEA",
+                                                                "2960": "TB",
+                                                                "2984": "TOR",
+                                                                "2970": "NYY",
+                                                                "2959": "BAL",
+                                                                "2966": "BOS",
+                                                                "2978": "DET",
+                                                                "2965": "KC",
+                                                                "2983": "MIN",
+                                                                "2974": "CHW",
+                                                                "2980": "CLE",
+                                                                "3483": "AL",
+                                                                "2975": "STL",
+                                                                "2976": "MIL",
+                                                                "2982": "CHC",
+                                                                "2971": "PIT",
+                                                                "2961": "CIN",
+                                                                "2972": "WAS",
+                                                                "2963": "MIA",
+                                                                "2957": "ATL",
+                                                                "2964": "NYM",
+                                                                "2958": "PHI",
+                                                                "2967": "LAD",
+                                                                "2968": "ARI",
+                                                                "2955": "SD",
+                                                                "2962": "SF",
+                                                                "2956": "COL",
+                                                                "3484": "NL"
+                                                            },
+                                                            "default_value": "Select a team",
+                                                            "return_format": "value",
+                                                            "multiple": 0,
+                                                            "allow_null": 0,
+                                                            "ui": 0,
+                                                            "ajax": 0,
+                                                            "placeholder": ""
+                                                        },
+                                                        {
+                                                            "key": "field_65316e10c528c",
+                                                            "label": "Rank",
+                                                            "name": "team_rank",
+                                                            "aria-label": "",
+                                                            "type": "number",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "30",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "default_value": 1,
+                                                            "min": "",
+                                                            "max": "",
+                                                            "placeholder": "",
+                                                            "step": "",
+                                                            "prepend": "",
+                                                            "append": ""
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "key": "field_65316e10c528d",
+                                                    "label": "team 2",
+                                                    "name": "team_2",
+                                                    "aria-label": "",
+                                                    "type": "group",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "45",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "layout": "block",
+                                                    "sub_fields": [
+                                                        {
+                                                            "key": "field_65316e10c528e",
+                                                            "label": "Team name",
+                                                            "name": "team_name",
+                                                            "aria-label": "",
+                                                            "type": "select",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "70",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "choices": {
+                                                                "Select a team": "Select a team",
+                                                                "2981": "HOU",
+                                                                "2977": "TEX",
+                                                                "2979": "LAA",
+                                                                "2969": "OAK",
+                                                                "2973": "SEA",
+                                                                "2960": "TB",
+                                                                "2984": "TOR",
+                                                                "2970": "NYY",
+                                                                "2959": "BAL",
+                                                                "2966": "BOS",
+                                                                "2978": "DET",
+                                                                "2965": "KC",
+                                                                "2983": "MIN",
+                                                                "2974": "CHW",
+                                                                "2980": "CLE",
+                                                                "3483": "AL",
+                                                                "2975": "STL",
+                                                                "2976": "MIL",
+                                                                "2982": "CHC",
+                                                                "2971": "PIT",
+                                                                "2961": "CIN",
+                                                                "2972": "WAS",
+                                                                "2963": "MIA",
+                                                                "2957": "ATL",
+                                                                "2964": "NYM",
+                                                                "2958": "PHI",
+                                                                "2967": "LAD",
+                                                                "2968": "ARI",
+                                                                "2955": "SD",
+                                                                "2962": "SF",
+                                                                "2956": "COL",
+                                                                "3484": "NL"
+                                                            },
+                                                            "default_value": "Select a team",
+                                                            "return_format": "value",
+                                                            "multiple": 0,
+                                                            "allow_null": 0,
+                                                            "ui": 0,
+                                                            "ajax": 0,
+                                                            "placeholder": ""
+                                                        },
+                                                        {
+                                                            "key": "field_65316e10c528f",
+                                                            "label": "Rank",
+                                                            "name": "team_rank",
+                                                            "aria-label": "",
+                                                            "type": "number",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "30",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "default_value": 1,
+                                                            "min": "",
+                                                            "max": "",
+                                                            "placeholder": "",
+                                                            "step": "",
+                                                            "prepend": "",
+                                                            "append": ""
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "key": "field_65316e10c5290",
+                                                    "label": "url",
+                                                    "name": "url",
+                                                    "aria-label": "",
+                                                    "type": "url",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": ""
                                                 }
                                             ]
                                         }
@@ -1458,8 +1771,8 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_6525b3f0092eb",
-                            "label": "National league ( right)",
+                            "key": "field_6531731bdec06",
+                            "label": "National league ( Right )",
                             "name": "league_right",
                             "aria-label": "",
                             "type": "group",
@@ -1474,7 +1787,7 @@
                             "layout": "block",
                             "sub_fields": [
                                 {
-                                    "key": "field_6525b3f2092ec",
+                                    "key": "field_6531731fdec07",
                                     "label": "Logo",
                                     "name": "",
                                     "aria-label": "",
@@ -1491,7 +1804,7 @@
                                     "endpoint": 0
                                 },
                                 {
-                                    "key": "field_6525b3f2092ed",
+                                    "key": "field_6531731fdec08",
                                     "label": "logo",
                                     "name": "logo",
                                     "aria-label": "",
@@ -1504,7 +1817,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "return_format": "url",
+                                    "return_format": "array",
                                     "library": "all",
                                     "min_width": "",
                                     "min_height": "",
@@ -1516,7 +1829,7 @@
                                     "preview_size": "medium"
                                 },
                                 {
-                                    "key": "field_6525b3f2092ee",
+                                    "key": "field_6531731fdec09",
                                     "label": "WILDCARD",
                                     "name": "",
                                     "aria-label": "",
@@ -1533,7 +1846,7 @@
                                     "endpoint": 0
                                 },
                                 {
-                                    "key": "field_6525b3f2092ef",
+                                    "key": "field_6531731fdec0a",
                                     "label": "Teams Wildcard",
                                     "name": "teams_wildcard",
                                     "aria-label": "",
@@ -1549,7 +1862,7 @@
                                     "layout": "block",
                                     "sub_fields": [
                                         {
-                                            "key": "field_6525b3f2092f0",
+                                            "key": "field_65317320dec0b",
                                             "label": "date",
                                             "name": "date",
                                             "aria-label": "",
@@ -1567,7 +1880,7 @@
                                             "first_day": 1
                                         },
                                         {
-                                            "key": "field_6525b3f2092f1",
+                                            "key": "field_65317320dec0c",
                                             "label": "match 1",
                                             "name": "match_1",
                                             "aria-label": "",
@@ -1583,7 +1896,7 @@
                                             "layout": "block",
                                             "sub_fields": [
                                                 {
-                                                    "key": "field_6525b3f2092f2",
+                                                    "key": "field_65317320dec0d",
                                                     "label": "team 1",
                                                     "name": "team_1",
                                                     "aria-label": "",
@@ -1599,7 +1912,7 @@
                                                     "layout": "block",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_6525b3f2092f3",
+                                                            "key": "field_65317320dec0e",
                                                             "label": "Team name",
                                                             "name": "team_name",
                                                             "aria-label": "",
@@ -1656,7 +1969,7 @@
                                                             "placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_6525b3f2092f4",
+                                                            "key": "field_65317321dec0f",
                                                             "label": "Rank",
                                                             "name": "team_rank",
                                                             "aria-label": "",
@@ -1680,7 +1993,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "key": "field_6525b3f2092f5",
+                                                    "key": "field_65317321dec10",
                                                     "label": "team 2",
                                                     "name": "team_2",
                                                     "aria-label": "",
@@ -1696,7 +2009,7 @@
                                                     "layout": "block",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_6525b3f3092f6",
+                                                            "key": "field_65317321dec11",
                                                             "label": "Team name",
                                                             "name": "team_name",
                                                             "aria-label": "",
@@ -1753,7 +2066,7 @@
                                                             "placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_6525b3f3092f7",
+                                                            "key": "field_65317321dec12",
                                                             "label": "Rank",
                                                             "name": "team_rank",
                                                             "aria-label": "",
@@ -1775,11 +2088,28 @@
                                                             "append": ""
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "key": "field_65317322dec13",
+                                                    "label": "url",
+                                                    "name": "url",
+                                                    "aria-label": "",
+                                                    "type": "url",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": ""
                                                 }
                                             ]
                                         },
                                         {
-                                            "key": "field_6525b3f3092f8",
+                                            "key": "field_65317322dec14",
                                             "label": "match 2",
                                             "name": "match_2",
                                             "aria-label": "",
@@ -1795,7 +2125,7 @@
                                             "layout": "block",
                                             "sub_fields": [
                                                 {
-                                                    "key": "field_6525b3f3092f9",
+                                                    "key": "field_65317322dec15",
                                                     "label": "team 1",
                                                     "name": "team_1",
                                                     "aria-label": "",
@@ -1811,7 +2141,7 @@
                                                     "layout": "block",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_6525b3f3092fa",
+                                                            "key": "field_65317322dec16",
                                                             "label": "Team name",
                                                             "name": "team_name",
                                                             "aria-label": "",
@@ -1868,7 +2198,7 @@
                                                             "placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_6525b3f3092fb",
+                                                            "key": "field_65317322dec17",
                                                             "label": "Rank",
                                                             "name": "team_rank",
                                                             "aria-label": "",
@@ -1892,7 +2222,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "key": "field_6525b3f3092fc",
+                                                    "key": "field_65317323dec18",
                                                     "label": "team 2",
                                                     "name": "team_2",
                                                     "aria-label": "",
@@ -1908,7 +2238,7 @@
                                                     "layout": "block",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_6525b3f3092fd",
+                                                            "key": "field_65317323dec19",
                                                             "label": "Team name",
                                                             "name": "team_name",
                                                             "aria-label": "",
@@ -1965,7 +2295,7 @@
                                                             "placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_6525b3f3092fe",
+                                                            "key": "field_65317323dec1a",
                                                             "label": "Rank",
                                                             "name": "team_rank",
                                                             "aria-label": "",
@@ -1987,13 +2317,30 @@
                                                             "append": ""
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "key": "field_65317323dec1b",
+                                                    "label": "url",
+                                                    "name": "url",
+                                                    "aria-label": "",
+                                                    "type": "url",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": ""
                                                 }
                                             ]
                                         }
                                     ]
                                 },
                                 {
-                                    "key": "field_6525b3f3092ff",
+                                    "key": "field_65317323dec1c",
                                     "label": "DIVISION",
                                     "name": "",
                                     "aria-label": "",
@@ -2010,8 +2357,8 @@
                                     "endpoint": 0
                                 },
                                 {
-                                    "key": "field_6525b483cc0c8",
-                                    "label": "Teams Division",
+                                    "key": "field_65317324dec1d",
+                                    "label": "Teams Division2",
                                     "name": "teams_division",
                                     "aria-label": "",
                                     "type": "group",
@@ -2026,7 +2373,7 @@
                                     "layout": "block",
                                     "sub_fields": [
                                         {
-                                            "key": "field_6525b483cc0c9",
+                                            "key": "field_65317324dec1e",
                                             "label": "date",
                                             "name": "date",
                                             "aria-label": "",
@@ -2044,7 +2391,7 @@
                                             "first_day": 1
                                         },
                                         {
-                                            "key": "field_6525b484cc0ca",
+                                            "key": "field_65317324dec1f",
                                             "label": "match 1",
                                             "name": "match_1",
                                             "aria-label": "",
@@ -2060,7 +2407,7 @@
                                             "layout": "block",
                                             "sub_fields": [
                                                 {
-                                                    "key": "field_6525b484cc0cb",
+                                                    "key": "field_65317324dec20",
                                                     "label": "team 1",
                                                     "name": "team_1",
                                                     "aria-label": "",
@@ -2076,7 +2423,7 @@
                                                     "layout": "block",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_6525b484cc0cc",
+                                                            "key": "field_65317325dec21",
                                                             "label": "Team name",
                                                             "name": "team_name",
                                                             "aria-label": "",
@@ -2133,7 +2480,7 @@
                                                             "placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_6525b484cc0cd",
+                                                            "key": "field_65317325dec22",
                                                             "label": "Rank",
                                                             "name": "team_rank",
                                                             "aria-label": "",
@@ -2157,7 +2504,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "key": "field_6525b484cc0ce",
+                                                    "key": "field_65317325dec23",
                                                     "label": "team 2",
                                                     "name": "team_2",
                                                     "aria-label": "",
@@ -2173,7 +2520,7 @@
                                                     "layout": "block",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_6525b484cc0cf",
+                                                            "key": "field_65317325dec24",
                                                             "label": "Team name",
                                                             "name": "team_name",
                                                             "aria-label": "",
@@ -2230,7 +2577,7 @@
                                                             "placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_6525b484cc0d0",
+                                                            "key": "field_65317325dec25",
                                                             "label": "Rank",
                                                             "name": "team_rank",
                                                             "aria-label": "",
@@ -2252,11 +2599,28 @@
                                                             "append": ""
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "key": "field_65317326dec26",
+                                                    "label": "url",
+                                                    "name": "url",
+                                                    "aria-label": "",
+                                                    "type": "url",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": ""
                                                 }
                                             ]
                                         },
                                         {
-                                            "key": "field_6525b484cc0d1",
+                                            "key": "field_65317326dec27",
                                             "label": "match 2",
                                             "name": "match_2",
                                             "aria-label": "",
@@ -2272,7 +2636,7 @@
                                             "layout": "block",
                                             "sub_fields": [
                                                 {
-                                                    "key": "field_6525b484cc0d2",
+                                                    "key": "field_65317326dec28",
                                                     "label": "team 1",
                                                     "name": "team_1",
                                                     "aria-label": "",
@@ -2288,7 +2652,7 @@
                                                     "layout": "block",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_6525b484cc0d3",
+                                                            "key": "field_65317326dec29",
                                                             "label": "Team name",
                                                             "name": "team_name",
                                                             "aria-label": "",
@@ -2345,7 +2709,7 @@
                                                             "placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_6525b485cc0d4",
+                                                            "key": "field_65317327dec2a",
                                                             "label": "Rank",
                                                             "name": "team_rank",
                                                             "aria-label": "",
@@ -2369,7 +2733,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "key": "field_6525b485cc0d5",
+                                                    "key": "field_65317327dec2b",
                                                     "label": "team 2",
                                                     "name": "team_2",
                                                     "aria-label": "",
@@ -2385,7 +2749,7 @@
                                                     "layout": "block",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_6525b485cc0d6",
+                                                            "key": "field_65317327dec2c",
                                                             "label": "Team name",
                                                             "name": "team_name",
                                                             "aria-label": "",
@@ -2442,7 +2806,7 @@
                                                             "placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_6525b485cc0d7",
+                                                            "key": "field_65317327dec2d",
                                                             "label": "Rank",
                                                             "name": "team_rank",
                                                             "aria-label": "",
@@ -2464,13 +2828,30 @@
                                                             "append": ""
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "key": "field_65317327dec2e",
+                                                    "label": "url",
+                                                    "name": "url",
+                                                    "aria-label": "",
+                                                    "type": "url",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": ""
                                                 }
                                             ]
                                         }
                                     ]
                                 },
                                 {
-                                    "key": "field_6525b3f509310",
+                                    "key": "field_65317328dec2f",
                                     "label": "CHAMPIONSHIP",
                                     "name": "",
                                     "aria-label": "",
@@ -2487,7 +2868,7 @@
                                     "endpoint": 0
                                 },
                                 {
-                                    "key": "field_6525b3f509311",
+                                    "key": "field_65317328dec30",
                                     "label": "Teams Championship",
                                     "name": "teams_championship",
                                     "aria-label": "",
@@ -2503,7 +2884,7 @@
                                     "layout": "block",
                                     "sub_fields": [
                                         {
-                                            "key": "field_6525b3f509312",
+                                            "key": "field_65317328dec31",
                                             "label": "date",
                                             "name": "date",
                                             "aria-label": "",
@@ -2521,7 +2902,7 @@
                                             "first_day": 1
                                         },
                                         {
-                                            "key": "field_6525b3f509313",
+                                            "key": "field_65317328dec32",
                                             "label": "match 1",
                                             "name": "match_1",
                                             "aria-label": "",
@@ -2537,7 +2918,7 @@
                                             "layout": "block",
                                             "sub_fields": [
                                                 {
-                                                    "key": "field_6525b3f509314",
+                                                    "key": "field_65317329dec33",
                                                     "label": "team 1",
                                                     "name": "team_1",
                                                     "aria-label": "",
@@ -2553,7 +2934,7 @@
                                                     "layout": "block",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_6525b3f509315",
+                                                            "key": "field_65317329dec34",
                                                             "label": "Team name",
                                                             "name": "team_name",
                                                             "aria-label": "",
@@ -2610,7 +2991,7 @@
                                                             "placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_6525b3f509316",
+                                                            "key": "field_65317329dec35",
                                                             "label": "Rank",
                                                             "name": "team_rank",
                                                             "aria-label": "",
@@ -2634,7 +3015,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "key": "field_6525b3f509317",
+                                                    "key": "field_65317329dec36",
                                                     "label": "team 2",
                                                     "name": "team_2",
                                                     "aria-label": "",
@@ -2650,7 +3031,7 @@
                                                     "layout": "block",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_6525b3f509318",
+                                                            "key": "field_65317329dec37",
                                                             "label": "Team name",
                                                             "name": "team_name",
                                                             "aria-label": "",
@@ -2707,7 +3088,7 @@
                                                             "placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_6525b3f509319",
+                                                            "key": "field_6531732adec38",
                                                             "label": "Rank",
                                                             "name": "team_rank",
                                                             "aria-label": "",
@@ -2729,6 +3110,252 @@
                                                             "append": ""
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "key": "field_6531732adec39",
+                                                    "label": "url",
+                                                    "name": "url",
+                                                    "aria-label": "",
+                                                    "type": "url",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": ""
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "key": "field_6531732adec3a",
+                                            "label": "match 2",
+                                            "name": "match_2",
+                                            "aria-label": "",
+                                            "type": "group",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "layout": "block",
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_6531732adec3b",
+                                                    "label": "team 1",
+                                                    "name": "team_1",
+                                                    "aria-label": "",
+                                                    "type": "group",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "45",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "layout": "block",
+                                                    "sub_fields": [
+                                                        {
+                                                            "key": "field_6531732bdec3c",
+                                                            "label": "Team name",
+                                                            "name": "team_name",
+                                                            "aria-label": "",
+                                                            "type": "select",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "70",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "choices": {
+                                                                "Select a team": "Select a team",
+                                                                "2981": "HOU",
+                                                                "2977": "TEX",
+                                                                "2979": "LAA",
+                                                                "2969": "OAK",
+                                                                "2973": "SEA",
+                                                                "2960": "TB",
+                                                                "2984": "TOR",
+                                                                "2970": "NYY",
+                                                                "2959": "BAL",
+                                                                "2966": "BOS",
+                                                                "2978": "DET",
+                                                                "2965": "KC",
+                                                                "2983": "MIN",
+                                                                "2974": "CHW",
+                                                                "2980": "CLE",
+                                                                "3483": "AL",
+                                                                "2975": "STL",
+                                                                "2976": "MIL",
+                                                                "2982": "CHC",
+                                                                "2971": "PIT",
+                                                                "2961": "CIN",
+                                                                "2972": "WAS",
+                                                                "2963": "MIA",
+                                                                "2957": "ATL",
+                                                                "2964": "NYM",
+                                                                "2958": "PHI",
+                                                                "2967": "LAD",
+                                                                "2968": "ARI",
+                                                                "2955": "SD",
+                                                                "2962": "SF",
+                                                                "2956": "COL",
+                                                                "3484": "NL"
+                                                            },
+                                                            "default_value": "Select a team",
+                                                            "return_format": "value",
+                                                            "multiple": 0,
+                                                            "allow_null": 0,
+                                                            "ui": 0,
+                                                            "ajax": 0,
+                                                            "placeholder": ""
+                                                        },
+                                                        {
+                                                            "key": "field_6531732bdec3d",
+                                                            "label": "Rank",
+                                                            "name": "team_rank",
+                                                            "aria-label": "",
+                                                            "type": "number",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "30",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "default_value": 1,
+                                                            "min": "",
+                                                            "max": "",
+                                                            "placeholder": "",
+                                                            "step": "",
+                                                            "prepend": "",
+                                                            "append": ""
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "key": "field_6531732bdec3e",
+                                                    "label": "team 2",
+                                                    "name": "team_2",
+                                                    "aria-label": "",
+                                                    "type": "group",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "45",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "layout": "block",
+                                                    "sub_fields": [
+                                                        {
+                                                            "key": "field_6531732bdec3f",
+                                                            "label": "Team name",
+                                                            "name": "team_name",
+                                                            "aria-label": "",
+                                                            "type": "select",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "70",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "choices": {
+                                                                "Select a team": "Select a team",
+                                                                "2981": "HOU",
+                                                                "2977": "TEX",
+                                                                "2979": "LAA",
+                                                                "2969": "OAK",
+                                                                "2973": "SEA",
+                                                                "2960": "TB",
+                                                                "2984": "TOR",
+                                                                "2970": "NYY",
+                                                                "2959": "BAL",
+                                                                "2966": "BOS",
+                                                                "2978": "DET",
+                                                                "2965": "KC",
+                                                                "2983": "MIN",
+                                                                "2974": "CHW",
+                                                                "2980": "CLE",
+                                                                "3483": "AL",
+                                                                "2975": "STL",
+                                                                "2976": "MIL",
+                                                                "2982": "CHC",
+                                                                "2971": "PIT",
+                                                                "2961": "CIN",
+                                                                "2972": "WAS",
+                                                                "2963": "MIA",
+                                                                "2957": "ATL",
+                                                                "2964": "NYM",
+                                                                "2958": "PHI",
+                                                                "2967": "LAD",
+                                                                "2968": "ARI",
+                                                                "2955": "SD",
+                                                                "2962": "SF",
+                                                                "2956": "COL",
+                                                                "3484": "NL"
+                                                            },
+                                                            "default_value": "Select a team",
+                                                            "return_format": "value",
+                                                            "multiple": 0,
+                                                            "allow_null": 0,
+                                                            "ui": 0,
+                                                            "ajax": 0,
+                                                            "placeholder": ""
+                                                        },
+                                                        {
+                                                            "key": "field_6531732bdec40",
+                                                            "label": "Rank",
+                                                            "name": "team_rank",
+                                                            "aria-label": "",
+                                                            "type": "number",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "30",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "default_value": 1,
+                                                            "min": "",
+                                                            "max": "",
+                                                            "placeholder": "",
+                                                            "step": "",
+                                                            "prepend": "",
+                                                            "append": ""
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "key": "field_6531732cdec41",
+                                                    "label": "url",
+                                                    "name": "url",
+                                                    "aria-label": "",
+                                                    "type": "url",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": ""
                                                 }
                                             ]
                                         }
@@ -2783,7 +3410,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "return_format": "url",
+                                    "return_format": "array",
                                     "library": "all",
                                     "min_width": "",
                                     "min_height": "",
@@ -2841,6 +3468,7 @@
                                                         "id": ""
                                                     },
                                                     "choices": {
+                                                        "Select a team": "Select a team",
                                                         "2981": "HOU",
                                                         "2977": "TEX",
                                                         "2979": "LAA",
@@ -2915,6 +3543,7 @@
                                                         "id": ""
                                                     },
                                                     "choices": {
+                                                        "Select a team": "Select a team",
                                                         "2981": "HOU",
                                                         "2977": "TEX",
                                                         "2979": "LAA",
@@ -2957,6 +3586,23 @@
                                                     "placeholder": ""
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "key": "field_6531750311eed",
+                                            "label": "url",
+                                            "name": "url",
+                                            "aria-label": "",
+                                            "type": "url",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": ""
                                         }
                                     ]
                                 }
@@ -3010,6 +3656,7 @@
                                         "id": ""
                                     },
                                     "choices": {
+                                        "Select a team": "Select a team",
                                         "2981": "HOU",
                                         "2977": "TEX",
                                         "2979": "LAA",
@@ -3050,10 +3697,28 @@
                                     "ui": 0,
                                     "ajax": 0,
                                     "placeholder": ""
+                                },
+                                {
+                                    "key": "field_6531752711eee",
+                                    "label": "url",
+                                    "name": "url",
+                                    "aria-label": "",
+                                    "type": "url",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
                                 }
                             ]
                         }
-                    ]
+                    ],
+                    "parent_repeater": "field_6513599e12351"
                 },
                 {
                     "key": "field_65285f7e7cd34",
@@ -5746,7 +6411,7 @@
                             "sub_fields": [
                                 {
                                     "key": "field_6528662734457",
-                                    "label": "logo mlb",
+                                    "label": "logo NFL",
                                     "name": "logo",
                                     "aria-label": "",
                                     "type": "image",
@@ -10783,5 +11448,5 @@
     "active": true,
     "description": "bracket",
     "show_in_rest": 0,
-    "modified": 1697477456
+    "modified": 1697740417
 }

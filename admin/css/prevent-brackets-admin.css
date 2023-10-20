@@ -2,60 +2,85 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
-[data-name="create_a_bracket"] .acf-table > tbody > tr{
-    
-    &:nth-child(1)  {
-      border: 2px solid #dfdfdfed;
-      background: #dfdfdfed;
-    }
-    & > td, & > .acf-row-handle{
-      background: transparent;
-    }
-    .acf-fields > .acf-tab-wrap{
-      background: transparent;
-    }
+[data-name="create_a_bracket"] .acf-table>tbody>tr {
+  &:nth-child(1) {
+    border: 2px solid #dfdfdfed;
+    background: #dfdfdfed;
+  }
+
+  &>td,
+  &>.acf-row-handle {
+    background: transparent;
+  }
+
+  .acf-fields>.acf-tab-wrap {
+    background: transparent;
+  }
 }
- .info{
+
+[data-name="match_1"],
+[data-name="match_2"],
+[data-name="match_3"],
+[data-name="match_4"] {
+  border: 1px solid rgb(70, 70, 70);
+  border-top: 1px solid rgb(70, 70, 70) !important;
+  margin: 20px !important;
+  background-color: #e4e4e4;
+}
+
+[data-name="match_1"]:focus-within,
+[data-name="match_2"]:focus-within,
+[data-name="match_3"]:focus-within,
+[data-name="match_4"]:focus-within {
+  background-color: #d8e4f7;
+
+}
+
+.info {
   background: #898383;
   color: white;
   justify-content: center;
-    display: flex;
-    align-content: center;
-    flex-wrap: wrap;
-    font-size: 1.2vw;
- } 
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  font-size: 1.2vw;
+}
 
-[data-name="lista_de_teams_json"]{
-  display: none; 
-} 
-.Teams{
-  padding: 0px!important;
-} 
- .Teams > .acf-label{
+[data-name="lista_de_teams_json"] {
   display: none;
-} 
- .Teams .acf-fields.-border{
-  border: none;
-} 
- .Teams .acf-fields > [data-type="group"] > .acf-input .acf-field-group:first-child::after  {
+}
 
-    content: 'vs';
-    color: white;
-    background-color: gray;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    position: absolute;
-    right: -15px;
-    bottom: 50%;
-    width: 30px;
-    height: 30px;
-    flex-wrap: wrap;
-    border-radius: 50%;
-    z-index: 5;
-  }
-  /* //:first-child::after */
-   .info .acf-label{
-    display: none;
-   } 
- 
+.Teams {
+  padding: 0px !important;
+}
+
+.Teams>.acf-label {
+  display: none;
+}
+
+.Teams .acf-fields.-border {
+  border: none;
+}
+
+.Teams .acf-fields>[data-type="group"]>.acf-input .acf-field-group:first-child::after {
+
+  content: 'vs';
+  color: white;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  right: -15px;
+  bottom: 50%;
+  width: 30px;
+  height: 30px;
+  flex-wrap: wrap;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+/* //:first-child::after */
+.info .acf-label {
+  display: none;
+}

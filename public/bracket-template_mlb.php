@@ -12,23 +12,18 @@
     return null; 
 }
 
-  function matchContent($wildMatches, $jsonTeams, $class) {
-    $box = '';
-    
-    foreach ($wildMatches as $matchKey => $matchesValue) {
-      if($matchKey !== 'date' && $matchKey !== 'logo'){
+ function matchValues($matchesValue, $jsonTeams, $matchKey, $class ){
+  $box = '';
         //I have date and logo in the same tab but 
         //I only need teams
-        $box .= '<div class="match-row '. $matchKey  .'">';
-        $box .= '<div class="matchBox '.$class.'">';
+      $box .=  $matchesValue['url'] !=='' ? '<a class="match-row '. $matchKey  .'" href="'.$matchesValue['url'].'">' : '<div class="match-row '. $matchKey  .'">';
+      $box .= '<div class="matchBox '.$class.'">';
         foreach ($matchesValue as $key => $matches) {
-
-          $teamID     = $matches['team_name'];
-          $rank       = $matches['team_rank']  ?? 0;
-     
-          $foundTeam  = findTeamByID($jsonTeams, $teamID);
-          
-          if ($foundTeam) {
+          if($key !== 'url'){
+            $teamID     = $matches['team_name'];
+            $rank       = $matches['team_rank']  ?? 0;
+            $foundTeam  = findTeamByID($jsonTeams, $teamID);
+            if ($foundTeam) {
               $teamName       = $foundTeam['teamFirstName'];
               $teamNickname   = $foundTeam['teamShortName'];
               $teamLogo       = $foundTeam['teamImageURL'];
@@ -39,29 +34,36 @@
               $box .= '<img class="matchBox-logo" src="' .  $teamThumb . '" alt="Team Logo">';
               $box .= '<div class="matchBox-nickname">' .   $teamNickname . '</div>';
               // $box .= '<div class="matchBox-teamName">' .   $teamName . '</div>';
-             if($rank) {$box .= '<div class="matchBox-rank">#' .      $rank . '</div>';}
+              if($rank) {$box .= '<div class="matchBox-rank">#' .      $rank . '</div>';}
               $box .= '</div>';
           
-          } else {
-              // Build the HTML for each match
-              $teamThumb = esc_url( plugins_url( '/images/shield.png', __FILE__ ) );
-    
-              
-              $box .= '<div class="matchBox-team deactivate">';
-              $box .= '<img class="matchBox-logo" src="'.$teamThumb .'" alt="Team Logo">';
-              $box .= '<div class="matchBox-nickname"></div>';
-              $box .= '<div class="matchBox-teamName"></div>';
-              $box .= '</div>';
+            } else {
+                // Build the HTML for each match
+                $teamThumb = esc_url( plugins_url( '/images/shield.png', __FILE__ ) );
+                $box .= '<div class="matchBox-team deactivate">';
+                $box .= '<img class="matchBox-logo" src="'.$teamThumb .'" alt="Team Logo">';
+                $box .= '<div class="matchBox-nickname"></div>';
+                $box .= '<div class="matchBox-teamName"></div>';
+                $box .= '</div>';
+            }
           }
         }
-        $box .= '</div>';
-        $box .= '</div>';
-      }
+      $box .= '</div>';
+      $box .=  $matchesValue['url'] ? '</a>' : '</div>';
+    return $box;
+ }
+
+  function matchContent($acfMatches, $jsonTeams, $class) {
+    $box = '';
+      foreach ($acfMatches as $matchKey => $matchesValue) {
+        if($matchKey !== 'date' && $matchKey !== 'logo'){
+           $box .= matchValues($matchesValue,  $jsonTeams, $matchKey, $class);
+          }
+        }
+    return $box; 
     }
 
-   
-   return $box; 
-  }
+ 
  
   function teamDestructur($teamID, $jsonTeams, $logoType) {
  
@@ -95,7 +97,7 @@
       ************************** */
       $stages             = $mlbObj['league_left'];
       $legue_logo_L       = $mlbObj['league_left']['logo'];
-
+     
 
       //WILDCARD
       $wildDate           = $mlbObj['league_left']['teams_wildcard']['date'];
@@ -130,6 +132,7 @@
       $championshipDate_R = $mlbObj['league_right']['teams_championship']['date'];
       $championshipMatches_R = $mlbObj['league_right']['teams_championship'];
 
+      
   /** **************************
   * HTML 
   ************************** */
@@ -139,8 +142,8 @@
     $htmlContent .=  '<div class="menu"> ';
     $htmlContent .=  '<h2>'.$bracket_title.'</h2>';
       $htmlContent .=  '<div class="logos"> ';
-      $htmlContent .=  '<div  class="logo legue_logo_L active" > <img width="269px" src="'. $legue_logo_L . '"></div>';
-      $htmlContent .=  '<div  class="logo legue_logo_R"        > <img width="269px" src="'. $legue_logo_R . '"></div>';
+      $htmlContent .=  '<div  class="logo legue_logo_L active" > <img alt="'. $legue_logo_R['url'] . '" width="269px" src="'. $legue_logo_L['url'] . '"></div>';
+      $htmlContent .=  '<div  class="logo legue_logo_R"        > <img alt="'. $legue_logo_R['url'] . '"width="269px" src="'. $legue_logo_R['url'] . '"></div>';
       $htmlContent .= '</div>';
 
       $htmlContent .=  '<div class="series"> ';
@@ -172,7 +175,7 @@
               $htmlContent .= '<section class="group-match">';
                 //wildcard
                 $htmlContent .= '<div id="group-1" class="group-1 group-wildcard">';
-                $htmlContent .=  '<img class="logo_league"  width="269px" src="'. $legue_logo_L . '">';
+                $htmlContent .=  '<img class="logo_league"  width="269px" src="'. $legue_logo_L['url'] . '">';
                 $htmlContent .=  matchContent($wildMatches, $json, 'wildcard');
                 $htmlContent .= '</div>';
                 //division
@@ -195,7 +198,7 @@
         $htmlContent .= '<div id="group-4" class="group-center">';
             //worldseries
           $htmlContent .= '<div  id="group-4_R" class="group-4 group-worldseries">';
-            $htmlContent .=  '<img width="269px" class="logo" src="'. $worldseries_logo . '">';
+            $htmlContent .=  '<img width="269px" class="logo" alt="'.$legue_logo_R['alt'] . '" src="'. $worldseries_logo['url'] . '">';
 
             //worldseries
             $htmlContent .='<div class="worldseries">';
@@ -223,17 +226,17 @@
         * Getting Right League 
         ************************** */
         $htmlContent .= '<div class="group-right">';
-        $htmlContent .= '<section class="group-stages">';
-          $htmlContent .= '<div><div class="stages-link">WILDCARD <span>Series</span></div>  <div class="date"> '.$wildDate.'</div> </div>';
-          $htmlContent .= '<div><div class="stages-link division">DIVISION <span>Series</span></div> <div class="date"> '.$divisionDate.'</div> </div>';
-          $htmlContent .= '<div><div class="stages-link championship">CHAMPIONSHIP <span>Series</span></div> <div class="date"> '.$championshipDate.'</div> </div>';
-          $htmlContent .= '<div><div class="stages-link worldSeries">World <span>Series</span></div></div>';
-        $htmlContent .= '</section>';
-    
+          $htmlContent .= '<section class="group-stages">';
+            $htmlContent .= '<div><div class="stages-link">WILDCARD <span>Series</span></div>  <div class="date"> '.$wildDate.'</div> </div>';
+            $htmlContent .= '<div><div class="stages-link division">DIVISION <span>Series</span></div> <div class="date"> '.$divisionDate.'</div> </div>';
+            $htmlContent .= '<div><div class="stages-link championship">CHAMPIONSHIP <span>Series</span></div> <div class="date"> '.$championshipDate.'</div> </div>';
+            $htmlContent .= '<div><div class="stages-link worldSeries">World <span>Series</span></div></div>';
+          $htmlContent .= '</section>';
+      
         $htmlContent .= '<section class="group-match">';
           //wildcard
           $htmlContent .= '<div id="group-1_R" class="group-1 group-wildcard">';
-          $htmlContent .=  '<img class="logo_league" src="'.$legue_logo_R . '">';
+          $htmlContent .=  '<img class="logo_league" alt="'.$legue_logo_R['alt'] . '" src="'.$legue_logo_R['url'] . '">';
           $htmlContent .=  matchContent($wildMatches_R, $json, 'wildcard');
           $htmlContent .= '</div>';
           //division
@@ -247,7 +250,8 @@
           $htmlContent .=  matchContent($championshipMatches_R, $json, 'championship');
           $htmlContent .= '</div>';
         $htmlContent .= '</section>'; //match-group
-      $htmlContent .= '</div>'; //match-group    
+      $htmlContent .= '</div>'; //match-right
+          
       $htmlContent .= '</div>'; //scroll-wrap    
 
         $htmlContent .= '</section>'; //match-group
