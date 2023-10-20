@@ -7,52 +7,54 @@
     foreach( $brackets as $row ) {
       $league             = $row['select_a_league']['value'];
       if($league === 'NFL'):
-        $data               = $row['lista_de_teams_json'];
-        $json               = json_decode($data, true);
-        $mlbObj             = $row['NFL'];
-        $bracket_title      = $row['bracket_title'];
 
-       
-        /** **************************
-        * Getting Left League
-        ************************** */
-        $stages             = $mlbObj['league_left'];
-        $legue_logo_L       = $mlbObj['league_left']['logo'];
+      //ACF VARIABLES
+            $data               = $row['lista_de_teams_json'];
+            $json               = json_decode($data, true);
+            $mlbObj             = $row['NFL'];
+            $bracket_title      = $row['bracket_title'];
+
+          
+            /** **************************
+            * Getting Left League
+            ************************** */
+            $stages             = $mlbObj['league_left'];
+            $legue_logo_L       = $mlbObj['league_left']['logo'];
 
 
-        //WILDCARD
-        $wildDate           = $mlbObj['league_left']['teams_wildcard']['date'];
-        $wildMatches        = $mlbObj['league_left']['teams_wildcard'];
-        //division
-        $divisionDate       = $mlbObj['league_left']['teams_division']['date'];
-        $divisionMatches    = $mlbObj['league_left']['teams_division'];
-        //Championship
-        $championshipDate    = $mlbObj['league_left']['teams_championship']['date'];
-        $championshipMatches = $mlbObj['league_left']['teams_championship'];
-        
-        /** **************************
-        * Getting Center worldseries
-        ************************** */
-        //worldseries
-        $worldseriesMatches = $mlbObj['teams_worldseries'];
-        $worldseries_logo   = $mlbObj['teams_worldseries']['logo'];
-        $championid         = $mlbObj['team_champion']['team_name'];
+            //WILDCARD
+            $wildDate           = $mlbObj['league_left']['teams_wildcard']['date'];
+            $wildMatches        = $mlbObj['league_left']['teams_wildcard'];
+            //division
+            $divisionDate       = $mlbObj['league_left']['teams_division']['date'];
+            $divisionMatches    = $mlbObj['league_left']['teams_division'];
+            //Championship
+            $championshipDate    = $mlbObj['league_left']['teams_championship']['date'];
+            $championshipMatches = $mlbObj['league_left']['teams_championship'];
+            
+            /** **************************
+            * Getting Center worldseries
+            ************************** */
+            //worldseries
+            $worldseriesMatches = $mlbObj['teams_worldseries'];
+            $worldseries_logo   = $mlbObj['teams_worldseries']['logo'];
+            $championid         = $mlbObj['team_champion']['team_name'];
 
-        /** **************************
-        * Getting RIGHT League
-        ************************** */
-        $legue_logo_R       = $mlbObj['league_right']['logo'];
+            /** **************************
+            * Getting RIGHT League
+            ************************** */
+            $legue_logo_R       = $mlbObj['league_right']['logo'];
 
-        //WILDCARD
-        $wildDate_R         = $mlbObj['league_right']['teams_wildcard']['date'];
-        $wildMatches_R      = $mlbObj['league_right']['teams_wildcard'];
-        //division
-        $divisionDate_R     = $mlbObj['league_right']['teams_division']['date'];
-        $divisionMatches_R  = $mlbObj['league_right']['teams_division'];
-        //Championship
-        $championshipDate_R = $mlbObj['league_right']['teams_championship']['date'];
-        $championshipMatches_R = $mlbObj['league_right']['teams_championship'];
-  
+            //WILDCARD
+            $wildDate_R         = $mlbObj['league_right']['teams_wildcard']['date'];
+            $wildMatches_R      = $mlbObj['league_right']['teams_wildcard'];
+            //division
+            $divisionDate_R     = $mlbObj['league_right']['teams_division']['date'];
+            $divisionMatches_R  = $mlbObj['league_right']['teams_division'];
+            //Championship
+            $championshipDate_R = $mlbObj['league_right']['teams_championship']['date'];
+            $championshipMatches_R = $mlbObj['league_right']['teams_championship'];
+      //ACF VARIABLES \
 
         /** **************************
         * HTML 
