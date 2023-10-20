@@ -44,7 +44,7 @@ function startMobileMenu() {
 		link.addEventListener('click', () => menuClick(link));
 	});
 
-	//bracketScroll.addEventListener('scroll', (e) =>  console.log(bracketScroll.scrollLeft))
+	deseableLinks();
 }
 
 function menuClick(link) {
@@ -139,4 +139,15 @@ function toggleMenuMobile(divId) {
 function ScrollToDiv(divId) {
 	const elem = document.getElementById(divId);
 	(cPos = elem.getBoundingClientRect()), elem.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'center' });
+}
+
+function deseableLinks() {
+	const links = document.querySelectorAll('.deactivate');
+	links.forEach(link => {
+		//get parent
+		const parent = link.closest('.match-row');
+		parent.addEventListener('click', function (event) {
+			event.preventDefault();
+		});
+	});
 }
