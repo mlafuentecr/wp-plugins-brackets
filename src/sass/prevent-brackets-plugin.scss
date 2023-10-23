@@ -219,13 +219,29 @@
 }
 .bracket-contest {
 	font-family: 'Gotham', sans-serif !important;
-	a.match-row {
+	a {
 		text-decoration: none;
+
+		&.champ,
 		.matchBox {
 			z-index: 26;
 			border: $border;
 			&:hover {
 				border: 1px solid $color-championship;
+			}
+		}
+		&.champ,
+		.matchBox {
+			&:hover {
+				border: 1px solid $color-championship;
+				border-right: 4px solid $color-wildcard;
+			}
+		}
+		& > .matchBox.worldseries {
+			z-index: 26;
+			border: 2px solid $color-wildcard;
+			&:hover {
+				border: 1px solid $color-championship !important;
 			}
 		}
 	}

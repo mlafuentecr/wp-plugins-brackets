@@ -3,6 +3,9 @@
 	$divWidth: 420px;
 	$maxWidth: 1432px;
 	max-width: $maxWidth !important;
+	& .matchBox-rank {
+		font-weight: 600;
+	}
 	.bracket {
 		&-contest {
 			max-width: $maxWidth;
@@ -14,12 +17,29 @@
 					display: none;
 				}
 			}
+
+			.worldseries {
+				background: transparent !important;
+				border: none;
+				border: 1px solid $color-championship;
+				.matchBox {
+					border-right: $border;
+					z-index: 2;
+					&:hover {
+						border: 1px solid $color-championship;
+					}
+				}
+				.match-row {
+					z-index: 1;
+				}
+			}
 		}
 	}
 
 	//Menu
 	.group {
 		justify-content: space-between;
+		width: auto !important;
 		&-stages {
 			width: 100%;
 			& > div {
@@ -134,7 +154,6 @@
 				top: -95px;
 			}
 			& .group {
-				width: auto !important;
 				&-1 {
 					display: flex;
 					justify-content: flex-end;
@@ -218,7 +237,7 @@
 				min-width: auto;
 				.champ {
 					&::before {
-						right: calc(50% - 2px);
+						right: calc(50% - 1px);
 					}
 				}
 				.logo {
@@ -229,9 +248,9 @@
 				}
 			}
 		}
-		&-worldseries .worldseries {
+		.worldseries.CHAMPIONSHIP {
 			background: none;
-			border: none;
+			border: none !important;
 		}
 	}
 	.logo_league {
@@ -376,11 +395,5 @@
 			display: flex;
 			max-width: initial !important;
 		}
-	}
-}
-
-.bracket-nba {
-	& .matchBox-rank {
-		font-weight: 600;
 	}
 }

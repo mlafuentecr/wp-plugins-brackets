@@ -43,6 +43,7 @@ if ($brackets)
             $championshipMatches = $mlbObj['teams_championship'];
             $championship_logo = $mlbObj['teams_championship']['logo'];
             $championid = $mlbObj['team_champion']['team_name'];
+            $championurl = $mlbObj['team_champion']['url'];
 
             /** **************************
              * Getting RIGHT League
@@ -146,13 +147,13 @@ if ($brackets)
             $htmlContent .= '</div>';
             //champ
             $htmlContent .= '<div class="match-row">';
-            $htmlContent .= '<div class="matchBox champ">';
+            $htmlContent .= '<a href="'.$championurl.'" target="_blank"  class="matchBox champ">';
             $htmlContent .= '<div class="title">CHAMPION</div>';
             $htmlContent .= '<div class="champ-wrap">';
             $htmlContent .= '<img class="thumb" src="' . teamDestructur($championid, $json, 'thumb') . '">';
             $htmlContent .= '<div class="name">' . teamDestructur($championid, $json, 'name') . '</div>';
             $htmlContent .= '</div> ';
-            $htmlContent .= '</div>';
+            $htmlContent .= '</a>';
             $htmlContent .= '</div>';
             $htmlContent .= '</div>'; //CHAMPIONSHIP ./
             $htmlContent .= '</div>'; //

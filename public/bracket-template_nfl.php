@@ -134,15 +134,13 @@ if ($brackets)
             $htmlContent .= '</div>';
 
             //champ PONER LINK AL CENTRO DE NBA Y MLB *************************************
-            $htmlContent .= $championurl !== '' ? '<a class="match-row" href="' . $championurl . '">' : '<div class="match-row">';
-            $htmlContent .= '<div class="matchBox champ">';
+            $htmlContent .= '<a href="'.$championurl.'" target="_blank"  class="matchBox champ">';
             $htmlContent .= '<div class="title">CHAMPION</div>';
             $htmlContent .= '<div class="champ-wrap">';
             $htmlContent .= '<img class="thumb" src="' . teamDestructur($championid, $json, 'thumb') . '">';
             $htmlContent .= '<div class="name">' . teamDestructur($championid, $json, 'name') . '</div>';
             $htmlContent .= '</div> ';
-            $htmlContent .= '</div>';
-            $htmlContent .= $championurl !== '' ? '</a >' : '</div>';
+            $htmlContent .= '</a>';
             //champ ./
             $htmlContent .= '</div>';
         $htmlContent .= '</div>'; //group-center

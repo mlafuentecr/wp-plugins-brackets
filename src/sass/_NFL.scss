@@ -8,7 +8,6 @@
 		}
 		.group-left {
 			min-width: 370px;
-			background-color: pink;
 			.logo_league {
 				left: 150px;
 				top: -55px;
@@ -16,7 +15,6 @@
 		}
 		.group-right {
 			min-width: 370px;
-			background-color: pink;
 			.logo_league {
 				right: 150px;
 				top: -55px;
@@ -25,8 +23,24 @@
 		& .group-center {
 			min-width: auto !important;
 		}
-		.bracket-contest h2 {
-			width: 30vw;
+		.bracket-contest {
+			h2 {
+				width: 30vw;
+			}
+			.group {
+				&-4 {
+					.worldseries:hover {
+						border: $border;
+					}
+				}
+				.champ {
+					margin-left: auto;
+					margin-right: auto;
+					&:hover {
+						border: 1px solid $color-championship;
+					}
+				}
+			}
 		}
 	}
 }

@@ -44,7 +44,7 @@ function teamRender($matches, $jsonTeams, $key) {
 function matchValues($matchesValue, $jsonTeams, $matchKey, $class) {
   $box = '';
 
-  $box .= $matchesValue['url'] !== '' ? '<a class="match-row ' . $matchKey . '" href="' . $matchesValue['url'] . '">' : '<div class="match-row ' . $matchKey . '">';
+  $box .= $matchesValue['url'] !== '' ? '<a target="_blank" class="match-row ' . $matchKey . '" href="' . $matchesValue['url'] . '">' : '<div class="match-row ' . $matchKey . '">';
   $box .= '<div class="matchBox ' . $class . '">';
 
   foreach ($matchesValue as $key => $matches) {

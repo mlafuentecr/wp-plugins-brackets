@@ -96,30 +96,30 @@ if ($brackets)
              **************************
              */
             $htmlContent .= '<div class="group-left">';
-            $htmlContent .= '<section class="group-stages">';
-            $htmlContent .= '<div><div class="stages-link">WILDCARD <span>Series</span></div>  <div class="date"> ' . $wildDate . '</div> </div>';
-            $htmlContent .= '<div><div class="stages-link division">DIVISION <span>Series</span></div> <div class="date"> ' . $divisionDate . '</div> </div>';
-            $htmlContent .= '<div><div class="stages-link championship">CHAMPIONSHIP <span>Series</span></div> <div class="date"> ' . $championshipDate . '</div> </div>';
-            $htmlContent .= '<div><div class="stages-link worldSeries">World <span>Series</span></div></div>';
-            $htmlContent .= '</section>';
+                $htmlContent .= '<section class="group-stages">';
+                $htmlContent .= '<div><div class="stages-link">WILDCARD <span>Series</span></div>  <div class="date"> ' . $wildDate . '</div> </div>';
+                $htmlContent .= '<div><div class="stages-link division">DIVISION <span>Series</span></div> <div class="date"> ' . $divisionDate . '</div> </div>';
+                $htmlContent .= '<div><div class="stages-link championship">CHAMPIONSHIP <span>Series</span></div> <div class="date"> ' . $championshipDate . '</div> </div>';
+                $htmlContent .= '<div><div class="stages-link worldSeries">World <span>Series</span></div></div>';
+                $htmlContent .= '</section>';
 
-            $htmlContent .= '<section class="group-match">';
-            //wildcard
-            $htmlContent .= '<div id="group-1" class="group-1 group-wildcard">';
-            $htmlContent .= '<img class="logo_league"  width="269px" src="' . $legue_logo_L['url'] . '">';
-            $htmlContent .= matchContent($wildMatches, $json, 'wildcard');
-            $htmlContent .= '</div>';
-            //division
-            $htmlContent .= '<div id="group-2" class="group-2 group-division">';
-            $htmlContent .= matchContent($divisionMatches, $json, 'division');
-            $htmlContent .= '</div>';
+                $htmlContent .= '<section class="group-match">';
+                //wildcard
+                $htmlContent .= '<div id="group-1" class="group-1 group-wildcard">';
+                $htmlContent .= '<img class="logo_league"  width="269px" src="' . $legue_logo_L['url'] . '">';
+                $htmlContent .= matchContent($wildMatches, $json, 'wildcard');
+                $htmlContent .= '</div>';
+                //division
+                $htmlContent .= '<div id="group-2" class="group-2 group-division">';
+                $htmlContent .= matchContent($divisionMatches, $json, 'division');
+                $htmlContent .= '</div>';
 
-            //championship
-            $htmlContent .= '<div id="group-3" class="group-3 group-championship">';
-            $htmlContent .= matchContent($championshipMatches, $json, 'championship');
-            $htmlContent .= '</div>';
+                //championship
+                $htmlContent .= '<div id="group-3" class="group-3 group-championship">';
+                $htmlContent .= matchContent($championshipMatches, $json, 'championship');
+                $htmlContent .= '</div>';
 
-            $htmlContent .= '</section>'; //match-group
+                $htmlContent .= '</section>'; //match-group
             $htmlContent .= '</div>'; //match-group
             
             /** **************************
@@ -140,12 +140,12 @@ if ($brackets)
             $htmlContent .= $worldseries_link ? '</a>' : '</div>';
 
             //champ
-            $htmlContent .= $worldseries_link !== '' ? '<a href="' . $championurl . '" class="match-row">' : '<a class="match-row">';
+            $htmlContent .= $worldseries_link !== '' ? '<a href="' . $championurl . '" class="match-row 11">' : '<div class="match-row 22">';
             $htmlContent .= '<div class="matchBox champ">';
-            $htmlContent .= '<div class="title">CHAMPION</div>';
-            $htmlContent .= '<div class="champ-wrap">';
-            $htmlContent .= '<img class="thumb" src="' . teamDestructur($championid, $json, 'thumb') . '">';
-            $htmlContent .= '<div class="name">' . teamDestructur($championid, $json, 'name') . '</div>';
+                $htmlContent .= '<div class="title">CHAMPION</div>';
+                $htmlContent .= '<div class="champ-wrap">';
+                $htmlContent .= '<img class="thumb" src="' . teamDestructur($championid, $json, 'thumb') . '">';
+                $htmlContent .= '<div class="name">' . teamDestructur($championid, $json, 'name') . '</div>';
             $htmlContent .= '</div> ';
             $htmlContent .= '</div>';
             $htmlContent .= $worldseries_link ? '</a>' : '</div>';
