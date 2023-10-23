@@ -9,6 +9,8 @@ if ($brackets)
         $league = $row['select_a_league']['value'];
 
         if ($league === 'NBA'):
+            
+        //ACF VARIABLES
             $data = $row['lista_de_teams_json'];
             $json = json_decode($data, true);
             $mlbObj = $row['NBA'];
@@ -17,7 +19,7 @@ if ($brackets)
             /** **************************
              * Getting Left League
              **************************
-             */
+                */
             $stages = $mlbObj['league_left'];
             $legue_logo_L = $mlbObj['league_left']['logo'];
 
@@ -36,7 +38,7 @@ if ($brackets)
             /** **************************
              * Getting Center worldseries
              **************************
-             */
+                */
             //Championship
             $championshipMatches = $mlbObj['teams_championship'];
             $championship_logo = $mlbObj['teams_championship']['logo'];
@@ -45,7 +47,7 @@ if ($brackets)
             /** **************************
              * Getting RIGHT League
              **************************
-             */
+                */
             $legue_logo_R = $mlbObj['league_right']['logo'];
 
             //divisiona
@@ -60,42 +62,43 @@ if ($brackets)
             //finals
             $finalsDate_R = $mlbObj['league_right']['teams_finals']['date'];
             $finalsMatches_R = $mlbObj['league_right']['teams_finals'];
+        //ACF VARIABLES \
 
-            /** **************************
-             * HTML
-             **************************
-             */
-            $htmlContent = '<main class="bracket_container bracket-nba">';
+        /** **************************
+         * HTML
+         **************************
+            */
+        $htmlContent = '<main class="bracket_container bracket-nba">';
 
-            $htmlContent .= '<section class="bracket-mobile">';
-            $htmlContent .= '<div class="menu"> ';
-            $htmlContent .= '<h2>' . $bracket_title . '</h2>';
-            $htmlContent .= '<div class="logos"> ';
-            $htmlContent .= '<div  class="logo legue_logo_L active" > <img width="269px" src="' . $legue_logo_L . '"></div>';
-            $htmlContent .= '<div  class="logo legue_logo_R"        > <img width="269px" src="' . $legue_logo_R . '"></div>';
-            $htmlContent .= '</div>';
+        $htmlContent .= '<section class="bracket-mobile">';
+        $htmlContent .= '<div class="menu"> ';
+        $htmlContent .= '<h2>' . $bracket_title . '</h2>';
+        $htmlContent .= '<div class="logos"> ';
+        $htmlContent .= '<div  class="logo legue_logo_L active" > <img width="269px" src="' . $legue_logo_L . '"></div>';
+        $htmlContent .= '<div  class="logo legue_logo_R"        > <img width="269px" src="' . $legue_logo_R . '"></div>';
+        $htmlContent .= '</div>';
 
-            $htmlContent .= '<div class="series"> ';
-            $htmlContent .= '<div data-type="group-1" class="serie active" >Play-In</div>';
-            $htmlContent .= '<div data-type="group-2" class="serie "       >1ST Round</div>';
-            $htmlContent .= '<div data-type="group-3" class="serie "   >Semifinals </div>';
-            $htmlContent .= '<div data-type="group-4" class="serie "    >FINALS </div>';
-            $htmlContent .= '<div data-type="group-5" class="serie "    >Championship </div>';
-            $htmlContent .= '</div>';
-            $htmlContent .= '</div>';
-            $htmlContent .= '</section>';
+        $htmlContent .= '<div class="series"> ';
+        $htmlContent .= '<div data-type="group-1" class="serie active" >Play-In</div>';
+        $htmlContent .= '<div data-type="group-2" class="serie "       >1ST Round</div>';
+        $htmlContent .= '<div data-type="group-3" class="serie "   >Semifinals </div>';
+        $htmlContent .= '<div data-type="group-4" class="serie "    >FINALS </div>';
+        $htmlContent .= '<div data-type="group-5" class="serie "    >Championship </div>';
+        $htmlContent .= '</div>';
+        $htmlContent .= '</div>';
+        $htmlContent .= '</section>';
 
-            $htmlContent .= '<div class="bracket-contest">';
-            $htmlContent .= '<h2>' . $bracket_title . '</h2>';
-            $htmlContent .= '<div class="bracketContest-wrap">';
-            $htmlContent .= '<div class="scroll-wrap">';
-            $htmlContent .= '<section class="group">';
+        $htmlContent .= '<div class="bracket-contest">';
+        $htmlContent .= '<h2>' . $bracket_title . '</h2>';
+        $htmlContent .= '<div class="bracketContest-wrap">';
+        $htmlContent .= '<div class="scroll-wrap">';
+        $htmlContent .= '<section class="group">';
 
-            /** **************************
-             * Getting Left League
-             **************************
-             */
-            $htmlContent .= '<div class="group-left">';
+        /** **************************
+         * Getting Left League
+         **************************
+            */
+        $htmlContent .= '<div class="group-left">';
             $htmlContent .= '<img class="logo_league"  width="269px" src="' . $legue_logo_L . '">';
 
             $htmlContent .= '<section class="group-stages">';
@@ -125,13 +128,13 @@ if ($brackets)
             $htmlContent .= matchContent($finalsMatches, $json, 'finals');
             $htmlContent .= '</div>';
             $htmlContent .= '</section>'; //match-group
-            $htmlContent .= '</div>'; //group-left
-            
-            /** **************************
-             * Getting Center
-             **************************
-             */
-            $htmlContent .= '<div id="group-5" class="group-center">';
+        $htmlContent .= '</div>'; //group-left
+        
+        /** **************************
+         * Getting Center
+         **************************
+        */
+        $htmlContent .= '<div id="group-5" class="group-center">';
             //CHAMPIONSHIP
             $htmlContent .= '<div class="group-5 group-worldseries  group-championship">';
             $htmlContent .= '<img width="165px" class="logo" src="' . $championship_logo . '">';
@@ -152,15 +155,15 @@ if ($brackets)
             $htmlContent .= '</div>';
             $htmlContent .= '</div>';
             $htmlContent .= '</div>'; //CHAMPIONSHIP ./
-            $htmlContent .= '</div>'; //group-center
             $htmlContent .= '</div>'; //
-            
-            /** **************************
-             * Getting Right League
-             **************************
-             */
-            $htmlContent .= '<div class="group-right">';
-            $htmlContent .= '<img class="logo_league"  width="269px" src="' . $legue_logo_L . '">';
+        $htmlContent .= '</div>'; //group-center
+        
+        /** **************************
+         * Getting Right League
+         **************************
+        */
+        $htmlContent .= '<div class="group-right">';
+            $htmlContent .= '<img class="logo_league"  width="269px" src="' . $legue_logo_R . '">';
 
             $htmlContent .= '<section class="group-stages">';
             $htmlContent .= '<div><div class="stages-link">Divisional </div>  <div class="date"> ' . $divisionaDate . '</div> </div>';
@@ -190,13 +193,14 @@ if ($brackets)
             $htmlContent .= '</div>';
 
             $htmlContent .= '</section>'; //match-group
-            $htmlContent .= '</div>'; //group-right
-            $htmlContent .= '</section>'; //match-group
-            $htmlContent .= '</div>'; //bracketContest-wrap
-            $htmlContent .= '</div>';
-            $htmlContent .= '</div>';
-            $htmlContent .= '</main>';
-            echo $htmlContent;
+        $htmlContent .= '</div>'; //group-right
+
+        $htmlContent .= '</section>'; //match-group
+        $htmlContent .= '</div>'; //bracketContest-wrap
+        $htmlContent .= '</div>';
+        $htmlContent .= '</div>';
+        $htmlContent .= '</main>';
+        echo $htmlContent;
 
         endif;
     }

@@ -1,10 +1,22 @@
 @import 'variable';
 .bracket-nba {
-	$divWidth: 550px;
-	.bracket-contest {
-		max-width: 1480px;
-		width: 1480px;
+	$divWidth: 420px;
+	$maxWidth: 1432px;
+	max-width: $maxWidth !important;
+	.bracket {
+		&-contest {
+			max-width: $maxWidth;
+			width: 100% !important;
+			padding: 0px;
+			h2 {
+				&::before,
+				&::after {
+					display: none;
+				}
+			}
+		}
 	}
+
 	//Menu
 	.group {
 		justify-content: space-between;
@@ -46,7 +58,7 @@
 			max-width: $divWidth;
 			.logo_league {
 				left: 150px;
-				top: -120px;
+				top: -95px;
 			}
 			& .group {
 				&-1 {
@@ -116,11 +128,13 @@
 			min-width: auto;
 			max-width: $divWidth;
 			align-content: end;
+			position: relative;
 			.logo_league {
 				right: 150px;
-				top: -45px;
+				top: -95px;
 			}
 			& .group {
+				width: auto !important;
 				&-1 {
 					display: flex;
 					justify-content: flex-end;
@@ -181,8 +195,7 @@
 		}
 
 		.matchBox {
-			width: calc($divWidth/4 - 20px);
-			min-width: 160px;
+			width: $col-width;
 			border-right: 4px solid $color-wildcard;
 		}
 		.match-row {
@@ -192,7 +205,7 @@
 			}
 		}
 		&-center {
-			min-width: 185px;
+			min-width: 185px !important;
 			.group-championship {
 				display: flex;
 				flex-direction: column;
@@ -226,15 +239,101 @@
 		max-width: 75px;
 	}
 
-	.bracket-contest h2 {
-		width: 30vw;
-		&::before,
-		&::after {
-			display: none;
-		}
-	}
 	& .matchBox-rank {
 		font-weight: 600;
+	}
+
+	@media (max-width: $xl) {
+		.bracket {
+			&-contest {
+				h2 {
+					display: none;
+				}
+			}
+			&-mobile {
+				display: flex;
+				flex-direction: column;
+				margin: 1rem;
+				max-width: 100vw;
+				h2 {
+					background-color: #f3f3f3;
+					padding: 1rem;
+					font-size: clamp(12px, 2vw, 32px);
+					text-align: center;
+					font-weight: 600;
+				}
+				.menu {
+					display: flex;
+					flex-direction: column;
+					& .logos {
+						display: flex;
+						gap: 10px;
+						& .logo {
+							display: flex;
+							flex: 1;
+							justify-content: center;
+							border-bottom: 4px solid transparent;
+							&.active {
+								border-bottom: 4px solid $color-wildcard;
+							}
+							& img {
+								height: fit-content;
+								max-width: 145px;
+							}
+						}
+					}
+
+					.series {
+						display: flex;
+						gap: 10px;
+
+						.serie {
+							display: flex;
+							flex: 1;
+							flex-direction: column;
+							justify-content: center;
+							text-align: center;
+							line-height: 15px;
+							text-decoration: none;
+							font-size: 12px;
+							font-weight: 500;
+							text-transform: uppercase;
+							padding: 20px 0px;
+							border-bottom: 4px solid transparent;
+							&.active {
+								color: $color-wildcard;
+								border-bottom: 4px solid $color-wildcard;
+							}
+							&:hover {
+								color: $color-wildcard;
+							}
+						}
+					}
+				}
+			}
+		}
+		.group {
+			&-stages {
+				display: none !important;
+			}
+			&-left,
+			&-right {
+				max-width: 350px;
+			}
+			&-center {
+				min-width: 300px !important;
+			}
+			&-left {
+				.group-4 {
+					left: auto;
+				}
+			}
+			&-right {
+				.group-4 {
+					left: auto;
+				}
+			}
+		}
 	}
 }
 
@@ -248,7 +347,7 @@
 }
 
 //MOBILE
-@media (max-width: $lg) {
+@media (max-width: $xl) {
 	.bracket-nba {
 		max-width: auto;
 		width: auto;
@@ -274,6 +373,7 @@
 			}
 		}
 		.bracket-mobile {
+			display: flex;
 			max-width: initial !important;
 		}
 	}

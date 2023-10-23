@@ -223,7 +223,7 @@
 		text-decoration: none;
 		.matchBox {
 			z-index: 26;
-			border: 1px solid #484a4e;
+			border: $border;
 			&:hover {
 				border: 1px solid $color-championship;
 			}
@@ -247,9 +247,10 @@
 		align-items: center;
 		flex-direction: column;
 		width: $col-width;
-		border: 1px solid #484a4e;
+		border: $border;
 		border-radius: 5px;
 		overflow: hidden;
+		z-index: 26;
 		&:has(> .deactivate) {
 			border: 1px solid #c3c3c3;
 			border-right: 3px solid gray !important;
@@ -258,7 +259,8 @@
 			cursor: context-menu;
 			text-decoration: none;
 			&:hover {
-				border: 1px solid #c3c3c3 !important;
+				border: $border !important;
+				border-right: 3px solid gray !important;
 			}
 		}
 		&-team {
@@ -605,7 +607,6 @@
 					}
 				}
 				&-2 {
-					left: 0px;
 					.match_1::after,
 					.match_2::after {
 						right: 70%;
@@ -618,7 +619,6 @@
 					}
 				}
 				&-3 {
-					left: 0px;
 					&::before {
 						right: auto;
 						left: -180px;

@@ -7,16 +7,23 @@
 			max-width: 105px;
 		}
 		.group-left {
+			min-width: 370px;
+			background-color: pink;
 			.logo_league {
 				left: 150px;
 				top: -55px;
 			}
 		}
 		.group-right {
+			min-width: 370px;
+			background-color: pink;
 			.logo_league {
 				right: 150px;
 				top: -55px;
 			}
+		}
+		& .group-center {
+			min-width: auto !important;
 		}
 		.bracket-contest h2 {
 			width: 30vw;
