@@ -1,0 +1,738 @@
+@media (max-width: $lg) {
+	.scroll-wrap {
+		width: 1200px;
+		overflow-x: scroll;
+	}
+	.bracket {
+		//Menu
+		&-mobile {
+			display: flex;
+			flex-direction: column;
+			margin: 1rem;
+			max-width: 100vw;
+			h2 {
+				background-color: #f3f3f3;
+				padding: 1rem;
+				font-size: clamp(12px, 2vw, 32px);
+				text-align: center;
+				font-weight: 600;
+			}
+			.menu {
+				display: flex;
+				flex-direction: column;
+				& .logos {
+					display: flex;
+					gap: 10px;
+					& .logo {
+						display: flex;
+						flex: 1;
+						justify-content: center;
+						border-bottom: 4px solid transparent;
+						&.active {
+							border-bottom: 4px solid $color-wildcard;
+						}
+						& img {
+							height: fit-content;
+							max-width: 145px;
+						}
+					}
+				}
+
+				.series {
+					display: flex;
+					gap: 10px;
+
+					.serie {
+						display: flex;
+						flex: 1;
+						flex-direction: column;
+						justify-content: center;
+						text-align: center;
+						line-height: 15px;
+						text-decoration: none;
+						font-size: 12px;
+						font-weight: 500;
+						text-transform: uppercase;
+						padding: 20px 0px;
+						border-bottom: 4px solid transparent;
+						&.active {
+							color: $color-wildcard;
+							border-bottom: 4px solid $color-wildcard;
+						}
+						&:hover {
+							color: $color-wildcard;
+						}
+					}
+				}
+			}
+		}
+		&-contest {
+			//Mobile
+			position: relative;
+			overflow: hidden;
+			border-radius: 10px;
+			margin: auto;
+			max-width: 100vw;
+			border: 1px solid rgb(155, 155, 155);
+			padding: 10px;
+			& a,
+			& a.match-row {
+				color: black !important;
+			}
+
+			h2 {
+				font-size: clamp(12px, 2vw, 32px);
+				text-align: center;
+				margin: auto;
+				background-color: #f3f3f3;
+				width: 90vw;
+				padding: 8px;
+				font-weight: 600;
+				display: none;
+			}
+			.bracketContest-wrap {
+				justify-content: space-between;
+				display: flex;
+				align-content: center;
+				flex-wrap: wrap;
+
+				& > p {
+					display: none;
+				}
+			}
+			& .group-stages {
+				display: none;
+			}
+		}
+	}
+}
+//IF WP PAGE IS LESS THAN 1200px
+.swithMobile {
+	.scroll-wrap {
+		width: 1200px;
+		overflow-x: scroll;
+	}
+	.bracket {
+		&-mobile {
+			display: flex;
+			flex-direction: column;
+			margin: 1rem;
+			max-width: 100vw;
+			h2 {
+				background-color: #f3f3f3;
+				padding: 1rem;
+				font-size: clamp(12px, 2vw, 32px);
+				text-align: center;
+				font-weight: 600;
+			}
+			.menu {
+				display: flex;
+				flex-direction: column;
+				& .logos {
+					display: flex;
+					gap: 10px;
+					& .logo {
+						display: flex;
+						flex: 1;
+						justify-content: center;
+						border-bottom: 4px solid transparent;
+						&.active {
+							border-bottom: 4px solid $color-wildcard;
+						}
+						& img {
+							height: fit-content;
+							max-width: 145px;
+						}
+					}
+				}
+
+				.series {
+					display: flex;
+					gap: 10px;
+
+					.serie {
+						display: flex;
+						flex: 1;
+						flex-direction: column;
+						justify-content: center;
+						text-align: center;
+						line-height: 15px;
+						text-decoration: none;
+						font-size: 12px;
+						font-weight: 500;
+						text-transform: uppercase;
+						padding: 20px 0px;
+						border-bottom: 4px solid transparent;
+						&.active {
+							color: $color-wildcard;
+							border-bottom: 4px solid $color-wildcard;
+						}
+						&:hover {
+							color: $color-wildcard;
+						}
+					}
+				}
+			}
+		}
+		&-contest {
+			//Mobile
+			position: relative;
+			overflow: hidden;
+			border-radius: 10px;
+			margin: auto;
+			max-width: 100vw;
+			border: 1px solid rgb(155, 155, 155);
+			h2 {
+				font-size: clamp(12px, 2vw, 32px);
+				text-align: center;
+				margin: auto;
+				background-color: #f3f3f3;
+				width: 90vw;
+				padding: 8px;
+				font-weight: 600;
+				display: none;
+			}
+			.group-2,
+			.group-3 {
+				left: initial;
+			}
+			.group-left,
+			.group-right {
+				min-width: auto;
+			}
+			.bracketContest-wrap {
+				justify-content: space-between;
+				display: flex;
+				align-content: center;
+				flex-wrap: wrap;
+
+				& > p {
+					display: none;
+				}
+			}
+		}
+	}
+	& .group-stages {
+		display: none !important;
+	}
+}
+.bracket-contest {
+	font-family: 'Gotham', sans-serif !important;
+	a {
+		text-decoration: none;
+
+		&.champ,
+		.matchBox {
+			z-index: 26;
+			border: $border;
+		}
+		// &.champ,
+		// .matchBox {
+		// }
+		& > .matchBox.worldseries {
+			z-index: 26;
+			.worldseries-wrap {
+				border: 2px solid $color-wildcard;
+			}
+
+			// &:hover {
+			// 	border: 1px solid $color-championship !important;
+			// }
+		}
+	}
+	// Championship
+	.match-championship {
+		display: flex;
+		background-color: gray;
+		width: 100%;
+		text-align: center;
+		justify-content: center;
+	}
+
+	.matchBox {
+		height: 80px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+		display: flex;
+		background-color: white;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+		width: $col-width;
+		border: $border;
+		border-radius: 5px;
+		overflow: hidden;
+		z-index: 26;
+		&:hover {
+			border: 1px solid $color-championship;
+			cursor: pointer;
+		}
+		&:has(> .deactivate) {
+			border: 1px solid #c3c3c3;
+			border-right: 3px solid gray !important;
+			background-color: #f3f3f3;
+			color: currentColor;
+			cursor: context-menu;
+			text-decoration: none;
+			&:hover {
+				border: $border !important;
+				border-right: 3px solid gray !important;
+			}
+		}
+		&-team {
+			width: 100%;
+			margin: 0 5px;
+			font-size: 12px;
+			min-height: 30px;
+			display: flex;
+			padding: 5px;
+		}
+		&-team:nth-child(2) {
+			background-color: #f3f3f3;
+		}
+		& > p {
+			display: none;
+		}
+		&-logo {
+			height: 25px;
+			display: flex;
+			align-items: center;
+			margin-left: 10px;
+		}
+		&-nickname {
+			margin-left: 5px;
+			display: flex;
+			align-items: center;
+			flex: 2;
+			justify-content: center;
+		}
+		&-teamName {
+			margin-left: 5px;
+			display: flex;
+			align-items: center;
+			flex: 1;
+			line-height: 12px;
+		}
+		&-rank {
+			font-weight: 500;
+			margin-left: 5px;
+			display: flex;
+			align-items: center;
+			margin-right: 10px;
+		}
+		&.wildcard {
+			border-right: 4px solid $color-wildcard;
+		}
+		&.division {
+			border-right: 4px solid $color-division;
+		}
+		&.championship {
+			border-right: 4px solid $color-championship;
+		}
+	}
+	.match-row {
+		display: flex;
+		flex: 1;
+		align-content: center;
+		flex-wrap: wrap;
+		flex-direction: column;
+
+		&:last-child {
+			justify-content: flex-end;
+			align-content: flex-end;
+		}
+	}
+	.group {
+		background-color: white;
+		width: 100%;
+		display: flex;
+		padding: 5px;
+		justify-content: space-between;
+		&-match {
+			display: flex;
+			height: $bracketHeight;
+		}
+		&-left {
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+		}
+		&-center {
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			flex-wrap: wrap;
+		}
+
+		&-1 {
+			position: relative;
+			height: 100%;
+
+			p {
+				display: none;
+			}
+			.logo {
+				position: absolute;
+				max-width: 250px !important;
+				height: 160px;
+				top: calc($bracketHeight / 2 - 80px);
+				z-index: 20;
+			}
+			.match_1 {
+				position: relative;
+				&::after {
+					@include line_v(80px, 80px, auto, 30%, auto); //$height,  $top, $bottom, $right, $left
+				}
+				&::before {
+					$moveit: calc(100% - 30%); //30% same has above line
+					@include line_h(80px, 160px, auto, auto, $moveit); //$width,  $top, $bottom, $right, $left
+				}
+			}
+			.match_2 {
+				position: relative;
+				&::after {
+					@include line_v(80px, auto, 80px, 30%, auto); //$height, $top, $bottom, $right, $pos
+				}
+				&::before {
+					$moveit: calc(100% - 30%); //30% same has above line
+					@include line_h(80px, auto, 160px, auto, $moveit); //$width,  $top, $bottom, $right, $left
+				}
+			}
+		}
+		//.group-division
+		&-2 {
+			margin-top: 120px;
+			margin-bottom: 120px;
+			position: relative;
+			z-index: 25;
+			display: flex;
+			flex-direction: column;
+			p {
+				display: none;
+			}
+			.match_1 {
+				position: relative;
+				&::after {
+					@include line_v(80px, 81px, auto, 30%, auto); //$height,  $top, $bottom, $right, $left
+				}
+				&::before {
+					$moveit: calc(100% - 30%); //30% same has above line
+					@include line_h(80px, 160px, auto, auto, $moveit); //$width,  $top, $bottom, $right, $left
+				}
+			}
+			.match_2 {
+				position: relative;
+				&::after {
+					@include line_v(80px, auto, 81px, 30%, auto); //$height, $top, $bottom, $right, $pos
+				}
+				&::before {
+					$moveit: calc(100% - 30%); //30% same has above line
+					@include line_h(80px, auto, 160px, auto, $moveit); //$width,  $top, $bottom, $right, $left
+				}
+			}
+		}
+		//championship
+		&-3 {
+			height: 100%;
+			position: relative;
+
+			&::before {
+				@include line_h(250px, auto, 50%, -250px, auto); //$width,  $top, $bottom, $right, $left
+			}
+			.championship {
+				z-index: 30;
+			}
+			p {
+				display: none;
+			}
+			.match-row {
+				height: 100%;
+				align-content: center;
+				justify-content: center;
+			}
+		}
+		&-4 {
+			& > .worldseries .worldseries-wrap .matchBox {
+				&:hover {
+					border: 1px solid $color-championship;
+				}
+			}
+			a {
+				text-decoration: none;
+			}
+		}
+		&-center {
+			z-index: 50;
+			min-width: 400px;
+		}
+		&-worldseries {
+			text-align: center;
+			.worldseries {
+				padding: 10px;
+				width: 200px;
+				justify-content: center;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				background: #f3f3f3 0% 0% no-repeat padding-box;
+				border: 1px solid #707070;
+				border-radius: 10px;
+				padding-top: 20px;
+				padding-bottom: 20px;
+				margin: auto;
+				position: relative;
+				font-size: 1.2rem;
+				z-index: 100;
+
+				.title {
+					font-weight: 700;
+					font-size: 1.2rem;
+					text-transform: uppercase;
+					margin-bottom: 10px;
+				}
+
+				.worldseries-wrap {
+					.matchBox {
+						width: $col-width;
+						display: flex;
+						flex-direction: row;
+						padding: 0px;
+						border: 1px solid #707070;
+						&-teamName {
+							height: 5px;
+							min-height: 5px;
+							padding: 0px;
+							margin: 0px !important;
+							line-height: 12px;
+							margin-bottom: 10px !important;
+						}
+						&-team {
+							background: #f3f3f3 0% 0% no-repeat padding-box;
+							padding: 0px;
+							margin: 0px;
+							border-radius: 10px 0px 0px 10px;
+							display: flex;
+							flex: 1;
+							flex-direction: column;
+							justify-content: center;
+							align-content: center;
+							flex-wrap: wrap;
+							height: 100%;
+							text-align: center;
+							&:first-child {
+								border-right: 2px solid #707070;
+							}
+							* {
+								display: flex;
+								width: 100%;
+								margin: auto;
+								justify-content: center;
+							}
+							p {
+								display: none;
+							}
+							img {
+								width: 25px;
+								height: 25px;
+								margin-top: 10px;
+							}
+							&:nth-child(2) {
+								border-radius: 0px 10px 10px 0px;
+							}
+						}
+					}
+				}
+			}
+			.match-row {
+				align-content: center !important;
+				overflow: initial;
+			}
+		}
+		//group-stages Tabs
+		&-stages {
+			flex: 1;
+			justify-content: space-between;
+			margin-bottom: 2rem;
+
+			.date {
+				font-size: 12px;
+				text-align: center;
+				height: 12px;
+				line-height: 12px;
+				padding: 5px 0px;
+			}
+			p {
+				display: none;
+			}
+			.stages-link,
+			span {
+				height: 35px;
+				display: flex;
+				justify-content: center;
+				align-content: center;
+				text-decoration: none;
+				flex-wrap: wrap;
+				opacity: 0;
+			}
+			.stages-link {
+				opacity: 1;
+				font-size: 12px;
+				font-weight: 700;
+				text-transform: uppercase;
+				display: flex;
+				flex-direction: column;
+				span {
+					opacity: 1;
+					height: 15px;
+					text-transform: uppercase;
+				}
+			}
+		}
+
+		&-wildcard {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-content: flex-end;
+			flex-direction: column;
+			.logo {
+				left: 0px;
+				right: auto;
+			}
+		}
+
+		&-right {
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+
+			.group {
+				&-stages,
+				&-match {
+					flex-direction: row-reverse;
+				}
+				&-1 {
+					left: 0px;
+					.logo {
+						left: auto;
+						right: 0px;
+					}
+					.match_1::after,
+					.match_2::after {
+						right: 70%;
+					}
+				}
+				&-2 {
+					.match_1::after,
+					.match_2::after {
+						right: 70%;
+					}
+					.match_1::before,
+					.match_2::before {
+						$moveit: calc(-30% + 2px);
+						left: $moveit;
+						right: auto;
+					}
+				}
+				&-3 {
+					&::before {
+						right: auto;
+						left: -180px;
+						width: 180px;
+					}
+				}
+			}
+
+			#group-1_R {
+				.match_1::before,
+				.match_2::before {
+					left: auto;
+					right: 70%;
+				}
+			}
+			#group-2_R {
+				.match_1::before,
+				.match_2::before {
+					left: 30%;
+					right: auto;
+					transform: rotate(180deg);
+					transform-origin: top left;
+				}
+			}
+			//Flip elements
+			& .matchBox-old {
+				&-team {
+					flex-direction: row-reverse;
+				}
+				&-logo {
+					margin-left: initial;
+					margin-right: 10px;
+				}
+				&-nickname {
+					margin-left: initial;
+					margin-right: 5px;
+					justify-content: end;
+				}
+				&-rank {
+					margin-left: 10px;
+					margin-right: 5px;
+				}
+				&.wildcard {
+					border-right: 1px solid #c3c3c3 !important;
+					border-left: 4px solid $color-wildcard;
+				}
+				&.division {
+					border-right: 1px solid #c3c3c3 !important;
+					border-left: 4px solid $color-division;
+				}
+				&.championship {
+					border-right: 1px solid #c3c3c3 !important;
+					border-left: 4px solid $color-championship;
+				}
+				&:has(> .deactivate) {
+					border: 1px solid #c3c3c3;
+					border-right: 1px solid #c3c3c3 !important;
+					border-left: 3px solid gray;
+					background-color: #f3f3f3;
+				}
+			}
+		}
+
+		.champ {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			margin-top: 30px;
+			position: relative;
+			overflow: initial;
+			z-index: 90;
+			font-size: 1rem;
+
+			&::before {
+				@include line-v(71px, -71px, auto, 50%, auto); //$height,  $top, $bottom, $right, $left
+			}
+			.title {
+				font-weight: 700;
+			}
+			&-wrap {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				align-self: center;
+				gap: 10px;
+			}
+			img {
+				width: 25px;
+				height: 25px;
+			}
+		}
+
+		.thumb {
+			width: 30px;
+		}
+	}
+}
+
+* {
+	scroll-behavior: smooth;
+}

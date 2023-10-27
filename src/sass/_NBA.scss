@@ -25,9 +25,9 @@
 				.matchBox {
 					border-right: $border;
 					z-index: 2;
-					&:hover {
-						border: 1px solid $color-championship;
-					}
+					// &:hover {
+					// 	border: 1px solid $color-championship;
+					// }
 				}
 				.match-row {
 					z-index: 1;
@@ -100,7 +100,9 @@
 					margin-left: 10px;
 					margin-top: initial;
 					margin-bottom: initial;
-
+					.matchBox {
+						border-right: 4px solid $color-wildcard;
+					}
 					& :nth-child(2).match-row {
 						margin-bottom: 180px;
 					}
@@ -176,6 +178,9 @@
 					& :nth-child(2).match-row {
 						margin-bottom: 180px;
 					}
+					.matchBox {
+						border-right: 4px solid $color-wildcard;
+					}
 				}
 				&-3 {
 					left: auto;
@@ -236,8 +241,16 @@
 				text-align: center;
 				min-width: auto;
 				.champ {
+					&:hover {
+						border: 1px solid $color-championship;
+					}
 					&::before {
 						right: calc(50% - 1px);
+					}
+				}
+				.worldseries .worldseries-wrap .matchBox {
+					&:hover {
+						border: 1px solid $color-championship;
 					}
 				}
 				.logo {
@@ -323,9 +336,9 @@
 								color: $color-wildcard;
 								border-bottom: 4px solid $color-wildcard;
 							}
-							&:hover {
-								color: $color-wildcard;
-							}
+							// &:hover {
+							// 	color: $color-wildcard;
+							// }
 						}
 					}
 				}

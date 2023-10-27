@@ -13,56 +13,56 @@ if ($brackets)
         //ACF VARIABLES
             $data = $row['lista_de_teams_json'];
             $json = json_decode($data, true);
-            $mlbObj = $row['NBA'];
+            $nhlObj = $row['NBA'];
             $bracket_title = $row['bracket_title'];
 
             /** **************************
              * Getting Left League
              **************************
                 */
-            $stages = $mlbObj['league_left'];
-            $legue_logo_L = $mlbObj['league_left']['logo'];
+            $stages = $nhlObj['league_left'];
+            $legue_logo_L = $nhlObj['league_left']['logo'];
 
             //divisiona
-            $divisionaDate = $mlbObj['league_left']['teams_divisional']['date'];
-            $divisionalMatches = $mlbObj['league_left']['teams_divisional'];
+            $divisionaDate = $nhlObj['league_left']['teams_divisional']['date'];
+            $divisionalMatches = $nhlObj['league_left']['teams_divisional'];
             //Round1st
-            $round1stDate = $mlbObj['league_left']['teams_1st_round']['date'];
-            $round1stMatches = $mlbObj['league_left']['teams_1st_round'];
+            $round1stDate = $nhlObj['league_left']['teams_1st_round']['date'];
+            $round1stMatches = $nhlObj['league_left']['teams_1st_round'];
             //semifinals
-            $semifinalsDate = $mlbObj['league_left']['teams_seminals']['date'];
-            $semifinalsMatches = $mlbObj['league_left']['teams_seminals'];
+            $semifinalsDate = $nhlObj['league_left']['teams_seminals']['date'];
+            $semifinalsMatches = $nhlObj['league_left']['teams_seminals'];
             //finals
-            $finalsDate = $mlbObj['league_left']['teams_finals']['date'];
-            $finalsMatches = $mlbObj['league_left']['teams_finals'];
+            $finalsDate = $nhlObj['league_left']['teams_finals']['date'];
+            $finalsMatches = $nhlObj['league_left']['teams_finals'];
             /** **************************
              * Getting Center worldseries
              **************************
                 */
             //Championship
-            $championshipMatches = $mlbObj['teams_championship'];
-            $championship_logo = $mlbObj['teams_championship']['logo'];
-            $championid = $mlbObj['team_champion']['team_name'];
-            $championurl = $mlbObj['team_champion']['url'];
+            $championshipMatches = $nhlObj['teams_championship'];
+            $championship_logo = $nhlObj['teams_championship']['logo'];
+            $championid = $nhlObj['team_champion']['team_name'];
+            $championurl = $nhlObj['team_champion']['url'];
 
             /** **************************
              * Getting RIGHT League
              **************************
                 */
-            $legue_logo_R = $mlbObj['league_right']['logo'];
+            $legue_logo_R = $nhlObj['league_right']['logo'];
 
             //divisiona
-            $divisionaDate_R = $mlbObj['league_right']['teams_divisional']['date'];
-            $divisionalMatches_R = $mlbObj['league_right']['teams_divisional'];
+            $divisionaDate_R = $nhlObj['league_right']['teams_divisional']['date'];
+            $divisionalMatches_R = $nhlObj['league_right']['teams_divisional'];
             //Round1st
-            $round1stDate_R = $mlbObj['league_right']['teams_1st_round']['date'];
-            $round1stMatches_R = $mlbObj['league_right']['teams_1st_round'];
+            $round1stDate_R = $nhlObj['league_right']['teams_1st_round']['date'];
+            $round1stMatches_R = $nhlObj['league_right']['teams_1st_round'];
             //semifinals
-            $semifinalsDate_R = $mlbObj['league_right']['teams_seminals']['date'];
-            $semifinalsMatches_R = $mlbObj['league_right']['teams_seminals'];
+            $semifinalsDate_R = $nhlObj['league_right']['teams_seminals']['date'];
+            $semifinalsMatches_R = $nhlObj['league_right']['teams_seminals'];
             //finals
-            $finalsDate_R = $mlbObj['league_right']['teams_finals']['date'];
-            $finalsMatches_R = $mlbObj['league_right']['teams_finals'];
+            $finalsDate_R = $nhlObj['league_right']['teams_finals']['date'];
+            $finalsMatches_R = $nhlObj['league_right']['teams_finals'];
         //ACF VARIABLES \
 
         /** **************************

@@ -28,6 +28,11 @@
     ob_start();
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/bracket-template_nba.php';
     return ob_get_clean();
+  }  
+  public function load_nhl_template() {
+    ob_start();
+    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/bracket-template_nhl.php';
+    return ob_get_clean();
   }
 }
 

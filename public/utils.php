@@ -1,26 +1,30 @@
 <?php
 function findTeamByID($jsonTeams, $teamID) {
   if (!is_null($jsonTeams)) {
+
       foreach ($jsonTeams as $team) {
           if ($team['teamID'] === $teamID) {
               return $team;
           }
+          
       }
   }
   return null;
 }
 
 function teamRender($matches, $jsonTeams, $key) {
+
   $teamID = $matches['team_name'];
   $rank = $matches['team_rank'] ?? 0;
+
   $foundTeam = findTeamByID($jsonTeams, $teamID);
   $box = '';
 
   if ($foundTeam) {
-      $teamName = $foundTeam['teamFirstName'];
+      $teamName     = $foundTeam['teamFirstName'];
       $teamNickname = $foundTeam['teamShortName'];
-      $teamLogo = $foundTeam['teamImageURL'];
-      $teamThumb = $foundTeam['thumbNailURL'];
+      $teamLogo     = $foundTeam['teamImageURL'];
+      $teamThumb    = $foundTeam['thumbNailURL'];
 
       $box .= '<div class="matchBox-team">';
       $box .= '<img class="matchBox-logo" src="' . $teamThumb . '" alt="' . $teamName . '">';
@@ -44,16 +48,16 @@ function teamRender($matches, $jsonTeams, $key) {
 function matchValues($matchesValue, $jsonTeams, $matchKey, $class) {
   $box = '';
 
-  $box .= $matchesValue['url'] !== '' ? '<a target="_blank" class="match-row ' . $matchKey . '" href="' . $matchesValue['url'] . '">' : '<div class="match-row ' . $matchKey . '">';
-  $box .= '<div class="matchBox ' . $class . '">';
-
-  foreach ($matchesValue as $key => $matches) {
-      if ($key !== 'url') {
-          $box .= teamRender($matches, $jsonTeams, $key);
-      }
-  }
-  $box .= '</div>';
-  $box .= $matchesValue['url'] ? '</a>' : '</div>';
+  $box .= '<a target="_blank" class="match-row ' . $matchKey . '" href="' . $matchesValue['url'] . '">';
+    $box .= '<div class="matchBox ' . $class . '">';
+    foreach ($matchesValue as $key => $matches) {
+      
+        if ($key !== 'url') {
+            $box .= teamRender($matches, $jsonTeams, $key);
+        }
+    }
+    $box .= '</div>';
+  $box .= '</a>';
 
   return $box;
 }

@@ -12,52 +12,52 @@ if ($brackets)
             //ACF VARIABLES
             $data = $row['lista_de_teams_json'];
             $json = json_decode($data, true);
-            $mlbObj = $row['MLB'];
+            $nhlObj = $row['MLB'];
             $bracket_title = $row['bracket_title'];
 
             /** **************************
              * Getting Left League
              **************************
              */
-            $stages = $mlbObj['league_left'];
-            $legue_logo_L = $mlbObj['league_left']['logo'];
+            $stages = $nhlObj['league_left'];
+            $legue_logo_L = $nhlObj['league_left']['logo'];
 
             //WILDCARD
-            $wildDate = $mlbObj['league_left']['teams_wildcard']['date'];
-            $wildMatches = $mlbObj['league_left']['teams_wildcard'];
+            $wildDate = $nhlObj['league_left']['teams_wildcard']['date'];
+            $wildMatches = $nhlObj['league_left']['teams_wildcard'];
             //division
-            $divisionDate = $mlbObj['league_left']['teams_division']['date'];
-            $divisionMatches = $mlbObj['league_left']['teams_division'];
+            $divisionDate = $nhlObj['league_left']['teams_division']['date'];
+            $divisionMatches = $nhlObj['league_left']['teams_division'];
             //Championship
-            $championshipDate = $mlbObj['league_left']['teams_championship']['date'];
-            $championshipMatches = $mlbObj['league_left']['teams_championship'];
+            $championshipDate = $nhlObj['league_left']['teams_championship']['date'];
+            $championshipMatches = $nhlObj['league_left']['teams_championship'];
 
             /** **************************
              * Getting Center worldseries
              **************************
              */
             //worldseries
-            $worldseriesMatches = $mlbObj['teams_worldseries'];
-            $worldseries_logo = $mlbObj['teams_worldseries']['logo'];
-            $worldseries_link = $mlbObj['teams_worldseries']['logo']['link'];
-            $championid = $mlbObj['team_champion']['team_name'];
-            $championurl = $mlbObj['team_champion']['url'];
+            $worldseriesMatches = $nhlObj['teams_worldseries'];
+            $worldseries_logo = $nhlObj['teams_worldseries']['logo'];
+            $worldseries_link = $nhlObj['teams_worldseries']['logo']['link'];
+            $championid = $nhlObj['team_champion']['team_name'];
+            $championurl = $nhlObj['team_champion']['url'];
 
             /** **************************
              * Getting RIGHT League
              **************************
              */
-            $legue_logo_R = $mlbObj['league_right']['logo'];
+            $legue_logo_R = $nhlObj['league_right']['logo'];
 
             //WILDCARD
-            $wildDate_R = $mlbObj['league_right']['teams_wildcard']['date'];
-            $wildMatches_R = $mlbObj['league_right']['teams_wildcard'];
+            $wildDate_R = $nhlObj['league_right']['teams_wildcard']['date'];
+            $wildMatches_R = $nhlObj['league_right']['teams_wildcard'];
             //division
-            $divisionDate_R = $mlbObj['league_right']['teams_division']['date'];
-            $divisionMatches_R = $mlbObj['league_right']['teams_division'];
+            $divisionDate_R = $nhlObj['league_right']['teams_division']['date'];
+            $divisionMatches_R = $nhlObj['league_right']['teams_division'];
             //Championship
-            $championshipDate_R = $mlbObj['league_right']['teams_championship']['date'];
-            $championshipMatches_R = $mlbObj['league_right']['teams_championship'];
+            $championshipDate_R = $nhlObj['league_right']['teams_championship']['date'];
+            $championshipMatches_R = $nhlObj['league_right']['teams_championship'];
             //ACF VARIABLES \
             
 
@@ -132,15 +132,15 @@ if ($brackets)
             $htmlContent .= '<img width="269px" class="logo" alt="' . $legue_logo_R['alt'] . '" src="' . $worldseries_logo['url'] . '">';
 
             //worldseries
-            $htmlContent .= $worldseries_link !== '' ? '<a href="' . $worldseries_link . '" class="worldseries">' : '<a class="worldseries">';
+            $htmlContent .= '<div href="' . $worldseries_link . '" class="worldseries">';
             $htmlContent .= '<div class="title">World Series</div>';
             $htmlContent .= '<div class="worldseries-wrap">';
             $htmlContent .= matchContent($worldseriesMatches, $json, 'worldseries');
             $htmlContent .= '</div>';
-            $htmlContent .= $worldseries_link ? '</a>' : '</div>';
+            $htmlContent .= '</div>' ;
 
             //champ
-            $htmlContent .= $worldseries_link !== '' ? '<a href="' . $championurl . '" class="match-row 11">' : '<div class="match-row 22">';
+            $htmlContent .= '<a href="' . $championurl . '" class="match-row 11">' ;
             $htmlContent .= '<div class="matchBox champ">';
                 $htmlContent .= '<div class="title">CHAMPION</div>';
                 $htmlContent .= '<div class="champ-wrap">';
@@ -148,7 +148,7 @@ if ($brackets)
                 $htmlContent .= '<div class="name">' . teamDestructur($championid, $json, 'name') . '</div>';
             $htmlContent .= '</div> ';
             $htmlContent .= '</div>';
-            $htmlContent .= $worldseries_link ? '</a>' : '</div>';
+            $htmlContent .=  '</a>';
             //champ ./
             $htmlContent .= '</div>';
             $htmlContent .= '</div>'; //group-center

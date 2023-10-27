@@ -16,6 +16,10 @@
 			margin-top: 4rem;
 			margin-bottom: 4rem;
 			font-size: 12em;
+			& a,
+			& a.match-row {
+				color: black !important;
+			}
 			& > p {
 				display: none;
 			}
